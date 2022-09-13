@@ -30,7 +30,7 @@
                 android:layout_height="375dp"
                 android:layout_alignParentBottom="true"
                 android:layout_marginTop="370dp"
-                android:foreground="@drawable/women">
+                android:foreground="@drawable/female">
 
             </Button>
         </RelativeLayout>
