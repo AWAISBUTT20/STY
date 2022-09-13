@@ -10,15 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints">
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/btnmen"
                 android:layout_width="match_parent"
                 android:layout_height="370dp"
-                android:layout_alignParentTop="true"
                 android:elevation="15dp"
                 android:foreground="@drawable/male">
 
@@ -28,12 +28,18 @@
                 android:id="@+id/btnwomen"
                 android:layout_width="match_parent"
                 android:layout_height="375dp"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="370dp"
                 android:foreground="@drawable/female">
 
             </Button>
-        </RelativeLayout>
+
+            <Button
+                android:id="@+id/btnacsesori"
+                android:layout_width="match_parent"
+                android:layout_height="375dp"
+                android:foreground="@drawable/breclet">
+
+            </Button>
+        </LinearLayout>
     </ScrollView>
 
 </LinearLayout>
