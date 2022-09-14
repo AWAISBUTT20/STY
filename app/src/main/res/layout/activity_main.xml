@@ -1,33 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Splash_Activity">
+    tools:context=".Splash_Activity"
+    android:orientation="vertical">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints">
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:paddingBottom="?attr/actionBarSize"
+          >
 
             <Button
                 android:id="@+id/btnmen"
                 android:layout_width="match_parent"
                 android:layout_height="370dp"
                 android:elevation="15dp"
-                android:foreground="@drawable/male">
-
+                android:foreground="@drawable/male"
+                >
             </Button>
 
             <Button
                 android:id="@+id/btnwomen"
                 android:layout_width="match_parent"
                 android:layout_height="375dp"
+                android:layout_marginTop="370dp"
                 android:foreground="@drawable/female">
 
             </Button>
@@ -36,10 +39,19 @@
                 android:id="@+id/btnacsesori"
                 android:layout_width="match_parent"
                 android:layout_height="375dp"
+                android:layout_marginTop="745dp"
                 android:foreground="@drawable/breclet">
 
             </Button>
-        </LinearLayout>
+        </FrameLayout>
     </ScrollView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_navigation"
+        android:layout_alignParentBottom="true"
+        >
 
-</LinearLayout>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+</RelativeLayout>
