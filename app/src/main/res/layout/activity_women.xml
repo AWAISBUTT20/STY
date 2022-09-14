@@ -5,16 +5,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mens_activity">
+    tools:context=".mens_activity"
+    >
 
 
     <Button
         android:id="@+id/btnmenarrivals"
         android:layout_width="match_parent"
-        android:layout_alignParentTop="true"
         android:layout_height="395dp"
+        android:layout_alignParentTop="true"
         android:elevation="15dp"
-        android:foreground="@drawable/menmodel">
+        android:foreground="@drawable/womenmodle">
 
     </Button>
 
@@ -22,10 +23,10 @@
         android:id="@+id/btnmenhood"
         android:layout_width="202dp"
         android:layout_height="340dp"
-        android:layout_marginTop="400dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:foreground="@drawable/menhodies">
+        android:layout_marginTop="400dp"
+        android:foreground="@drawable/womenhood">
 
     </Button>
 
@@ -33,12 +34,12 @@
         android:id="@+id/btnmentees"
         android:layout_width="202dp"
         android:layout_height="340dp"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="209dp"
         android:layout_marginTop="400dp"
-        android:foreground="@drawable/mentees">
+        android:foreground="@drawable/womentees">
 
     </Button>
 
