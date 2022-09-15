@@ -35,14 +35,14 @@
 
             </Button>
 
-            <Button
+            <ImageView
                 android:id="@+id/btnacsesori"
                 android:layout_width="match_parent"
                 android:layout_height="375dp"
                 android:layout_marginTop="745dp"
-                android:foreground="@drawable/breclet">
+                >
 
-            </Button>
+            </ImageView>
         </FrameLayout>
     </ScrollView>
     <com.google.android.material.bottomnavigation.BottomNavigationView
