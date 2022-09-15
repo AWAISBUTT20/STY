@@ -22,11 +22,19 @@
 
 </item><item
     android:id="@+id/Cart"
-    android:title="Shopping Cart"
+    android:title="Cart"
     android:icon="@drawable/shopping_cart"
     >
 
 </item>
+    <item
+        android:id="@+id/User"
+        android:title="User Profile"
+        android:icon="@drawable/ic_baseline_account_box_24"
+        >
+
+    </item>
+
 
 
 

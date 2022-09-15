@@ -66,8 +66,7 @@ public class login_m extends AppCompatActivity {
                 Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
             }
         }
-          */
-        /*  btnout=findViewById(R.id.item7);
+          *//*  btnout=findViewById(R.id.item7);
             btnout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
