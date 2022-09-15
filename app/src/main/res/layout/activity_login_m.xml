@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    tools:context=".login_m">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="SIGN UP / LOGIN"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
+            <!--  <TextView
+                style="@style/headerTextPrimary"
+                android:layout_marginTop="@dimen/loginViewsMargin"
+                android:text="Username or Email :"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+    -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp">
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:backgroundTint="@color/black"
+                    android:hint="Username"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:textColorHint="@color/black">
+
+                </EditText>
+            </androidx.cardview.widget.CardView>
+            <!-- <TextView
+                style="@style/headerTextPrimary"
+                android:layout_marginTop="@dimen/loginViewsMargin"
+                android:text="Password :"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="15sp" />-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/textInputPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp">
+
+                <EditText
+                    android:id="@+id/editTextPassword"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:backgroundTint="@color/black"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:textColorHint="@color/black">
+
+                </EditText>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="25dp"
+                android:onClick="viewForgotPAssword"
+                android:text="Forgot Password?"
+
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                tools:ignore="OnClick" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnlog"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:backgroundTint="@color/black"
+                android:elevation="20dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="20dp">
+
+                <Button
+                    android:id="@+id/cirLoginButton"
+                    android:layout_width="210dp"
+                    android:layout_height="58dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:backgroundTint="@color/black"
+                    android:text="Login"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:text="or"
+                android:textSize="20sp">
+
+            </TextView>
+
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/google"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp">
+
+            </com.google.android.gms.common.SignInButton>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/white"
+                android:onClick="viewRegisterClicked"
+                android:text="Create A new Account"
+                android:layout_marginTop="50dp"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:textStyle="normal"
+                tools:ignore="OnClick" />
+
+            <Button
+                android:id="@+id/btnsign"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="200dp"
+                android:backgroundTint="@color/white"
+                android:layout_marginTop="-30dp"
+                android:text="SignUp"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:textSize="15sp">
+
+            </Button>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</RelativeLayout>
