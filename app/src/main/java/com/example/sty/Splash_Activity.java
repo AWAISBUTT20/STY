@@ -12,7 +12,7 @@ public class Splash_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        Intent nxt = new Intent(this,login_m.class);
+        Intent nxt = new Intent(this,MainActivity.class);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
