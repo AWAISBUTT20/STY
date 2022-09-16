@@ -29,7 +29,24 @@ public class login_m extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_m);
-        /*btngmail = findViewById(R.id.google);
+
+        btn1 =findViewById(R.id.cirLoginButton);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nxt = new Intent(login_m.this,Home.class);
+                startActivity(nxt);
+            }
+        });
+        btn2 =findViewById(R.id.btnsignup);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nxt = new Intent(login_m.this,SignUp.class);
+                startActivity(nxt);
+            }
+        });
+         /*btngmail = findViewById(R.id.google);
         auth = FirebaseAuth.getInstance();
         googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail()
                 .build();
@@ -86,21 +103,5 @@ public class login_m extends AppCompatActivity {
             });
             Toast.makeText(this,"Logout Sucssesfully",Toast.LENGTH_SHORT).show();
         }}*/
-        btn1 =findViewById(R.id.cirLoginButton);
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent nxt = new Intent(login_m.this,Home.class);
-                startActivity(nxt);
-            }
-        });
-        btn2 =findViewById(R.id.btnsignup);
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent nxt = new Intent(login_m.this,SignUp.class);
-                startActivity(nxt);
-            }
-        });
     }
 }

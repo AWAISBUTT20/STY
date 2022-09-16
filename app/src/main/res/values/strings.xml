@@ -14,4 +14,6 @@
     <string name="ConfirmPassword">Confirm Password</string>
     <string name="SignUp">Sign Up</string>
     <string name="registrationPage">Create Your Account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
