@@ -12,8 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:background="@color/white"
         android:orientation="vertical"
         android:padding="20dp">
@@ -39,19 +39,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:text="Get UpTo 30% Off"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:textStyle="italic"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="4dp">
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="13dp"
+            app:cardElevation="10dp">
 
             <EditText
                 android:id="@+id/email"
@@ -59,19 +62,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:backgroundTint="@color/black"
-                android:hint="Username"
+                android:hint="@string/Email"
                 android:inputType="textPersonName"
                 android:maxLines="1"
-                android:textColorHint="@color/black"></EditText>
+                android:textColorHint="@color/grey">
+
+            </EditText>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/textInputPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="4dp">
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="13dp"
+            app:cardElevation="10dp">
 
             <EditText
                 android:id="@+id/editTextPassword"
@@ -82,7 +89,7 @@
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:textColorHint="@color/black">
+                android:textColorHint="@color/grey">
 
             </EditText>
         </androidx.cardview.widget.CardView>
@@ -141,30 +148,18 @@
 
         </com.google.android.gms.common.SignInButton>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="55dp"
-            android:backgroundTint="@color/white"
-            android:text="Create a new Account?"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="normal">
-
-        </TextView>
-
         <Button
             android:id="@+id/btnsignup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="176dp"
-            android:layout_marginTop="-33dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
             android:background="@android:color/transparent"
             android:backgroundTint="@android:color/transparent"
-            android:text="SignUp"
+            android:text="Create a new Account? SignUp"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="13sp"
             android:textStyle="normal">
 
         </Button>
