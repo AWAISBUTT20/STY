@@ -45,7 +45,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            app:cardElevation="10dp">
+            app:cardCornerRadius="13dp"
+            app:cardElevation="20dp">
 
             <EditText
                 android:id="@+id/edittxtusername"
@@ -53,6 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="5dp"
+                android:backgroundTint="@color/black"
                 android:hint="@string/Username"
                 android:inputType="text"
                 android:textColorHint="@color/black" />
@@ -65,6 +67,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            android:background="@color/black"
+            app:cardCornerRadius="13dp"
             app:cardElevation="10dp">
 
             <EditText
@@ -85,6 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            app:cardCornerRadius="13dp"
             app:cardElevation="10dp">
 
             <EditText
@@ -107,6 +112,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
+            app:cardCornerRadius="13dp"
             app:cardElevation="10dp">
 
             <EditText
@@ -118,7 +124,8 @@
                 android:hint="@string/ConfirmPassword"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:textColorHint="@color/black">
+                android:textColorHint="@color/black"
+                app:cardCornerRadius="13dp">
 
             </EditText>
         </androidx.cardview.widget.CardView>
