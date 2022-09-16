@@ -7,10 +7,39 @@
 
     tools:context=".main">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+      <LinearLayout
+               android:orientation="vertical"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:paddingBottom="?attr/actionBarSize"
+               >
 
+               <Button
+                   android:id="@+id/btnmen"
+                   android:layout_width="match_parent"
+                   android:layout_height="370dp"
+                   android:elevation="15dp"
+                   android:foreground="@drawable/male"
+                   >
+               </Button>
+
+               <Button
+                   android:id="@+id/btnwomen"
+                   android:layout_width="match_parent"
+                   android:layout_height="375dp"
+
+                   android:foreground="@drawable/female"
+                   tools:targetApi="m">
+
+               </Button>
+
+               <Button
+                   android:id="@+id/btnacsesori"
+                   android:layout_width="match_parent"
+                   android:layout_height="375dp"
+                   android:foreground="@drawable/breclet"
+                   >
+
+               </Button>
+           </LinearLayout>
 </FrameLayout>
