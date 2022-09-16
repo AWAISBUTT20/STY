@@ -1,7 +1,5 @@
 package com.example.sty;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -70,6 +68,14 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent nxt=new Intent(Home.this,women_activity.class);
+                startActivity(nxt);
+            }
+        });
+        btn3=findViewById(R.id.btnacsesori);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nxt=new Intent(Home.this,Accessories.class);
                 startActivity(nxt);
             }
         });
