@@ -16,9 +16,13 @@
         android:theme="@style/Theme.STY"
         tools:targetApi="31">
         <activity
+            android:name=".Home"
+            android:exported="true"
+            android:theme="@style/Theme.Splash" />
+        <activity
             android:name=".SignUp"
             android:exported="true"
-            android:theme="@style/Theme.Splash"/>
+            android:theme="@style/Theme.Splash" />
         <activity
             android:name=".login_m"
             android:exported="true"
@@ -37,10 +41,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Splash" />
         <activity
             android:name=".mens_activity"
             android:exported="true"

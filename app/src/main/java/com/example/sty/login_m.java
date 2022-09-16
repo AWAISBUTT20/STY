@@ -24,6 +24,7 @@ public class login_m extends AppCompatActivity {
     GoogleSignInOptions googleSignInOptions;
     Button btngmail,btnout;
     GoogleSignInClient googlesignInClient;*/
+    Button btn1,btn2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,5 +86,21 @@ public class login_m extends AppCompatActivity {
             });
             Toast.makeText(this,"Logout Sucssesfully",Toast.LENGTH_SHORT).show();
         }}*/
+        btn1 =findViewById(R.id.cirLoginButton);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nxt = new Intent(login_m.this,Home.class);
+                startActivity(nxt);
+            }
+        });
+        btn2 =findViewById(R.id.btnsignup);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nxt = new Intent(login_m.this,SignUp.class);
+                startActivity(nxt);
+            }
+        });
     }
 }

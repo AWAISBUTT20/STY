@@ -11,11 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints">
-        <FrameLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="?attr/actionBarSize"
-          >
+            >
 
             <Button
                 android:id="@+id/btnmen"
@@ -30,21 +31,20 @@
                 android:id="@+id/btnwomen"
                 android:layout_width="match_parent"
                 android:layout_height="375dp"
-                android:layout_marginTop="370dp"
+
                 android:foreground="@drawable/female">
 
             </Button>
 
-            <ImageView
+            <Button
                 android:id="@+id/btnacsesori"
                 android:layout_width="match_parent"
                 android:layout_height="375dp"
-                android:layout_marginTop="745dp"
                 android:foreground="@drawable/breclet"
                 >
 
-            </ImageView>
-        </FrameLayout>
+            </Button>
+        </LinearLayout>
     </ScrollView>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
