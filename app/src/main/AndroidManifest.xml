@@ -16,9 +16,13 @@
         android:theme="@style/Theme.STY"
         tools:targetApi="31">
         <activity
-            android:name=".Accessories"
+            android:name=".welcome"
             android:exported="true"
             android:theme="@style/Theme.Splash"/>
+        <activity
+            android:name=".Accessories"
+            android:exported="true"
+            android:theme="@style/Theme.Splash" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -11,40 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints">
-      <!--  <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="?attr/actionBarSize"
-            >
-
-            <Button
-                android:id="@+id/btnmen"
-                android:layout_width="match_parent"
-                android:layout_height="370dp"
-                android:elevation="15dp"
-                android:foreground="@drawable/male"
-                >
-            </Button>
-
-            <Button
-                android:id="@+id/btnwomen"
-                android:layout_width="match_parent"
-                android:layout_height="375dp"
-
-                android:foreground="@drawable/female">
-
-            </Button>
-
-            <Button
-                android:id="@+id/btnacsesori"
-                android:layout_width="match_parent"
-                android:layout_height="375dp"
-                android:foreground="@drawable/breclet"
-                >
-
-            </Button>
-        </LinearLayout>-->
         <FrameLayout
             android:id="@+id/container"
             android:layout_width="match_parent"
