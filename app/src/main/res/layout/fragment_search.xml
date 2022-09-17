@@ -1,16 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/colorPrimaryDark"
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".search">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+<androidx.cardview.widget.CardView
+    android:layout_marginTop="@android:dimen/app_icon_size"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginStart="20dp"
+    android:paddingBottom="20dp"
+    android:elevation="15dp"
+    app:cardCornerRadius="10dp"
+    >
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:backgroundTint="@color/grey"
+        android:background="@drawable/search"
+        >
+    </ImageView>
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/edittxtsearch"
+        android:layout_marginStart="45dp"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
+        android:hint="@string/search"
+        android:textSize="23sp"
+android:textColorHint="@color/grey"
+        android:backgroundTint="@color/black"
+        >
+    </EditText>
+    <Button
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="5dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="320dp"
+        android:foreground="@drawable/filter"
+        >
+    </Button>
+</androidx.cardview.widget.CardView>
+</LinearLayout>

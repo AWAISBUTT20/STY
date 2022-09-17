@@ -19,6 +19,6 @@ public class Splash_Activity extends AppCompatActivity {
                 startActivity(nxt);
                 finish();
             }
-        },2000);
+        },1900);
     }
 }

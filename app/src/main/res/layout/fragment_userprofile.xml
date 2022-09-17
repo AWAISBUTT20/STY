@@ -1,37 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="30dp"
     tools:context=".Userprofile">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
     <Button
-        android:id="@+id/farglogin"
+        android:id="@+id/btnUserProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="@color/black"
-        android:text="Login"
+        android:text="User Profile"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
     <Button
-        android:id="@+id/fragsignup"
+    android:id="@+id/btnMyOrder"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:backgroundTint="@color/black"
+    android:text="My Orders"
+    android:textColor="@color/white"
+    android:textSize="18sp"
+    android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnMyVouchers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="@color/black"
-        android:text="@string/SignUp"
+        android:text="Vouchers"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnpaymentmethod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/black"
+        android:text="Payment method"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnlogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/black"
+        android:text="Logout"
         android:layout_marginLeft="50dp"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
 </LinearLayout>
-
-
-</FrameLayout>

@@ -23,6 +23,14 @@ public class SignUp extends AppCompatActivity {
             startActivity(nxt);
             }
         });
+        btn=findViewById(R.id.BtnRegister);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nxt= new Intent(SignUp.this,MainActivity.class);
+                startActivity(nxt);
+            }
+        });
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             if (bundle.getString("some") != null) {
