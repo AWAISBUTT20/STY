@@ -27,9 +27,28 @@ public class Home extends Fragment {
             @Override
             public void onClick(View v){
                 Intent in = new Intent(getActivity(), mens_activity.class);
-                in.putExtra("some", "some data");
+                //in.putExtra("some", "Mens Wears");
                 startActivity(in);
             }
         });
-        return view;    }
+        Button btnOpen2 = (Button) view. findViewById(R.id.btnwomen);
+        btnOpen2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent in = new Intent(getActivity(), women_activity.class);
+                //in.putExtra("some", "Mens Wears");
+                startActivity(in);
+            }
+        });
+        Button btnOpen3 = (Button) view. findViewById(R.id.btnacsesori);
+        btnOpen3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent in = new Intent(getActivity(), Accessories.class);
+                //in.putExtra("some", "Mens Wears");
+                startActivity(in);
+            }
+        });
+        return view;
+    }
 }

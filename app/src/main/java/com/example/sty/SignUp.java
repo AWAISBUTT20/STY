@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class SignUp extends AppCompatActivity {
     Button btn;
@@ -22,5 +23,13 @@ public class SignUp extends AppCompatActivity {
             startActivity(nxt);
             }
         });
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            if (bundle.getString("some") != null) {
+                Toast.makeText(getApplicationContext(),
+                        "data:" + bundle.getString("some"),
+                        Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
