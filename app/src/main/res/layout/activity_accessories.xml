@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   android:background="@color/black"
+   android:background="@color/white"
     tools:context=".mens_activity">
 <ScrollView
     android:layout_height="match_parent"
@@ -19,7 +19,7 @@
        <Button
            android:id="@+id/btnbreclets"
            android:layout_width="match_parent"
-           android:layout_height="400dp"
+           android:layout_height="395dp"
            android:layout_alignParentTop="true"
            android:elevation="15dp"
            android:foreground="@drawable/acsesories">
@@ -27,16 +27,28 @@
        </Button>
 
        <Button
-           android:id="@+id/btnCaps"
-           android:layout_width="match_parent"
-           android:layout_height="395dp"
-           android:layout_alignParentTop="true"
+           android:id="@+id/btnmenhood"
+           android:layout_width="202dp"
+           android:layout_height="340dp"
            android:layout_marginTop="400dp"
-           android:elevation="15dp"
+           android:layout_alignParentTop="true"
+           android:layout_alignParentBottom="true"
            android:foreground="@drawable/caps">
 
        </Button>
 
+       <Button
+           android:id="@+id/btnmentees"
+           android:layout_width="202dp"
+           android:layout_height="340dp"
+           android:layout_alignParentEnd="true"
+           android:layout_alignParentTop="true"
+           android:layout_alignParentBottom="true"
+           android:layout_marginStart="209dp"
+           android:layout_marginTop="400dp"
+           android:foreground="@drawable/neck">
+
+       </Button>
    </RelativeLayout>
 
 </ScrollView>
