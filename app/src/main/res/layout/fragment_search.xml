@@ -6,45 +6,93 @@
     android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".search">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
+     android:layout_width="match_parent"
+     android:layout_height="50dp"
+     android:layout_marginEnd="20dp"
+     android:layout_marginStart="20dp"
+     android:paddingBottom="20dp"
+     android:elevation="15dp"
+     app:cardCornerRadius="10dp"
+android:layout_marginTop="100dp"
+     >
+     <ImageView
+         android:layout_marginTop="5dp"
+         android:layout_width="45dp"
+         android:layout_height="45dp"
+         android:backgroundTint="@color/grey"
+         android:background="@drawable/search"
+         >
+     </ImageView>
 
-<androidx.cardview.widget.CardView
-    android:layout_marginTop="@android:dimen/app_icon_size"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:layout_marginEnd="20dp"
-    android:layout_marginStart="20dp"
-    android:paddingBottom="20dp"
-    android:elevation="15dp"
-    app:cardCornerRadius="10dp"
-    >
-    <ImageView
-        android:layout_marginTop="5dp"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:backgroundTint="@color/grey"
-        android:background="@drawable/search"
-        >
-    </ImageView>
+     <EditText
+         android:id="@+id/editxtsearch"
+         android:layout_marginStart="45dp"
+         android:layout_width="270dp"
+         android:layout_height="50dp"
+         android:hint="@string/search"
+         android:textSize="23sp"
+ android:textColorHint="@color/grey"
+         android:backgroundTint="@color/black"
+         >
+     </EditText>
+     <Button
+         android:backgroundTint="@color/white"
+         android:layout_marginTop="5dp"
+         android:layout_width="45dp"
+         android:layout_height="45dp"
+         android:layout_marginStart="320dp"
+         android:foreground="@drawable/filter"
+         >
+     </Button>
+ </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/group_47"
+                android:layout_width="170dp"
+                android:layout_height="210dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="21dp"
+                android:layout_marginTop="221dp"
+                android:foreground="@drawable/sample" />
 
-    <EditText
-        android:id="@+id/edittxtsearch"
-        android:layout_marginStart="45dp"
-        android:layout_width="270dp"
-        android:layout_height="50dp"
-        android:hint="@string/search"
-        android:textSize="23sp"
-android:textColorHint="@color/grey"
-        android:backgroundTint="@color/black"
-        >
-    </EditText>
-    <Button
-        android:backgroundTint="@color/white"
-        android:layout_marginTop="5dp"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="320dp"
-        android:foreground="@drawable/filter"
-        >
-    </Button>
-</androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/group_48"
+                android:layout_width="169dp"
+                android:layout_height="210dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="215dp"
+                android:layout_marginTop="221dp"
+                android:foreground="@drawable/sample">
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/group_49"
+                android:layout_width="170dp"
+                android:layout_height="210dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="455dp"
+                android:foreground="@drawable/sample" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/group_50"
+                android:layout_width="169dp"
+                android:layout_height="210dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="215dp"
+                android:layout_marginTop="455dp"
+                android:foreground="@drawable/sample" />
+        </RelativeLayout>
+    </ScrollView>
 </LinearLayout>
