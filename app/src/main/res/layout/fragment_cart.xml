@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:layout_marginBottom="@android:dimen/app_icon_size"
     tools:context=".Cart">
 <ScrollView
     android:layout_width="match_parent"
@@ -11,56 +12,78 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="37dp"
+            android:layout_centerHorizontal="true"
+            android:text="CART"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:gravity="top"
+            />
 
-        <View
-            android:id="@+id/group_58"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
+        <Button
+            android:id="@+id/rectangle_1"
+            android:layout_width="315dp"
+            android:layout_height="102dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:background="@drawable/acsesories" />
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="150dp"
+            android:backgroundTint="@color/teal_200"
+            android:elevation="40dp"
+            android:text="Item 1"
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/group_47"
-            android:layout_width="170dp"
-            android:layout_height="210dp"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/rectangle_2"
+            android:layout_width="315dp"
+            android:layout_height="102dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="21dp"
-            android:layout_marginTop="321dp"
-            android:foreground="@drawable/sample" />
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="300dp"
+            android:backgroundTint="@color/teal_700"
+            android:elevation="40dp"
+            android:text="Item 2"
+            android:textColor="@color/black" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/group_48"
-            android:layout_width="169dp"
-            android:layout_height="210dp"
+        <Button
+            android:id="@+id/rectangle_3"
+            android:layout_width="315dp"
+            android:layout_height="102dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="215dp"
-            android:layout_marginTop="321dp"
-            android:foreground="@drawable/sample">
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="450dp"
+            android:backgroundTint="@color/grey"
+            android:elevation="40dp"
+            android:text="Item 3"
+            android:textColor="@color/black" />
 
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/group_49"
-            android:layout_width="170dp"
-            android:layout_height="210dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="21dp"
-            android:layout_marginTop="555dp"
-            android:foreground="@drawable/sample" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/group_50"
-            android:layout_width="169dp"
-            android:layout_height="210dp"
+        <Button
+            android:id="@+id/rectangle_4"
+            android:layout_width="314dp"
+            android:layout_height="70dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="215dp"
-            android:layout_marginTop="555dp"
-            android:foreground="@drawable/sample" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="600dp"
+            android:backgroundTint="#FA4A0C"
+            android:shadowRadius="20"
+            android:text="Proceed to payment"
+            android:textAlignment="center"
+            android:textSize="20sp"
+
+            />
+
     </RelativeLayout>
 </ScrollView>
-</RelativeLayout>
+
+
+</FrameLayout>

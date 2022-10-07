@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<FrameLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+   android:layout_marginBottom="@android:dimen/app_icon_size"
     tools:context=".Userprofile">
     <ScrollView
         android:layout_width="match_parent"
@@ -30,12 +31,15 @@
  <androidx.cardview.widget.CardView
      android:layout_width="match_parent"
      android:layout_marginTop="10dp"
-     android:layout_height="240dp"
+     android:layout_height="200dp"
+     android:elevation="30dp"
+     app:cardCornerRadius="3dp"
      >
      <de.hdodenhof.circleimageview.CircleImageView
 
-         android:id="@+id/profile_image"
+         android:id="@+id/imgprofil"
          android:layout_width="150dp"
+         android:layout_marginTop="20dp"
          android:layout_height="wrap_content"
          android:layout_gravity="center"
          android:layout_marginBottom="30dp"
@@ -47,15 +51,65 @@
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:layout_gravity="center"
-         android:layout_marginTop="70dp"
+         android:layout_marginTop="90dp"
          android:text="@string/Username"
          android:textStyle="italic"
          android:textAlignment="center"
          android:textColor="@color/black">
 
      </TextView>
+     <Button
+         android:id="@+id/change"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Update"
+         android:layout_marginLeft="-10dp"
+         android:textSize="12sp"
+         android:textColor="@color/black"
+         android:background="@android:color/transparent"
+         android:backgroundTint="@android:color/transparent"
+         android:gravity="top"
+         />
  </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
+
+    <Button
+        android:id="@+id/rectangle_1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:elevation="40dp"
+        android:layout_marginTop="41dp"
+        android:backgroundTint="@color/white"
+        android:text="Orders"
+        android:textColor="@color/black"
+         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:elevation="40dp"
+        android:text="Reviews"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:elevation="40dp"
+        android:text="FAQ"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:elevation="40dp"
+        android:text="Customer Support"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        />
+ <!--   <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
@@ -69,6 +123,8 @@
             android:elevation="15dp"
 
             >
+
+
             <Button
                 android:id="@+id/btnmyorder"
                 android:layout_width="match_parent"
@@ -86,17 +142,6 @@
                 >
             </ImageView>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="My Orders"
-                android:textColor="@color/black"
-                android:layout_marginTop="5dp"
-                android:textSize="25sp"
-                android:textAlignment="center"
-                android:backgroundTint="@color/white"
-                >
-            </TextView>
             <ImageView
                 android:backgroundTint="@color/white"
                 android:layout_width="match_parent"
@@ -105,7 +150,20 @@
                 android:foreground="@drawable/righterrow"
                 >
             </ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/white"
+                android:text="My Orders"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25sp">
+
+            </TextView>
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:layout_marginTop="60dp"
             android:layout_width="match_parent"
@@ -202,6 +260,7 @@
                 >
             </ImageView>
         </androidx.cardview.widget.CardView>
+
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -303,7 +362,7 @@
                 >
             </ImageView>
         </androidx.cardview.widget.CardView>
-    </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>-->
 </LinearLayout>
     </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

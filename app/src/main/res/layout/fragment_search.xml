@@ -5,7 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:layout_height="match_parent"
+    android:layout_marginBottom="@android:dimen/app_icon_size"
     tools:context=".search">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -20,7 +22,7 @@
      android:paddingBottom="20dp"
      android:elevation="15dp"
      app:cardCornerRadius="10dp"
-android:layout_marginTop="100dp"
+android:layout_marginTop="80dp"
      >
      <ImageView
          android:layout_marginTop="5dp"
@@ -52,11 +54,26 @@ android:layout_marginTop="100dp"
          >
      </Button>
  </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="161dp"
+                android:text="New Collection"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="italic">
+
+            </TextView>
             <androidx.cardview.widget.CardView
                 android:id="@+id/group_47"
                 android:layout_width="170dp"
                 android:layout_height="210dp"
                 android:layout_alignParentLeft="true"
+                android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="21dp"
                 android:layout_marginTop="221dp"
@@ -67,6 +84,7 @@ android:layout_marginTop="100dp"
                 android:layout_width="169dp"
                 android:layout_height="210dp"
                 android:layout_alignParentLeft="true"
+                android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="215dp"
                 android:layout_marginTop="221dp"
@@ -77,6 +95,7 @@ android:layout_marginTop="100dp"
             <androidx.cardview.widget.CardView
                 android:id="@+id/group_49"
                 android:layout_width="170dp"
+                android:layout_centerHorizontal="true"
                 android:layout_height="210dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
@@ -89,6 +108,7 @@ android:layout_marginTop="100dp"
                 android:layout_width="169dp"
                 android:layout_height="210dp"
                 android:layout_alignParentLeft="true"
+                android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="215dp"
                 android:layout_marginTop="455dp"
