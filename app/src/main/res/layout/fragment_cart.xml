@@ -12,18 +12,32 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/cart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+
+        <View
+            android:id="@+id/some_id"
+            android:layout_width="124.96dp"
+            android:layout_height="2.25dp"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="37dp"
+            android:layout_marginTop="102.32dp"
+            android:background="@color/black"
             android:layout_centerHorizontal="true"
-            android:text="CART"
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            android:gravity="top"
+
             />
+
+        <TextView
+            android:id="@+id/checkout"
+            android:layout_width="225.51dp"
+            android:layout_height="32.58dp"
+            android:layout_marginStart="75.58dp"
+            android:layout_marginTop="69.75dp"
+            android:layout_marginEnd="110dp"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="19sp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/SHOPPINGBAG"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:translationY="-9.47sp" />
 
         <Button
             android:id="@+id/rectangle_1"
@@ -33,7 +47,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="150dp"
-            android:backgroundTint="@color/teal_200"
+            android:foreground="@drawable/cart1"
             android:elevation="40dp"
             android:text="Item 1"
 
@@ -47,7 +61,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="300dp"
-            android:backgroundTint="@color/teal_700"
+            android:foreground="@drawable/cart1"
             android:elevation="40dp"
             android:text="Item 2"
             android:textColor="@color/black" />
@@ -60,7 +74,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="450dp"
-            android:backgroundTint="@color/grey"
+            android:foreground="@drawable/cart1"
             android:elevation="40dp"
             android:text="Item 3"
             android:textColor="@color/black" />
@@ -74,9 +88,9 @@
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="600dp"
-            android:backgroundTint="#FA4A0C"
+            android:backgroundTint="@color/black"
             android:shadowRadius="20"
-            android:text="Proceed to payment"
+            android:text="Check Out"
             android:textAlignment="center"
             android:textSize="20sp"
 

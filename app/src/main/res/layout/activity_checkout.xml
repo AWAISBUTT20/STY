@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".checkout">
+    <View
+        android:id="@+id/some_id"
+        android:layout_width="124.96dp"
+        android:layout_height="2.25dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="102.32dp"
+        android:background="@color/black"
+        android:layout_centerHorizontal="true"
+
+        />
+
+    <TextView
+        android:id="@+id/checkout"
+        android:layout_width="225.51dp"
+        android:layout_height="32.58dp"
+        android:layout_marginStart="75.58dp"
+        android:layout_marginTop="69.75dp"
+        android:layout_marginEnd="110dp"
+        android:gravity="center_horizontal|top"
+        android:lineSpacingExtra="19sp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/checkout"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:translationY="-9.47sp" />
+
+<androidx.cardview.widget.CardView
+    android:layout_width="342dp"
+    android:layout_height="179.54dp"
+    android:layout_alignParentStart="true"
+    android:layout_marginStart="36dp"
+    android:layout_alignParentTop="true"
+    android:layout_marginTop="128.17dp"
+    android:background="#00000000">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="SHIPPING ADDRESS "
+    android:textColor="@color/grey"
+    android:layout_marginTop="5dp"
+    android:textStyle="bold"
+
+    />
+</androidx.cardview.widget.CardView>
+
+<androidx.cardview.widget.CardView
+    android:layout_width="342.98dp"
+    android:layout_height="76dp"
+    android:layout_alignParentStart="true"
+    android:layout_marginStart="36dp"
+    android:layout_alignParentTop="true"
+    android:layout_marginTop="343.71dp"
+    android:background="#00000000">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SHIPPING METHOD "
+        android:textColor="@color/grey"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+
+        />
+</androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="342dp"
+        android:layout_height="76dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="455.71dp"
+        android:background="#00000000">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="TOTAL "
+            android:textColor="@color/grey"
+            android:textStyle="bold"
+
+            />
+    </androidx.cardview.widget.CardView>
+    <Button
+        android:layout_width="342dp"
+        android:layout_height="76dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="36dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@android:dimen/app_icon_size"
+        android:layout_marginTop="581.71dp"
+        android:text="Place Order"
+        android:textSize="20sp"
+        android:backgroundTint="@color/black"
+        />
+</RelativeLayout>

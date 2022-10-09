@@ -27,7 +27,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="42dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="125dp"
+        android:layout_marginBottom="130dp"
         android:background="@android:color/transparent"
         android:gravity="center"
         android:textAlignment="center"

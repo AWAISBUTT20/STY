@@ -22,8 +22,8 @@
 
 </item><item
     android:id="@+id/Cart"
-    android:title="Cart"
-    android:icon="@drawable/shopping_cart"
+    android:title="Bag"
+    android:icon="@drawable/shoppingbag"
     >
 
 </item>

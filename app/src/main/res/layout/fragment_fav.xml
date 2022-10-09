@@ -10,8 +10,8 @@
     <ImageButton
         android:layout_width="match_parent"
         android:layout_height="225dp"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/menmodel">
 
     </ImageButton>
@@ -30,12 +30,12 @@
         android:layout_width="315dp"
         android:layout_height="102dp"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="300dp"
         android:backgroundTint="@color/teal_700"
         android:elevation="40dp"
         android:text="Item 1"
-        android:layout_centerHorizontal="true"
         android:textColor="@color/black" />
 
     <Button
@@ -57,10 +57,11 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="600dp"
-        android:backgroundTint="#FA4A0C"
+        android:backgroundTint="@color/black"
         android:shadowRadius="20"
-        android:text="Add To Cart"
+        android:text="Add all To bag"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="20sp"
 
         />
