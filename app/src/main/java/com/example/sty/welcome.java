@@ -10,8 +10,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class welcome extends AppCompatActivity {
 Button btn1,btn2,btn3;
+FirebaseAuth firebaseAuth;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user=firebaseAuth.getCurrentUser();
+        if (user == null) {
+            startActivity(new Intent(welcome.this,login_m.class));
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +33,7 @@ Button btn1,btn2,btn3;
         btn1 =findViewById(R.id.btnwelcomelog);
         btn2 =findViewById(R.id.btnwelcomesignup);
         btn3 =findViewById(R.id.btnwellcomayb);
-
+        firebaseAuth =FirebaseAuth.getInstance();
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +55,7 @@ Button btn1,btn2,btn3;
                 startActivity(intent);
             }
         });
+
 
     }
     }

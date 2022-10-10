@@ -7,9 +7,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 public class Userprofile extends Fragment {
-
+Button btn;
 
     public Userprofile() {
         // Required empty public constructor
