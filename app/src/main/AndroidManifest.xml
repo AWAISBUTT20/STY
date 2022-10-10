@@ -16,8 +16,13 @@
         android:theme="@style/Theme.STY"
         tools:targetApi="31">
         <activity
+            android:name=".mens_product"
+            android:exported="true"
+            android:theme="@style/Theme.Splash"/>
+        <activity
             android:name=".checkout"
-            android:exported="false" />
+            android:exported="true"
+            android:theme="@style/Theme.Splash" />
         <activity
             android:name=".welcome"
             android:exported="true"
