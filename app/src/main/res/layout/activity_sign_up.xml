@@ -50,7 +50,7 @@
             app:cardElevation="20dp">
 
             <EditText
-                android:id="@+id/edittxtusername"
+                android:id="@+id/edittxtregusername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
