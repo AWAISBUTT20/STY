@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class SignUp extends AppCompatActivity {
     Button btn,btn1;
-    EditText txt1,txt2,txt3,txt4;
+   EditText txt1,txt2,txt3,txt4;
     private FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +64,7 @@ public class SignUp extends AppCompatActivity {
         }else if (!password.equals(confirmpass)) {
             txt3.setError("Password Unmatched");
         } else {
-            firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(SignUp.this, new OnCompleteListener<AuthResult>() {
+            firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(SignUp.this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
@@ -75,6 +75,5 @@ public class SignUp extends AppCompatActivity {
                 }
             });
             Toast.makeText(SignUp.this, "Successful", Toast.LENGTH_SHORT).show();
-        }
+        }}
     }
-}
