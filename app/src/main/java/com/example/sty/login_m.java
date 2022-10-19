@@ -70,7 +70,7 @@ mauth=FirebaseAuth.getInstance();
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                         Toast.makeText(login_m.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                        Intent intent=new Intent(login_m.this,welcome.class);
+                        Intent intent=new Intent(login_m.this,MainActivity.class);
                         startActivity(intent);
                 }else
                     Toast.makeText(login_m.this, "Login UnSuccessfully"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
