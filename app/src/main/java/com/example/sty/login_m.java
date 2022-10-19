@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
@@ -58,20 +59,28 @@ mauth=FirebaseAuth.getInstance();
     private void loginUser() {
         String email=txt1.getText().toString();
         String password=txt2.getText().toString();
-        mauth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
+        if (password.isEmpty()) {
+            txt2.setError("Enter Password");
+        }else if (email.isEmpty()) {
+            txt1.setError("Enter Email Address");
+        }else {
+        mauth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                    if (user.isEmailVerified()) {
-                        Toast.makeText(login_m.this, "User Register Successfully", Toast.LENGTH_SHORT).show();
-                    } else {
-                        user.sendEmailVerification();
-                        Toast.makeText(login_m.this, "User Register Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                    }
+                        Toast.makeText(login_m.this, "Login Successfully", Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(login_m.this,welcome.class);
+                        startActivity(intent);
                 }else
-                    Toast.makeText(login_m.this, "Register UnSuccessfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(login_m.this, "Login UnSuccessfully"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(login_m.this,"Authentication Failed",Toast.LENGTH_SHORT).show();
             }
         });
+        }
     }
 }
