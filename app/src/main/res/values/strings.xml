@@ -20,4 +20,5 @@
     <string name="SHOPPINGBAG">S H O P P I N G B A G</string>
     <string name="checkout">C H E C K O U T</string>
     <string name="product_dscr">BLACK TEE \n\n The Black Tee is BACK! \n\n Rs. 1,439.00</string>
+    <string name="descrition">Product Name \n Description \n Price 00$</string>
 </resources>
