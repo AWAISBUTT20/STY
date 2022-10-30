@@ -56,6 +56,7 @@ android:layout_marginTop="80dp"
  </androidx.cardview.widget.CardView>
 
             <TextView
+                android:id="@+id/txtalsolike"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -78,8 +79,18 @@ android:layout_marginTop="80dp"
                 android:layout_centerHorizontal="true"
 
                 />
+<androidx.recyclerview.widget.RecyclerView
 
-            <androidx.cardview.widget.CardView
+    android:id="@+id/rvsearch"
+    android:layout_alignTop="@+id/some_id"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="@android:dimen/app_icon_size"
+    android:orientation="vertical">
+
+</androidx.recyclerview.widget.RecyclerView>
+       <!--     <androidx.cardview.widget.CardView
                 android:id="@+id/group_47"
                 android:layout_width="170dp"
                 android:layout_height="210dp"
@@ -89,7 +100,6 @@ android:layout_marginTop="80dp"
                 android:layout_marginLeft="21dp"
                 android:layout_marginTop="231dp"
                 android:foreground="@drawable/sample" />
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/group_48"
                 android:layout_width="169dp"
@@ -102,7 +112,6 @@ android:layout_marginTop="80dp"
                 android:foreground="@drawable/sample">
 
             </androidx.cardview.widget.CardView>
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/group_49"
                 android:layout_width="170dp"
@@ -113,7 +122,6 @@ android:layout_marginTop="80dp"
                 android:layout_marginStart="21dp"
                 android:layout_marginTop="465dp"
                 android:foreground="@drawable/sample" />
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/group_50"
                 android:layout_width="169dp"
@@ -123,7 +131,7 @@ android:layout_marginTop="80dp"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="215dp"
                 android:layout_marginTop="465dp"
-                android:foreground="@drawable/sample" />
+                android:foreground="@drawable/sample" />-->
         </RelativeLayout>
     </ScrollView>
 </LinearLayout>

@@ -44,7 +44,7 @@ public class mens_product extends AppCompatActivity {
         Product.add(R.drawable.caps);
         Product.add(R.drawable.acsesories);
 
-        myadapter adapter=new myadapter(description,Product,this);
+        myadapter adapter=new myadapter(description,Product,mens_product.this);
         GridLayoutManager gridLayoutManager=new GridLayoutManager(this,2, GridLayoutManager.VERTICAL,false);
         rv.setLayoutManager(gridLayoutManager);
         rv.setAdapter((RecyclerView.Adapter) adapter);
