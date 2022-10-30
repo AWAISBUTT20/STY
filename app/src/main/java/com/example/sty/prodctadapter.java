@@ -10,16 +10,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.dynamic.IFragmentWrapper;
-
 import java.util.List;
 
-public class myadapter extends RecyclerView.Adapter<myadapter.ViewHolder> {
+public class prodctadapter extends RecyclerView.Adapter<prodctadapter.ViewHolder> {
     List<String> desc;
     List<Integer> product;
     LayoutInflater inflater;
 
-    public myadapter(List<String> desc, List<Integer> image, Context context) {
+    public prodctadapter(List<String> desc, List<Integer> image, Context context) {
         this.desc = desc;
         this.product = image;
         this.inflater = LayoutInflater.from(context);

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -33,9 +32,7 @@ public class search extends Fragment {
         //for activity in fragment
         View view= inflater.inflate(R.layout.fragment_search, container, false);
         rv=view.findViewById(R.id.rvsearch);
-
-
-        myadapter adapter=new myadapter(description,Product,getContext());
+        prodctadapter adapter=new prodctadapter(description,Product,getContext());
         rv.setLayoutManager(new GridLayoutManager(getActivity(),2,GridLayoutManager.VERTICAL,false));
         rv.setAdapter((RecyclerView.Adapter) adapter);
 

@@ -1,90 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:layout_marginBottom="@android:dimen/app_icon_size"
-    tools:context=".Cart">
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <RelativeLayout
+    tools:context=".mens_product">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvcart"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <View
-            android:id="@+id/some_id"
-            android:layout_width="124.96dp"
-            android:layout_height="2.25dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="102.32dp"
-            android:background="@color/black"
-            android:layout_centerHorizontal="true"
-
-            />
-
-        <TextView
-            android:id="@+id/checkout"
-            android:layout_width="225.51dp"
-            android:layout_height="32.58dp"
-            android:layout_marginStart="75.58dp"
-            android:layout_marginTop="69.75dp"
-            android:layout_marginEnd="110dp"
-            android:gravity="center_horizontal|top"
-            android:lineSpacingExtra="19sp"
-            android:layout_centerHorizontal="true"
-            android:text="@string/SHOPPINGBAG"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:translationY="-9.47sp" />
-
-        <Button
-            android:id="@+id/rectangle_1"
-            android:layout_width="315dp"
-            android:layout_height="102dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="150dp"
-            android:foreground="@drawable/cart1"
-            android:elevation="40dp"
-            android:text="Item 1"
-
-            android:textColor="@color/black" />
-
-        <Button
-            android:id="@+id/rectangle_2"
-            android:layout_width="315dp"
-            android:layout_height="102dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="300dp"
-            android:foreground="@drawable/cart1"
-            android:elevation="40dp"
-            android:text="Item 2"
-            android:textColor="@color/black" />
-
-        <Button
-            android:id="@+id/rectangle_3"
-            android:layout_width="315dp"
-            android:layout_height="102dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="450dp"
-            android:foreground="@drawable/cart1"
-            android:elevation="40dp"
-            android:text="Item 3"
-            android:textColor="@color/black" />
-
-        <Button
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--<Button
             android:id="@+id/btncheckout"
             android:layout_width="314dp"
             android:layout_height="70dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
+            android:layout_below="@+id/rvcart"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="600dp"
@@ -93,11 +24,8 @@
             android:text="Check Out"
             android:textAlignment="center"
             android:textSize="20sp"
+            android:layout_marginBottom="@android:dimen/app_icon_size"
+            tools:ignore="MissingConstraints" />-->
+    </androidx.recyclerview.widget.RecyclerView>
 
-            />
-
-    </RelativeLayout>
-</ScrollView>
-
-
-</FrameLayout>
+</RelativeLayout>

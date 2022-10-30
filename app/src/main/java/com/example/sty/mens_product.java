@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.Adapter;
-import android.widget.GridLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +43,7 @@ public class mens_product extends AppCompatActivity {
         Product.add(R.drawable.caps);
         Product.add(R.drawable.acsesories);
 
-        myadapter adapter=new myadapter(description,Product,mens_product.this);
+        prodctadapter adapter=new prodctadapter(description,Product,mens_product.this);
         GridLayoutManager gridLayoutManager=new GridLayoutManager(this,2, GridLayoutManager.VERTICAL,false);
         rv.setLayoutManager(gridLayoutManager);
         rv.setAdapter((RecyclerView.Adapter) adapter);
