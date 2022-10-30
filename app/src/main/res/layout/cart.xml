@@ -8,46 +8,48 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvcart"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:elevation="125dp">
+        android:layout_marginTop="20dp"
+        android:paddingStart="10dp"
+        android:elevation="125dp"
+        tools:ignore="RtlSymmetry">
 
 
-    <ImageView
-    android:id="@+id/cartimg"
-    android:layout_width="91dp"
-    android:layout_height="91dp"
-    android:layout_marginStart="30dp"
-    android:background="@drawable/product"
-    tools:ignore="MissingConstraints"
-    >
+        <ImageView
+            android:id="@+id/cartimg"
+            android:layout_width="121dp"
+            android:layout_height="91dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/product"
+            tools:ignore="MissingConstraints">
 
-</ImageView>
-    <TextView
-        android:id="@+id/cartname"
-        android:layout_width="94dp"
-        android:layout_height="34dp"
-        android:text="STY Tees"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_marginStart="145dp"
-        tools:ignore="MissingConstraints">
+        </ImageView>
 
-    </TextView>
+        <TextView
+            android:id="@+id/cartname"
+            android:layout_width="94dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="155dp"
+            android:text="STY Tees"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints">
+
+        </TextView>
 
         <TextView
             android:id="@+id/cartdescr"
             android:layout_width="151dp"
             android:layout_height="50dp"
-            android:layout_marginStart="145dp"
+            android:layout_marginStart="155dp"
             android:layout_marginTop="40dp"
+            android:text=" Black Cotton Shirt \n Product No. #36251"
+            android:textColor="@color/black"
             android:textSize="15sp"
             android:textStyle="italic"
-            android:text="Black Cotton Shirt \nProduct No. #36251"
-            android:textColor="@color/black"
             tools:ignore="MissingConstraints">
 
         </TextView>
@@ -57,24 +59,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/cartdescr"
-            android:layout_marginStart="145dp"
+            android:layout_marginStart="155dp"
             android:layout_marginTop="95dp"
             android:text="$150"
             android:textColor="@color/black"
-            android:textStyle="bold"
             android:textSize="20sp"
+            android:textStyle="bold"
             tools:ignore="MissingConstraints">
 
         </TextView>
-    <TextView
-        android:layout_width="91dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="100dp"
-        tools:ignore="MissingConstraints"
-        android:background="@drawable/prdctcount"
-        >
 
-    </TextView>
+        <TextView
+            android:layout_width="121dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/prdctcount"
+            tools:ignore="MissingConstraints">
+
+        </TextView>
+
+        <View
+            android:id="@+id/some_id"
+            android:layout_width="175dp"
+            android:layout_height="2.25dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="140dp"
+            android:background="@color/black" />
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

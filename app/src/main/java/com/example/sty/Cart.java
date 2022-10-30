@@ -39,7 +39,7 @@ public class Cart extends Fragment {
         cartadpater cartadpater=new cartadpater(getContext(),prdctname,prdctdesc,prdctprice,prdctimg);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
         rv.setAdapter(cartadpater);
-       /* Button btnOpen = (Button) view. findViewById(R.id.btncheckout);
+        Button btnOpen = (Button) view.findViewById(R.id.btnchckout);
 
         btnOpen.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +48,7 @@ public class Cart extends Fragment {
                 //in.putExtra("some", "Mens Wears");
                 startActivity(in);
             }
-        });*/
+        });
         return view;
     }
 

@@ -23,46 +23,29 @@
             android:layout_height="2dp"
             android:layout_alignParentTop="true"
             android:layout_marginStart="110dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="250dp"
             android:background="@color/black" />
 
-    <Button
-        android:layout_width="315dp"
-        android:layout_height="102dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="300dp"
-        android:backgroundTint="@color/teal_700"
-        android:elevation="40dp"
-        android:text="Item 1"
-        android:textColor="@color/black" />
+ <androidx.recyclerview.widget.RecyclerView
+     android:id="@+id/rvfav"
+     android:layout_below="@id/rectangle"
+ android:layout_marginTop="10dp"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     >
 
+ </androidx.recyclerview.widget.RecyclerView>
     <Button
-        android:layout_width="315dp"
-        android:layout_height="102dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="450dp"
-        android:backgroundTint="@color/grey"
-        android:elevation="40dp"
-        android:text="Item 2"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/black" />
-
-    <Button
+        android:id="@+id/btnaddtobag"
         android:layout_width="314dp"
         android:layout_height="70dp"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/rvfav"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="600dp"
         android:backgroundTint="@color/black"
-        android:shadowRadius="20"
-        android:text="Add all To bag"
+        android:text="add to bag"
         android:textAlignment="center"
-        android:textColor="@color/white"
         android:textSize="20sp"
-
+        android:layout_marginBottom="@android:dimen/app_icon_size"
         />
+
        </RelativeLayout>
