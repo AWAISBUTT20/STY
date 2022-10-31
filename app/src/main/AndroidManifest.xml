@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -16,9 +17,13 @@
         android:theme="@style/Theme.STY"
         tools:targetApi="31">
         <activity
-            android:name=".mens_product"
+            android:name=".Women_Tees"
             android:exported="true"
             android:theme="@style/Theme.Splash"/>
+        <activity
+            android:name=".mens_tee"
+            android:exported="true"
+            android:theme="@style/Theme.Splash" />
         <activity
             android:name=".checkout"
             android:exported="true"

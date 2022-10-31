@@ -15,7 +15,7 @@ Button btn3;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mens_avtivity);
         btn3 = findViewById(R.id.btnmentees);
-        Intent intent=new Intent(mens_activity.this,mens_product.class);
+        Intent intent=new Intent(mens_activity.this, mens_tee.class);
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

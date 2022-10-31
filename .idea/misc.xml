@@ -17,20 +17,22 @@
         <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/activity_men.xml" value="0.536" />
         <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/activity_mens_avtivity.xml" value="0.11203703703703703" />
-        <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/activity_mens_product.xml" value="0.264" />
+        <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/activity_mens_product.xml" value="0.1" />
+        <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/activity_mens_tees.xml" value="0.2" />
         <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/activity_payment.xml" value="0.1" />
         <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
         <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/activity_wellcome.xml" value="0.264" />
         <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/activity_women.xml" value="0.1" />
+        <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/activity_women_tees.xml" value="0.1" />
         <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/cart.xml" value="0.264" />
-        <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/fragment_cart.xml" value="0.264" />
+        <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/fragment_cart.xml" value="0.2" />
         <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/fragment_fav.xml" value="0.264" />
         <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/fragment_favrout_fargment.xml" value="0.1111111111111111" />
         <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/fragment_main.xml" value="0.1111111111111111" />
         <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/fragment_search.xml" value="0.1" />
         <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/fragment_userprofile.xml" value="0.264" />
-        <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/product.xml" value="0.18721270371918095" />
+        <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/layout/product.xml" value="0.1" />
         <entry key="..\:/Apps &amp; Features/STY/app/src/main/res/menu/bottom_navigation.xml" value="0.4" />
       </map>
     </option>
