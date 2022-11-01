@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -19,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class SignUp extends AppCompatActivity {
     Button btn,btn1;
    EditText txt1,txt2,txt3,txt4;
+   TextView mTextView;
     private FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,9 @@ public class SignUp extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
+                        //for userprofile
+                        mTextView=findViewById(R.id.txtusrname);
+                        mTextView.setText(username);
                         Toast.makeText(SignUp.this, "User Register Successfully", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(SignUp.this, "User Register Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -73,5 +78,6 @@ public class SignUp extends AppCompatActivity {
             Intent intent =new Intent(SignUp.this,login_m.class);
             startActivity(intent);
             Toast.makeText(SignUp.this, "Successful", Toast.LENGTH_SHORT).show();
+
         }}
     }

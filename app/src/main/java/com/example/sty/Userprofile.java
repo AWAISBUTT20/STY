@@ -8,9 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class Userprofile extends Fragment {
-Button btn;
 
     public Userprofile() {
         // Required empty public constructor
@@ -21,6 +22,7 @@ Button btn;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_userprofile, container, false);
+        View view=inflater.inflate(R.layout.fragment_userprofile, container, false);
+        return view;
     }
 }
