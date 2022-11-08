@@ -31,7 +31,7 @@
         <activity
             android:name=".welcome"
             android:exported="true"
-            android:theme="@style/Theme.Splash" />
+            />
         <activity
             android:name=".Accessories"
             android:exported="true"
@@ -39,7 +39,8 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.Splash" />
+            android:theme="@style/Theme.Splash"
+            />
         <activity
             android:name=".SignUp"
             android:exported="true"
