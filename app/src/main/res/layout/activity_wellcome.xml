@@ -36,13 +36,7 @@
 
     </RelativeLayout>
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigationmenu"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/headersidemenu"
-        app:menu="@menu/menu" />
+
 
     <RelativeLayout
         android:id="@+id/welcomxml"
@@ -58,7 +52,6 @@
             android:background="@drawable/welcome">
 
         </ImageView>
-
         <Button
             android:id="@+id/btnwelcomelog"
             android:layout_width="150dp"
@@ -75,7 +68,6 @@
             android:textStyle="bold">
 
         </Button>
-
         <Button
             android:id="@+id/btnwelcomesignup"
             android:layout_width="wrap_content"
@@ -92,7 +84,6 @@
             android:textStyle="bold">
 
         </Button>
-
         <Button
             android:id="@+id/btnwellcomayb"
             android:layout_width="wrap_content"
@@ -112,4 +103,11 @@
 
         </Button>
     </RelativeLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationmenu"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/headersidemenu"
+        app:menu="@menu/menu" />
 </androidx.drawerlayout.widget.DrawerLayout>

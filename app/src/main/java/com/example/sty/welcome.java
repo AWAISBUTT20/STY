@@ -52,20 +52,28 @@ public class welcome extends AppCompatActivity {
 
                 switch (item.getItemId()){
                     case R.id.Mensmenu:
-                        Toast.makeText(welcome.this, "Home Clicked", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(welcome.this, "Men Clicked", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
                     case R.id.Womensmenu:
-                        Toast.makeText(welcome.this, "Setting Clicked", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(welcome.this, "Women Clicked", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
                     case R.id.logoutmenu:
-                        Toast.makeText(welcome.this, "Exit Clicked", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(welcome.this, "Logout Clicked", Toast.LENGTH_SHORT).show();
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.usermenu:
+                        Toast.makeText(welcome.this, "User Clicked", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
+                    case R.id.accsesorymenu:
+                        Toast.makeText(welcome.this, "Accessories Clicked", Toast.LENGTH_SHORT).show();
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
                     default:
                         Toast.makeText(welcome.this, "Kuch Ni", Toast.LENGTH_SHORT).show();
                 }
