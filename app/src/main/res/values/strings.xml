@@ -18,6 +18,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Search">Search Items</string>
     <string name="SHOPPINGBAG">S H O P P I N G B A G</string>
+    <string name="favrt">F A V O U R I T E </string>
+    <string name="search">S E A R C H </string>
+    <string name="profile">P R O F I L E</string>
     <string name="checkout">C H E C K O U T</string>
     <string name="product_dscr">BLACK TEE \n\n The Black Tee is BACK! \n\n Rs. 1,439.00</string>
     <string name="descrition">Product Name \n Description \n Price 00$</string>

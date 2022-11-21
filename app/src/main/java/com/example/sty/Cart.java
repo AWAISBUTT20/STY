@@ -59,19 +59,15 @@ public class Cart extends Fragment {
         prdctname.add("STY Tee1");
         prdctname.add("STY Tee2");
         prdctname.add("STY Tee3");
-        prdctname.add("STY Tee4");
-        prdctdesc.add("Black Cotton Shirt \nProduct No. #36251");
         prdctdesc.add("Black Cotton Shirt \nProduct No. #36251");
         prdctdesc.add("Black Cotton Shirt \nProduct No. #36251");
         prdctdesc.add("Black Cotton Shirt \nProduct No. #36251");
         prdctprice.add("100$");
         prdctprice.add("150$");
         prdctprice.add("130$");
-        prdctprice.add("120$");
         prdctimg.add(R.drawable.menhodies);
         prdctimg.add(R.drawable.mentees);
         prdctimg.add(R.drawable.womenmodle);
-        prdctimg.add(R.drawable.female);
 
     }
 }

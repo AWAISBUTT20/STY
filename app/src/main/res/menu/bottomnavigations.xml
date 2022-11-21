@@ -16,7 +16,7 @@
 
     </item><item
     android:id="@+id/Fav"
-    android:title="Favorites"
+    android:title="Favourite"
     android:icon="@drawable/favorite"
     >
 
