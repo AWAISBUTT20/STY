@@ -18,6 +18,8 @@ public class DBHandler extends SQLiteOpenHelper {
     // below variable is for our course name column
     private static final String NAME_COL = "name";
 
+    String usrname;
+
     public DBHandler(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
@@ -35,20 +37,15 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
     //Fetching
-    public ArrayList<Structure> feactch(){
+    public String feactch(){
         SQLiteDatabase db=this.getReadableDatabase();
         Cursor cursor=db.rawQuery("SELECT * FROM "+ TABLE_NAME,null);
-
-
-        ArrayList<Structure> arraymodel =new ArrayList<>();
-
         while (cursor.moveToNext()){
-            Structure structure=new Structure();
-            structure.user=cursor.getString(1);
-            arraymodel.add(structure);
+           usrname=cursor.getString(0);
         }
-        return arraymodel;
+        return usrname;
     }
+
     public void addnewuser(String userName) {
         // on below line we are creating a variable for our sqlite database and calling writable method
         // as we are writing data in our database.

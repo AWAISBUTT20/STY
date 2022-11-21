@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,12 +18,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.ArrayList;
+
 public class SignUp extends AppCompatActivity {
     Button btn,btn1;
    EditText txt1,txt2,txt3,txt4;
    TextView mTextView;
     private FirebaseAuth firebaseAuth;
     private DBHandler DBHandler;
+    String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,7 +89,10 @@ public class SignUp extends AppCompatActivity {
             startActivity(intent);
             Toast.makeText(SignUp.this, "Successful", Toast.LENGTH_SHORT).show();
 
-        }}
+        }
+
+
+    }
 
     private void sqldb() {
         String userName = txt4.getText().toString();
@@ -96,5 +103,9 @@ public class SignUp extends AppCompatActivity {
         DBHandler.addnewuser(userName);
         Toast.makeText(SignUp.this, "User has been added to SQL.", Toast.LENGTH_SHORT).show();
 
+            Log.d("info", "Name : "+DBHandler.feactch());
+            name=DBHandler.feactch();
+
+        }
     }
-}
+
