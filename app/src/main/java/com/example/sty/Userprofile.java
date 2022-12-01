@@ -1,7 +1,9 @@
 package com.example.sty;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -19,18 +21,19 @@ public class Userprofile extends Fragment {
     public Userprofile() {
         // Required empty public constructor
     }
-    private DBHandler DBHandler;
+    TextView txt;
     String usrname;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_userprofile, container, false);
-        TextView txt =view.findViewById(R.id.txtusrname);
+        View view = inflater.inflate(R.layout.fragment_userprofile, container, false);
+        txt = view.findViewById(R.id.txtusrname);
 
-        //usrname=DBHandler.feactch().toString();
-
-        txt.setText("username");
+        if (getArguments() != null) {
+            usrname=getArguments().getString("user");
+        }
+        txt.setText(usrname);
         return view;
     }
 }

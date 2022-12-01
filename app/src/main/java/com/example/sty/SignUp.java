@@ -2,6 +2,8 @@ package com.example.sty;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 
 import android.content.Intent;
@@ -44,6 +46,11 @@ public class SignUp extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+              /*
+                Intent intent2=new Intent(SignUp.this,MainActivity.class);
+                String username = txt4.getText().toString();
+                intent2.putExtra("fname",username);
+                startActivity(intent2);*/
                 createUser();
             }
         });
@@ -61,6 +68,7 @@ public class SignUp extends AppCompatActivity {
         String password = txt2.getText().toString();
         String confirmpass = txt3.getText().toString();
         String username = txt4.getText().toString();
+
         if (username.isEmpty()) {
             txt4.setError("Username cannot be empty");
         }else if (email.isEmpty()) {
@@ -76,9 +84,6 @@ public class SignUp extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        //for userprofile
-                        mTextView=findViewById(R.id.txtusrname);
-                        mTextView.setText(username);
                         Toast.makeText(SignUp.this, "User Register Successfully", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(SignUp.this, "User Register Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -88,10 +93,7 @@ public class SignUp extends AppCompatActivity {
             Intent intent =new Intent(SignUp.this,login_m.class);
             startActivity(intent);
             Toast.makeText(SignUp.this, "Successful", Toast.LENGTH_SHORT).show();
-
         }
-
-
     }
 
     private void sqldb() {
