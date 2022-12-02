@@ -37,11 +37,13 @@
             android:name=".Accessories"
             android:exported="true"
             android:theme="@style/Theme.Splash" />
+        <!--Hiding ‘Bottom Navigation Bar’ while keyboard is present-->
+        <!--android:windowSoftInputMode="adjustPan"-->
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Splash"
-            />
+       android:windowSoftInputMode="adjustPan"
+        android:exported="true"
+            android:theme="@style/Theme.Splash"/>
         <activity
             android:name=".SignUp"
             android:exported="true"

@@ -52,46 +52,20 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <androidx.cardview.widget.CardView
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchview"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
-                android:paddingBottom="20dp"
                 android:elevation="15dp"
                 app:cardCornerRadius="10dp"
                 android:layout_marginTop="20dp"
+                android:foregroundTint="@color/black"
+                android:backgroundTint="@color/black"
                 >
-                <ImageView
-                    android:layout_marginTop="5dp"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:backgroundTint="@color/grey"
-                    android:background="@drawable/search"
-                    >
-                </ImageView>
 
-                <EditText
-                    android:id="@+id/editxtsearch"
-                    android:layout_marginStart="45dp"
-                    android:layout_width="270dp"
-                    android:layout_height="50dp"
-                    android:hint="@string/Search"
-                    android:textSize="20sp"
-                    android:textColorHint="@color/grey"
-                    android:backgroundTint="@color/black"
-                    >
-                </EditText>
-                <Button
-                    android:backgroundTint="@color/white"
-                    android:layout_marginTop="5dp"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginStart="320dp"
-                    android:foreground="@drawable/filter"
-                    >
-                </Button>
-            </androidx.cardview.widget.CardView>
+            </androidx.appcompat.widget.SearchView>
 
             <TextView
                 android:id="@+id/txtalsolike"
@@ -99,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="121dp"
+                android:layout_marginTop="91dp"
                 android:text="You May Also Like"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -112,7 +86,7 @@
                 android:layout_width="124.96dp"
                 android:layout_height="2.25dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="162.32dp"
+                android:layout_marginTop="142.32dp"
                 android:background="@color/black"
                 android:layout_centerHorizontal="true"
 

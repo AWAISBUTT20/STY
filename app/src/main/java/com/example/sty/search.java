@@ -1,13 +1,18 @@
 package com.example.sty;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
@@ -22,15 +27,32 @@ public class search extends Fragment {
         // Required empty public constructor
     }
     RecyclerView rv;
+    SearchView sv;
     List<String> description = new ArrayList<>();
     List<Integer> Product = new ArrayList<>();
     Adapter adapter;
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         //for activity in fragment
         View view= inflater.inflate(R.layout.fragment_search, container, false);
+        sv=view.findViewById(R.id.searchview);
+        sv.setIconified(false);
+        sv.clearFocus();
+        sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+        //recycler view
         rv=view.findViewById(R.id.rvsearch);
         prodctadapter adapter=new prodctadapter(description,Product,getContext());
         rv.setLayoutManager(new GridLayoutManager(getActivity(),2,GridLayoutManager.VERTICAL,false));
@@ -58,4 +80,5 @@ public class search extends Fragment {
         Product.add(R.drawable.womenhood);
         Product.add(R.drawable.womentees);
     }
+
 }

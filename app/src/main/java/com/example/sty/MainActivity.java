@@ -20,10 +20,57 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity {
    BottomNavigationView bottomNavigationView;
    String fn;
+    NavigationView navigationView;
+    ActionBarDrawerToggle toggle;
+    DrawerLayout drawerLayout;
+    Toolbar toolbar;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        navigationView = findViewById(R.id.navigationmenumain);
+        drawerLayout = findViewById(R.id.drawermain);
+
+        toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()){
+                    case R.id.Mensmenu:
+                        Toast.makeText(MainActivity.this, "Men Clicked", Toast.LENGTH_SHORT).show();
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+
+                    case R.id.Womensmenu:
+                        Toast.makeText(MainActivity.this, "Women Clicked", Toast.LENGTH_SHORT).show();
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+
+                    case R.id.logoutmenu:
+                        Toast.makeText(MainActivity.this, "Logout Clicked", Toast.LENGTH_SHORT).show();
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.usermenu:
+                        Toast.makeText(MainActivity.this, "User Clicked", Toast.LENGTH_SHORT).show();
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+
+                    case R.id.accsesorymenu:
+                        Toast.makeText(MainActivity.this, "Accessories Clicked", Toast.LENGTH_SHORT).show();
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    default:
+                        Toast.makeText(MainActivity.this, "Kuch Ni", Toast.LENGTH_SHORT).show();
+                }
+
+                return true;
+            }
+        });
+        //Activity
         //Bottom Navigation's
         bottomNavigationView =findViewById(R.id.bottom_nav);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

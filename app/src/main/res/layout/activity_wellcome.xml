@@ -35,9 +35,6 @@
         </androidx.appcompat.widget.Toolbar>
 
     </RelativeLayout>
-
-
-
     <RelativeLayout
         android:id="@+id/welcomxml"
         android:layout_width="match_parent"
