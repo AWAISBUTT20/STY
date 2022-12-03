@@ -29,8 +29,6 @@ public class welcome extends AppCompatActivity {
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
-   BroadcastReceiver broadcastReceiver;
-
     /*firebase
     @Override
     protected void onStart() {
@@ -44,10 +42,6 @@ public class welcome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wellcome);
-        //No internet signal
-        broadcastReceiver=new NetworkBrodcast();
-        registerReceiver(broadcastReceiver,new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
-
         toolbar = findViewById(R.id.custom_toolbar);
         //setSupportActionBar(toolbar);
 
@@ -118,12 +112,6 @@ public class welcome extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    unregisterReceiver(broadcastReceiver);
     }
 /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
