@@ -44,6 +44,7 @@ public class welcome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wellcome);
+        //No internet signal
         broadcastReceiver=new NetworkBrodcast();
         registerReceiver(broadcastReceiver,new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
 

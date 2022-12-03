@@ -6,7 +6,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 
+import android.content.BroadcastReceiver;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,6 +32,7 @@ public class SignUp extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private DBHandler DBHandler;
     String name;
+    BroadcastReceiver broadcastReceiver;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,9 +41,12 @@ public class SignUp extends AppCompatActivity {
        txt2=findViewById(R.id.editregPassword);
        txt3=findViewById(R.id.edttxtConformPassword);
        txt4=findViewById(R.id.edittxtregusername);
-        // creating a new DBHandler class
+        //no internet connection
+        broadcastReceiver=new NetworkBrodcast();
+        registerReceiver(broadcastReceiver,new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+// creating a new DBHandler class
         // and passing our context to it.
-       DBHandler = new DBHandler(SignUp.this);
+        DBHandler = new DBHandler(SignUp.this);
 
        firebaseAuth= FirebaseAuth.getInstance();
        btn=findViewById(R.id.BtnRegister);
@@ -109,5 +116,10 @@ public class SignUp extends AppCompatActivity {
             name=DBHandler.feactch();
 
         }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(broadcastReceiver);
+    }
     }
 
