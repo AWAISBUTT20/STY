@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.sty">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
@@ -19,7 +20,7 @@
         <activity
             android:name=".Women_Tees"
             android:exported="true"
-            android:theme="@style/Theme.Splash"/>
+            android:theme="@style/Theme.Splash" />
         <activity
             android:name=".mens_tee"
             android:exported="true"
@@ -31,8 +32,7 @@
         <activity
             android:name=".welcome"
             android:exported="true"
-            android:theme="@style/Theme.Splash"
-            />
+            android:theme="@style/Theme.Splash" />
         <activity
             android:name=".Accessories"
             android:exported="true"
@@ -41,9 +41,9 @@
         <!--android:windowSoftInputMode="adjustPan"-->
         <activity
             android:name=".MainActivity"
-       android:windowSoftInputMode="adjustPan"
-        android:exported="true"
-            android:theme="@style/Theme.Splash"/>
+            android:exported="true"
+            android:theme="@style/Theme.Splash"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".SignUp"
             android:exported="true"
@@ -70,6 +70,15 @@
             android:name=".mens_activity"
             android:exported="true"
             android:theme="@style/Theme.Splash" />
+
+        <receiver
+            android:name=".NetworkBrodcast"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.Connectivity_CHANGE"/>
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
