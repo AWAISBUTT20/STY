@@ -41,7 +41,7 @@ public class SignUp extends AppCompatActivity {
        txt2=findViewById(R.id.editregPassword);
        txt3=findViewById(R.id.edttxtConformPassword);
        txt4=findViewById(R.id.edittxtregusername);
-        //no internet connection
+        //no internet Alert
         broadcastReceiver=new NetworkBrodcast();
         registerReceiver(broadcastReceiver,new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
 // creating a new DBHandler class
@@ -58,7 +58,7 @@ public class SignUp extends AppCompatActivity {
                 String username = txt4.getText().toString();
                 intent2.putExtra("fname",username);
                 startActivity(intent2);*/
-                createUser();
+              createUser();
             }
         });
         btn1=findViewById(R.id.btnreg_login);
