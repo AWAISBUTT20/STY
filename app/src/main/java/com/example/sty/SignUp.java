@@ -19,17 +19,25 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.core.FirestoreClient;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignUp extends AppCompatActivity {
     Button btn,btn1;
    EditText txt1,txt2,txt3,txt4;
    TextView mTextView;
     private FirebaseAuth firebaseAuth;
+
     private DBHandler DBHandler;
     String name;
     BroadcastReceiver broadcastReceiver;
@@ -47,17 +55,12 @@ public class SignUp extends AppCompatActivity {
 // creating a new DBHandler class
         // and passing our context to it.
         DBHandler = new DBHandler(SignUp.this);
-
        firebaseAuth= FirebaseAuth.getInstance();
        btn=findViewById(R.id.BtnRegister);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              /*
-                Intent intent2=new Intent(SignUp.this,MainActivity.class);
-                String username = txt4.getText().toString();
-                intent2.putExtra("fname",username);
-                startActivity(intent2);*/
+                firestore();
               createUser();
             }
         });
@@ -75,7 +78,6 @@ public class SignUp extends AppCompatActivity {
         String password = txt2.getText().toString();
         String confirmpass = txt3.getText().toString();
         String username = txt4.getText().toString();
-
         if (username.isEmpty()) {
             txt4.setError("Username cannot be empty");
         }else if (email.isEmpty()) {
@@ -86,6 +88,7 @@ public class SignUp extends AppCompatActivity {
         }else if (!password.equals(confirmpass)) {
             txt3.setError("Password Unmatched");
         } else {
+            //SQLite database
             sqldb();
             firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(SignUp.this, new OnCompleteListener<AuthResult>() {
                 @Override
@@ -115,6 +118,26 @@ public class SignUp extends AppCompatActivity {
             Log.d("info", "Name : "+DBHandler.feactch());
             name=DBHandler.feactch();
 
+        }
+        public void firestore(){
+            String username = txt4.getText().toString();
+            String email = txt1.getText().toString();
+            //FireStore
+            FirebaseFirestore cloud_db =FirebaseFirestore.getInstance();
+            Map<String,Object> user=new HashMap<>();
+            user.put("User Name",username);
+            user.put("Email",email);
+            cloud_db.collection("User").document("User_1").set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(SignUp.this, "Firestore Success", Toast.LENGTH_SHORT).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(SignUp.this, "FireStore Error", Toast.LENGTH_SHORT).show();
+                        }
+                    });
         }
     @Override
     protected void onDestroy() {
