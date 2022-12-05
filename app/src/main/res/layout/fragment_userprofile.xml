@@ -145,6 +145,7 @@
                    android:backgroundTint="@color/black"
                    android:shadowRadius="20"
                    android:text="Log Out"
+                   android:onClick="logout"
                    android:textAlignment="center"
                    android:layout_gravity="center_horizontal"
                    android:textSize="20sp"
