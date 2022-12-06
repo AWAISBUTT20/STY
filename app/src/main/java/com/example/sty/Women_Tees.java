@@ -25,12 +25,12 @@ RecyclerView rv;
 
         //description
         prdctdesc.add("Mens Tee 1 \n Description 1 \n Price: $10");
-        prdctdesc.add("Mens Tee 2 \n Description 2 \n Price: $10");
-        prdctdesc.add("Mens Tee 3 \n Description 3 \n Price: $10");
-        prdctdesc.add("Mens Tee 4 \n Description 4 \n Price: $10");
+        prdctdesc.add("Mens Tee 2 \n Description 2 \n Price: $20");
+        prdctdesc.add("Mens Tee 3 \n Description 3 \n Price: $30");
+        prdctdesc.add("Mens Tee 4 \n Description 4 \n Price: $40");
         //product picture
         prdctimg.add(R.drawable.female);
-        prdctimg.add(R.drawable.womentees);
+        prdctimg.add(R.drawable.acsesories);
         prdctimg.add(R.drawable.womenmodle);
         prdctimg.add(R.drawable.womenhood);
     }
