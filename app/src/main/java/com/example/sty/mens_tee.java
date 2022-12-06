@@ -18,8 +18,10 @@ import java.util.List;
 
 public class mens_tee extends AppCompatActivity {
     RecyclerView rv;
-    List<String> description = new ArrayList<>();
-    List<Integer> Product = new ArrayList<>();
+    ArrayList<Integer> prdctimg = new ArrayList<>();
+    ArrayList<String> prdctname = new ArrayList<>();
+    ArrayList<String> prdctdesc = new ArrayList<>();
+    ArrayList<String> prdctprice= new ArrayList<>();
     Button btn2;
     Adapter adapter;
     @SuppressLint("MissingInflatedId")
@@ -38,21 +40,24 @@ public class mens_tee extends AppCompatActivity {
             }
         });*/
         //description
-        description.add("Mens Tee 1 \n Description 1 \n Price: $10");
-        description.add("Mens Tee 2 \n Description 2 \n Price: $20");
-        description.add("Mens Tee 3 \n Description 3 \n Price: $30");
-        description.add("Mens Tee 4 \n Description 4 \n Price: $40");
-        description.add("Mens Tee 5 \n Description 5 \n Price: $50");
-        description.add("Mens Tee 6 \n Description 6 \n Price: $60");
-        //product picture
-        Product.add(R.drawable.menhodies);
-        Product.add(R.drawable.mentees);
-        Product.add(R.drawable.product);
-        Product.add(R.drawable.neck);
-        Product.add(R.drawable.caps);
-        Product.add(R.drawable.acsesories);
+        prdctname.add("STY Tee 1");
+        prdctname.add("STY Tee 2");
+        prdctname.add("STY Tee 3");
+        prdctname.add("STY Tee 4");
+        prdctdesc.add("Black Cotton Shirt");
+        prdctdesc.add("Black Cotton Shirt");
+        prdctdesc.add("Black Cotton Shirt ");
+        prdctdesc.add("Black Cotton Shirt");
+        prdctprice.add("200$");
+        prdctprice.add("100$");
+        prdctprice.add("150$");
+        prdctprice.add("130$");
+        prdctimg.add(R.drawable.menhodies);
+        prdctimg.add(R.drawable.mentees);
+        prdctimg.add(R.drawable.womentees);
+        prdctimg.add(R.drawable.womenhood);
 
-        prodctadapter adapter=new prodctadapter(description,Product, mens_tee.this);
+        prodctadapter adapter=new prodctadapter(mens_tee.this,prdctname,prdctdesc,prdctprice,prdctimg);
         GridLayoutManager gridLayoutManager=new GridLayoutManager(this,2, GridLayoutManager.VERTICAL,false);
         rv.setLayoutManager(gridLayoutManager);
         rv.setAdapter((RecyclerView.Adapter) adapter);

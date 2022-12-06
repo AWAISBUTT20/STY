@@ -11,7 +11,9 @@ import java.util.ArrayList;
 
 public class Women_Tees extends AppCompatActivity {
 RecyclerView rv;
-    ArrayList<String> prdctdesc=new ArrayList<>();
+    ArrayList<String> prdctname = new ArrayList<>();
+    ArrayList<String> prdctdesc = new ArrayList<>();
+    ArrayList<String> prdctprice= new ArrayList<>();
     ArrayList<Integer> prdctimg=new ArrayList<>();
     Adapter ad;
     @Override
@@ -19,19 +21,24 @@ RecyclerView rv;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_women_tees);
         rv=findViewById(R.id.rvwomentee);
-        prodctadapter prodctadapter=new prodctadapter(prdctdesc,prdctimg,this);
+        prodctadapter prodctadapter=new prodctadapter(Women_Tees.this,prdctname,prdctdesc,prdctprice,prdctimg);
         rv.setLayoutManager(new GridLayoutManager(this,2,RecyclerView.VERTICAL,false));
         rv.setAdapter(prodctadapter);
-
-        //description
-        prdctdesc.add("Mens Tee 1 \n Description 1 \n Price: $10");
-        prdctdesc.add("Mens Tee 2 \n Description 2 \n Price: $20");
-        prdctdesc.add("Mens Tee 3 \n Description 3 \n Price: $30");
-        prdctdesc.add("Mens Tee 4 \n Description 4 \n Price: $40");
-        //product picture
-        prdctimg.add(R.drawable.female);
-        prdctimg.add(R.drawable.acsesories);
-        prdctimg.add(R.drawable.womenmodle);
+        prdctname.add("STY Tee 1");
+        prdctname.add("STY Tee 2");
+        prdctname.add("STY Tee 3");
+        prdctname.add("STY Tee 4");
+        prdctdesc.add("Black Cotton Shirt");
+        prdctdesc.add("Black Cotton Shirt");
+        prdctdesc.add("Black Cotton Shirt ");
+        prdctdesc.add("Black Cotton Shirt");
+        prdctprice.add("200$");
+        prdctprice.add("100$");
+        prdctprice.add("150$");
+        prdctprice.add("130$");
+        prdctimg.add(R.drawable.menhodies);
+        prdctimg.add(R.drawable.mentees);
+        prdctimg.add(R.drawable.womentees);
         prdctimg.add(R.drawable.womenhood);
     }
 }

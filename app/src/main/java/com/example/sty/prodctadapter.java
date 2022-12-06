@@ -10,16 +10,21 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class prodctadapter extends RecyclerView.Adapter<prodctadapter.ViewHolder> {
-    List<String> desc;
     List<Integer> product;
     LayoutInflater inflater;
+    List<String> prdctname;
+    List<String> prdctdesc;
+    List<String> prdctprice;
 
-    public prodctadapter(List<String> desc, List<Integer> image, Context context) {
-        this.desc = desc;
-        this.product = image;
+    public prodctadapter(Context context, ArrayList<String> prdctname, ArrayList<String> prdctdesc, ArrayList<String> prdctprice, ArrayList<Integer> prdctimg) {
+        this.prdctname = prdctname;
+        this.prdctdesc = prdctdesc;
+        this.prdctprice = prdctprice;
+        this.product = prdctimg;
         this.inflater = LayoutInflater.from(context);
     }
 
@@ -32,21 +37,27 @@ public class prodctadapter extends RecyclerView.Adapter<prodctadapter.ViewHolder
     }
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.txtdesc.setText(desc.get(position));
+
+        holder.name.setText(prdctname.get(position));
+        holder.desc.setText(prdctdesc.get(position));
+        holder.price.setText(prdctprice.get(position));
         holder.prdct.setImageResource(product.get(position));
     }
     @Override
     public int getItemCount() {
-return desc.size();
+         return prdctname.size();
     }
-
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView txtdesc;
         ImageView prdct;
+        TextView name;
+        TextView desc;
+        TextView price;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtdesc = itemView.findViewById(R.id.textView);
-            prdct = itemView.findViewById(R.id.imageView);
+            name=itemView.findViewById(R.id.prdctname);
+            desc=itemView.findViewById(R.id.prdctdesc);
+            price=itemView.findViewById(R.id.prdctprice);
+            prdct = itemView.findViewById(R.id.prdctimg);
         }
     }
 }

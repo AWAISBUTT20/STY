@@ -23,8 +23,6 @@ public class Cart extends Fragment {
     public Cart() {
         // Required empty public constructor
     }
-
-
     RecyclerView rv;
     ArrayList<String> prdctname = new ArrayList<>();
     ArrayList<String> prdctdesc = new ArrayList<>();
@@ -39,8 +37,8 @@ public class Cart extends Fragment {
         cartadpater cartadpater=new cartadpater(getContext(),prdctname,prdctdesc,prdctprice,prdctimg);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
         rv.setAdapter(cartadpater);
-        Button btnOpen = (Button) view.findViewById(R.id.btnchckout);
 
+        Button btnOpen = (Button) view.findViewById(R.id.btnchckout);
         btnOpen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
@@ -67,7 +65,7 @@ public class Cart extends Fragment {
         prdctprice.add("130$");
         prdctimg.add(R.drawable.menhodies);
         prdctimg.add(R.drawable.mentees);
-        prdctimg.add(R.drawable.womenmodle);
+        prdctimg.add(R.drawable.womentees);
 
     }
 }
