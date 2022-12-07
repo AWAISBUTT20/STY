@@ -59,6 +59,7 @@
         android:id="@+id/imageslider"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:iss_placeholder="@drawable/menmodel"
         app:iss_error_image="@drawable/sample"
         app:iss_auto_cycle="true"
         app:iss_delay="0"
