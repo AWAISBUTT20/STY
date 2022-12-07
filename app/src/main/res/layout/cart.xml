@@ -23,7 +23,6 @@
             android:layout_width="121dp"
             android:layout_height="91dp"
             android:layout_marginStart="10dp"
-            android:background="@drawable/product"
             tools:ignore="MissingConstraints">
 
         </ImageView>
@@ -69,13 +68,39 @@
             tools:ignore="MissingConstraints">
 
         </TextView>
-
-        <TextView
-            android:layout_width="121dp"
-            android:layout_height="21dp"
+        <Button
+            android:id="@+id/btncartminus"
+            android:layout_width="30dp"
+            android:layout_height="17dp"
+            android:foreground="@drawable/left"
+            android:foregroundTint="@color/white"
+            android:background="@color/white"
             android:layout_marginTop="100dp"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/prdctcount"
+            android:layout_marginStart="20dp"
+            >
+        </Button>
+        <Button
+            android:id="@+id/btncartplus"
+            android:layout_width="30dp"
+            android:layout_height="17dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="90dp"
+            android:foreground="@drawable/righterrow"
+            android:foregroundTint="@color/white"
+            android:background="@color/white"
+
+            >
+
+        </Button>
+        <TextView
+            android:id="@+id/txtQuantity"
+            android:layout_width="40dp"
+            android:layout_height="17dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="50dp"
+            android:text="1"
+            android:textAlignment="center"
+            android:textColor="@color/black"
             tools:ignore="MissingConstraints">
 
         </TextView>
