@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:layout_marginBottom="@android:dimen/app_icon_size"
+    tools:context=".Home">
+    <!--
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -41,4 +51,59 @@
                </Button>
            </LinearLayout>
 
-</FrameLayout>
+</FrameLayout>-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/imageslider"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:iss_error_image="@drawable/sample"
+        app:iss_auto_cycle="true"
+        app:iss_delay="0"
+        app:iss_period="3000"
+        app:iss_corner_radius="5"
+        >
+        <Button
+            android:id="@+id/btnmen"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:elevation="15dp"
+            android:text="Men"
+            android:textColor="@color/black"
+            >
+        </Button>
+
+        <Button
+            android:id="@+id/btnwomen"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/white"
+            android:backgroundTint="@color/white"
+            android:text="Women"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            tools:targetApi="m">
+
+        </Button>
+
+        <Button
+            android:id="@+id/btnacsesori"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="Accessories"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            >
+
+        </Button>
+    </com.denzcoskun.imageslider.ImageSlider>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
+
