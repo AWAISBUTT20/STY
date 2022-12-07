@@ -77,6 +77,7 @@
             android:background="@color/white"
             android:layout_marginTop="100dp"
             android:layout_marginStart="20dp"
+            android:onClick="decrement"
             >
         </Button>
         <Button
@@ -85,12 +86,11 @@
             android:layout_height="17dp"
             android:layout_marginTop="100dp"
             android:layout_marginStart="90dp"
+            android:onClick="increment"
             android:foreground="@drawable/righterrow"
             android:foregroundTint="@color/white"
             android:background="@color/white"
-
             >
-
         </Button>
         <TextView
             android:id="@+id/txtQuantity"
@@ -98,10 +98,10 @@
             android:layout_height="17dp"
             android:layout_marginTop="100dp"
             android:layout_marginStart="50dp"
-            android:text="1"
             android:textAlignment="center"
             android:textColor="@color/black"
-            tools:ignore="MissingConstraints">
+            android:inputType="number"
+            tools:ignore="MissingConstraints,TextViewEdits">
 
         </TextView>
 

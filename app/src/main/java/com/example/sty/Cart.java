@@ -1,5 +1,6 @@
 package com.example.sty;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -13,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -23,25 +25,30 @@ public class Cart extends Fragment {
     public Cart() {
         // Required empty public constructor
     }
+
     RecyclerView rv;
     ArrayList<String> prdctname = new ArrayList<>();
     ArrayList<String> prdctdesc = new ArrayList<>();
-    ArrayList<String> prdctprice= new ArrayList<>();
+    ArrayList<String> prdctprice = new ArrayList<>();
     ArrayList<Integer> prdctimg = new ArrayList<>();
+    TextView quantity;
+    int count;
+    Button btn1,btn2,btnopen;
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_cart, container, false);
-        rv=view.findViewById(R.id.rvcart);
-        cartadpater cartadpater=new cartadpater(getContext(),prdctname,prdctdesc,prdctprice,prdctimg);
+        rv = view.findViewById(R.id.rvcart);
+        btnopen = view.findViewById(R.id.btnchckout);
+        cartadpater cartadpater = new cartadpater(getContext(), prdctname, prdctdesc, prdctprice, prdctimg);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
         rv.setAdapter(cartadpater);
 
-        Button btnOpen = (Button) view.findViewById(R.id.btnchckout);
-        btnOpen.setOnClickListener(new View.OnClickListener() {
+        btnopen.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 Intent in = new Intent(getActivity(), checkout.class);
                 //in.putExtra("some", "Mens Wears");
                 startActivity(in);

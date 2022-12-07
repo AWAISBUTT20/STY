@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,6 +20,9 @@ public class cartadpater extends RecyclerView.Adapter<cartadpater.cartVholder> {
     LayoutInflater layoutInflater;
     ArrayList<String> prdctname,prdctdesc,prdctprice;
     ArrayList<Integer> prdctimg;
+    Button btn1,btn2;
+    int count=1;
+    TextView quantity;
     //ArrayList<String> prdctvalue;
 
     public cartadpater(Context context, ArrayList<String> prdctname, ArrayList<String> prdctdesc, ArrayList<String> prdctprice, ArrayList<Integer> prdctimg) {
@@ -60,6 +64,28 @@ public class cartadpater extends RecyclerView.Adapter<cartadpater.cartVholder> {
             desc=itemView.findViewById(R.id.cartdescr);
             price=itemView.findViewById(R.id.cartprice);
             img=itemView.findViewById(R.id.cartimg);
+            btn1 = itemView.findViewById(R.id.btncartminus);
+            btn2= itemView.findViewById(R.id.btncartplus);
+            quantity = itemView.findViewById(R.id.txtQuantity);
+            btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (count <= 1) {
+                    count = 1;
+                    quantity.setText(String.valueOf(count));
+                } else {
+                    count--;
+                    quantity.setText(String.valueOf(count));
+                }
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count++;
+                quantity.setText(String.valueOf(count));
+            }
+        });
 
         }
     }
