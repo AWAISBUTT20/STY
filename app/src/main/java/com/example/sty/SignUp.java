@@ -33,46 +33,52 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SignUp extends AppCompatActivity {
-    Button btn,btn1;
-   EditText txt1,txt2,txt3,txt4;
-   TextView mTextView;
+    Button btn, btn1;
+    EditText txt1, txt2, txt3, txt4;
+    TextView mTextView;
     private FirebaseAuth firebaseAuth;
-
     private DBHandler DBHandler;
     String name;
+    String user = "Awais butt";
     BroadcastReceiver broadcastReceiver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-       txt1=findViewById(R.id.edttxtemail);
-       txt2=findViewById(R.id.editregPassword);
-       txt3=findViewById(R.id.edttxtConformPassword);
-       txt4=findViewById(R.id.edittxtregusername);
+        txt1 = findViewById(R.id.edttxtemail);
+        txt2 = findViewById(R.id.editregPassword);
+        txt3 = findViewById(R.id.edttxtConformPassword);
+        txt4 = findViewById(R.id.edittxtregusername);
+
         //no internet Alert
-        broadcastReceiver=new NetworkBrodcast();
-        registerReceiver(broadcastReceiver,new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
-// creating a new DBHandler class
+        broadcastReceiver = new NetworkBrodcast();
+        registerReceiver(broadcastReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+        // creating a new DBHandler class
         // and passing our context to it.
         DBHandler = new DBHandler(SignUp.this);
-       firebaseAuth= FirebaseAuth.getInstance();
-       btn=findViewById(R.id.BtnRegister);
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        //user = txt4.getText().toString();
+        btn = findViewById(R.id.BtnRegister);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                firestore();
-              createUser();
+               /* firestore();
+              createUser();*/
+                Toast.makeText(SignUp.this, "UserName", Toast.LENGTH_SHORT).show();
             }
         });
-        btn1=findViewById(R.id.btnreg_login);
+        btn1 = findViewById(R.id.btnreg_login);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(SignUp.this,login_m.class);
-            startActivity(intent);
+                Intent intent = new Intent(SignUp.this, login_m.class);
+                startActivity(intent);
             }
         });
     }
+
     private void createUser() {
         String email = txt1.getText().toString();
         String password = txt2.getText().toString();
@@ -80,17 +86,17 @@ public class SignUp extends AppCompatActivity {
         String username = txt4.getText().toString();
         if (username.isEmpty()) {
             txt4.setError("Username cannot be empty");
-        }else if (email.isEmpty()) {
+        } else if (email.isEmpty()) {
             txt1.setError("Email cannot be empty");
-        }
-        else if (password.isEmpty()) {
+        } else if (password.isEmpty()) {
             txt2.setError("Password cannot be empty");
-        }else if (!password.equals(confirmpass)) {
+        } else if (!password.equals(confirmpass)) {
             txt3.setError("Password Unmatched");
         } else {
             //SQLite database
+
             sqldb();
-            firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(SignUp.this, new OnCompleteListener<AuthResult>() {
+            firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(SignUp.this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
@@ -100,7 +106,7 @@ public class SignUp extends AppCompatActivity {
                     }
                 }
             });
-            Intent intent =new Intent(SignUp.this,login_m.class);
+            Intent intent = new Intent(SignUp.this, login_m.class);
             startActivity(intent);
             Toast.makeText(SignUp.this, "Successful", Toast.LENGTH_SHORT).show();
         }
@@ -115,34 +121,47 @@ public class SignUp extends AppCompatActivity {
         DBHandler.addnewuser(userName);
         Toast.makeText(SignUp.this, "User has been added to SQL.", Toast.LENGTH_SHORT).show();
 
-            Log.d("info", "Name : "+DBHandler.feactch());
-            name=DBHandler.feactch();
+        Log.d("info", "Name : " + DBHandler.feactch());
+        name = DBHandler.feactch();
 
-        }
-        public void firestore(){
-            String username = txt4.getText().toString();
-            String email = txt1.getText().toString();
-            //FireStore
-            FirebaseFirestore cloud_db =FirebaseFirestore.getInstance();
-            Map<String,Object> user=new HashMap<>();
-            user.put("User Name",username);
-            user.put("Email",email);
-            cloud_db.collection("User").document("User_1").set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void unused) {
-                            Toast.makeText(SignUp.this, "Firestore Success", Toast.LENGTH_SHORT).show();
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(SignUp.this, "FireStore Error", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-        }
+    }
+
+    public void firestore() {
+        String username = txt4.getText().toString();
+        String email = txt1.getText().toString();
+        //FireStore
+        FirebaseFirestore cloud_db = FirebaseFirestore.getInstance();
+        Map<String, Object> user = new HashMap<>();
+        user.put("User Name", username);
+        user.put("Email", email);
+        cloud_db.collection("User").document("User_1").set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Toast.makeText(SignUp.this, "Firestore Success", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(SignUp.this, "FireStore Error", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(broadcastReceiver);
     }
+
+    public String getuser() {
+        if (setuser().isEmpty()) {
+            return "Empty";
+        }
+        return setuser();
     }
+
+    public String setuser() {
+        return user;
+    }
+}
 

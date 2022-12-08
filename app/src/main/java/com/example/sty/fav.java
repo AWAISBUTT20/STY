@@ -12,6 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
+
 import java.util.ArrayList;
 import java.util.zip.Inflater;
 
@@ -33,7 +37,19 @@ public class fav extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_fav, container, false);
-    rv =view.findViewById(R.id.rvfav);
+     //image Slider
+          ImageSlider imageSlider=view.findViewById(R.id.imageslider);
+
+        ArrayList<SlideModel> slideModels=new ArrayList<>();
+        slideModels.add(new SlideModel(R.drawable.mentees, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.womentees,ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.menhodies,ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.womenhood,ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.acsesories,ScaleTypes.FIT));
+        imageSlider.setImageList(slideModels, ScaleTypes.CENTER_INSIDE);
+        imageSlider.startSliding(2000);
+        //recycler View
+        rv =view.findViewById(R.id.rvfav);
     favadapter myfavadapter=new favadapter(prdctname,prdctdesc,prdctprice,prdctimg,getContext());
     rv.setAdapter(myfavadapter);
     rv.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -44,12 +60,8 @@ public class fav extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         prdctname.add("STY Tee1");
-        prdctname.add("STY Tee2");
         prdctdesc.add("Black Cotton Shirt \nProduct No. #36251");
-        prdctdesc.add("Black Cotton Shirt \nProduct No. #36251");
-        prdctprice.add("100$");
         prdctprice.add("120$");
-        prdctimg.add(R.drawable.womenmodle);
         prdctimg.add(R.drawable.female);
     }
 }

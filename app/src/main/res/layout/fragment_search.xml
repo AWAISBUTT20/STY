@@ -13,38 +13,45 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
-        <View
+        <RelativeLayout
+            android:id="@id/some_id"
             android:layout_width="match_parent"
-            android:layout_height="2.25dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="10.32dp"
-            android:background="@color/black"
-            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            >
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2.25dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="5.32dp"
+                android:background="@color/black"
+                android:layout_centerHorizontal="true"
 
-            />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2.25dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="102.32dp"
-            android:background="@color/black"
-            android:layout_centerHorizontal="true"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2.25dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="95.32dp"
+                android:background="@color/black"
+                android:layout_centerHorizontal="true"
 
-            />
-        <TextView
-            android:id="@+id/checkout"
-            android:layout_width="match_parent"
-            android:layout_height="35.58dp"
-            android:layout_marginStart="75.58dp"
-            android:layout_marginTop="49.75dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center_horizontal|top"
-            android:lineSpacingExtra="19sp"
-            android:layout_centerHorizontal="true"
-            android:text="@string/search"
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            android:translationY="-9.47sp" />
+                />
+            <TextView
+                android:id="@+id/checkout"
+                android:layout_width="match_parent"
+                android:layout_height="35.58dp"
+                android:layout_marginStart="75.58dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_horizontal|top"
+                android:lineSpacingExtra="19sp"
+                android:layout_centerHorizontal="true"
+                android:text="@string/Search"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:translationY="-9.47sp" />
+
+        </RelativeLayout>
 
     </RelativeLayout>
    <!-- <ScrollView
@@ -172,48 +179,6 @@
                 android:orientation="vertical">
 
             </androidx.recyclerview.widget.RecyclerView>
-            <!--     <androidx.cardview.widget.CardView
-                     android:id="@+id/group_47"
-                     android:layout_width="170dp"
-                     android:layout_height="210dp"
-                     android:layout_alignParentLeft="true"
-                     android:layout_alignParentTop="true"
-                     android:layout_centerHorizontal="true"
-                     android:layout_marginLeft="21dp"
-                     android:layout_marginTop="231dp"
-                     android:foreground="@drawable/sample" />
-                 <androidx.cardview.widget.CardView
-                     android:id="@+id/group_48"
-                     android:layout_width="169dp"
-                     android:layout_height="210dp"
-                     android:layout_alignParentLeft="true"
-                     android:layout_alignParentTop="true"
-                     android:layout_centerHorizontal="true"
-                     android:layout_marginLeft="215dp"
-                     android:layout_marginTop="221dp"
-                     android:foreground="@drawable/sample">
-
-                 </androidx.cardview.widget.CardView>
-                 <androidx.cardview.widget.CardView
-                     android:id="@+id/group_49"
-                     android:layout_width="170dp"
-                     android:layout_height="210dp"
-                     android:layout_alignParentStart="true"
-                     android:layout_alignParentTop="true"
-                     android:layout_centerHorizontal="true"
-                     android:layout_marginStart="21dp"
-                     android:layout_marginTop="465dp"
-                     android:foreground="@drawable/sample" />
-                 <androidx.cardview.widget.CardView
-                     android:id="@+id/group_50"
-                     android:layout_width="169dp"
-                     android:layout_height="210dp"
-                     android:layout_alignParentLeft="true"
-                     android:layout_centerHorizontal="true"
-                     android:layout_alignParentTop="true"
-                     android:layout_marginStart="215dp"
-                     android:layout_marginTop="465dp"
-                     android:foreground="@drawable/sample" />-->
         </RelativeLayout>
     </ScrollView>
 </LinearLayout>

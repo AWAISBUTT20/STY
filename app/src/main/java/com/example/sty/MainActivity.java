@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         navigationView = findViewById(R.id.navigationmenumain);
         drawerLayout = findViewById(R.id.drawermain);
-
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
@@ -97,11 +96,6 @@ public class MainActivity extends AppCompatActivity {
     public void loadfrag(Fragment fragment,Boolean flag){
         FragmentManager fm=getSupportFragmentManager();
         FragmentTransaction ft=fm.beginTransaction();
-
-        Bundle bundle=new Bundle();
-        bundle.putString("user","fn");
-        fragment.setArguments(bundle);
-
         if (!flag) {
             ft.add(R.id.container,fragment);
         }else {
