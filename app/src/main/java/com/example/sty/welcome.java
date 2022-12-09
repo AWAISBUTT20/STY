@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -16,6 +19,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import android.content.Intent;
 import android.widget.Button;
@@ -24,12 +29,7 @@ import android.view.View;
 
 public class welcome extends AppCompatActivity {
     Button btn1, btn2, btn3;
-    // FirebaseAuth firebaseAuth;
-    NavigationView navigationView;
-    ActionBarDrawerToggle toggle;
-    DrawerLayout drawerLayout;
-    Toolbar toolbar;
-    /*firebase
+    /* FirebaseAuth firebaseAuth;
     @Override
     protected void onStart() {
         super.onStart();
@@ -42,50 +42,6 @@ public class welcome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wellcome);
-        toolbar = findViewById(R.id.custom_toolbar);
-        //setSupportActionBar(toolbar);
-
-        navigationView = findViewById(R.id.navigationmenu);
-        drawerLayout = findViewById(R.id.drawer);
-
-        toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                switch (item.getItemId()) {
-                    case R.id.Mensmenu:
-                        Toast.makeText(welcome.this, "Men Clicked", Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-
-                    case R.id.Womensmenu:
-                        Toast.makeText(welcome.this, "Women Clicked", Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-
-                    case R.id.logoutmenu:
-                        Toast.makeText(welcome.this, "Logout Clicked", Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-                    case R.id.usermenu:
-                        Toast.makeText(welcome.this, "User Clicked", Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-
-                    case R.id.accsesorymenu:
-                        Toast.makeText(welcome.this, "Accessories Clicked", Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-                    default:
-                        Toast.makeText(welcome.this, "Kuch Ni", Toast.LENGTH_SHORT).show();
-                }
-
-                return true;
-            }
-        });
         //Activity
         btn1 = findViewById(R.id.btnwelcomelog);
         btn2 = findViewById(R.id.btnwelcomesignup);

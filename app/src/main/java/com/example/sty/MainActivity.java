@@ -18,8 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
-   BottomNavigationView bottomNavigationView;
-   String fn;
+
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
@@ -71,11 +70,11 @@ public class MainActivity extends AppCompatActivity {
         });
         //Activity
         //Bottom Navigation's
-        bottomNavigationView =findViewById(R.id.bottom_nav);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        BottomNavigationView bnv =findViewById(R.id.bottom_nav);
+        bnv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                 int id=item.getItemId();
+                int id=item.getItemId();
                 if (id == R.id.home) {
                    loadfrag(new Home(),false);
                 }else  if (id == R.id.search) {
@@ -90,9 +89,10 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-    //Bottom Navigation
-    bottomNavigationView.setSelectedItemId(R.id.home);
+    //My first fragment
+    bnv.setSelectedItemId(R.id.Fav);
     }
+    //load_fragment method
     public void loadfrag(Fragment fragment,Boolean flag){
         FragmentManager fm=getSupportFragmentManager();
         FragmentTransaction ft=fm.beginTransaction();

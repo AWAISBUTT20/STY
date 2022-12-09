@@ -5,41 +5,102 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mens_activity">
-
-
-    <Button
-        android:id="@+id/btnmenarrivals"
+    tools:context=".Accessories">
+    <VideoView
+        android:id="@+id/accsesoriesvid"
         android:layout_width="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_height="395dp"
-        android:elevation="15dp"
-        android:foreground="@drawable/acsesories">
-
-    </Button>
-
+        android:layout_height="wrap_content"
+        >
+    </VideoView>
     <Button
-        android:id="@+id/btnmenhood"
-        android:layout_width="202dp"
-        android:layout_height="340dp"
-        android:layout_marginTop="400dp"
-        android:layout_alignParentTop="true"
+        android:id="@+id/btnnewaccseroy"
+        android:layout_width="wrap_content"
         android:layout_alignParentBottom="true"
-        android:foreground="@drawable/neck">
-
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="115dp"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:textColor="@color/white"
+        android:text="New Arrivals!"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        android:foreground="@drawable/tranparent_button"
+        android:background="@android:color/transparent"
+        >
     </Button>
-
     <Button
-        android:id="@+id/btnmentees"
-        android:layout_width="202dp"
-        android:layout_height="340dp"
+        android:id="@+id/btnbraclet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@android:dimen/app_icon_size"
+        android:textColor="@color/white"
+        android:text="BRACELETS"
+        android:textStyle="italic"
+        android:textAllCaps="false"
+        android:foreground="@drawable/tranparent_button"
+        android:background="@android:color/transparent"
+        >
+    </Button>
+    <Button
+        android:id="@+id/btnnecklace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="209dp"
-        android:layout_marginTop="400dp"
-        android:foreground="@drawable/caps">
-
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="@android:dimen/app_icon_size"
+        android:textColor="@color/white"
+        android:text="NECKLACE"
+        android:textStyle="italic"
+        android:textAllCaps="false"
+        android:foreground="@drawable/tranparent_button"
+        android:background="@android:color/transparent">
     </Button>
-
 </RelativeLayout>
+<!--
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".mens_activity">
+
+
+<Button
+    android:id="@+id/btnmenarrivals"
+    android:layout_width="match_parent"
+    android:layout_alignParentTop="true"
+    android:layout_height="395dp"
+    android:elevation="15dp"
+    android:foreground="@drawable/acsesories">
+
+</Button>
+
+<Button
+    android:id="@+id/btnmenhood"
+    android:layout_width="202dp"
+    android:layout_height="340dp"
+    android:layout_marginTop="400dp"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentBottom="true"
+    android:foreground="@drawable/neck">
+
+</Button>
+
+<Button
+    android:id="@+id/btnmentees"
+    android:layout_width="202dp"
+    android:layout_height="340dp"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentBottom="true"
+    android:layout_marginStart="209dp"
+    android:layout_marginTop="400dp"
+    android:foreground="@drawable/caps">
+
+</Button>
+
+</RelativeLayout>-->
