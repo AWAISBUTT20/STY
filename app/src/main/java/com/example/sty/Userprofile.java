@@ -10,6 +10,7 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
@@ -21,8 +22,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -37,6 +46,8 @@ public class Userprofile extends Fragment {
     String usrname;
     Button btn;
     ImageView iv;
+    FirebaseFirestore db=FirebaseFirestore.getInstance();
+    DocumentReference documentReference;
 
     @SuppressLint({"ResourceType", "MissingInflatedId"})
     @Override
@@ -48,6 +59,27 @@ public class Userprofile extends Fragment {
         iv = view.findViewById(R.id.imgprofil);
         iv.setImageResource(menhodies);
         firebaseAuth = FirebaseAuth.getInstance();
+        //featching data from fire store
+        documentReference=db.document("User/User_1");
+        documentReference.get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if (documentSnapshot.exists()) {
+                            String username = documentSnapshot.getString("User Name");
+                            //String email = documentSnapshot.getString("Email");
+                            txt.setText(username);
+                        }else {
+                            Toast.makeText(getContext(), "FireStore Fetching Error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getContext(), "FireStore Fetching Error", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
         btn = view.findViewById(R.id.btnlogout);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,9 +110,9 @@ public class Userprofile extends Fragment {
                 }
             }
         });
-        SignUp signUp = new SignUp();
+       /* SignUp signUp = new SignUp();
         usrname = signUp.getuser();
-        txt.setText(usrname);
+        txt.setText(usrname);*/
         return view;
 
 
