@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id=item.getItemId();
                 if (id == R.id.home) {
-                   loadfrag(new Home(),false);
+                    loadfrag(new Home(),false);
                 }else  if (id == R.id.search) {
                     loadfrag(new search(),true);
                 }else  if (id == R.id.Fav) {
@@ -84,13 +84,15 @@ public class MainActivity extends AppCompatActivity {
                 }else  if (id == R.id.Cart) {
                     loadfrag(new Cart(),true);
                 }else  if (id == R.id.User) {
-                    loadfrag(new Userprofile(),true);
+                   // loadfrag(new Userprofile(),true);
+                    loadfrag(new authentication(),true);
                 }
                 return true;
             }
         });
-    //My first fragment
-    bnv.setSelectedItemId(R.id.Fav);
+        loadfrag(new Home(),false);
+//My first fragment
+        bnv.setSelectedItemId(R.id.home);
     }
     //load_fragment method
     public void loadfrag(Fragment fragment,Boolean flag){

@@ -10,10 +10,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.IntentFilter;
+import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -26,6 +30,7 @@ import android.content.Intent;
 import android.widget.Button;
 import android.view.Menu;
 import android.view.View;
+import android.widget.VideoView;
 
 public class welcome extends AppCompatActivity {
     Button btn1, btn2, btn3;
@@ -38,27 +43,33 @@ public class welcome extends AppCompatActivity {
             startActivity(new Intent(welcome.this,login_m.class));
         }
     }*/
+    @SuppressLint({"MissingInflatedId", "LocalSuppress"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wellcome);
-        //Activity
-        btn1 = findViewById(R.id.btnwelcomelog);
-        btn2 = findViewById(R.id.btnwelcomesignup);
-        btn3 = findViewById(R.id.btnwellcomayb);
-        //firebaseAuth = FirebaseAuth.getInstance();
-        btn1.setOnClickListener(new View.OnClickListener() {
+        btn3=findViewById(R.id.btnshopnow);
+        VideoView videoview =findViewById(R.id.styvidv1);
+        String vidpath = "android.resource://" + getPackageName() + "/" + R.raw.wellcome;
+        Uri uri = Uri.parse(vidpath);
+        videoview.setVideoURI(uri);
+        /*for play and pause manually
+        MediaController mediaController=new MediaController(this);
+        videoview.setMediaController(mediaController);
+        mediaController.setAnchorView(videoview);
+        getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        getWindow().setStatusBarColor(Color.TRANSPARENT);*/
+        videoview.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(welcome.this, login_m.class);
-                startActivity(intent);
+            public void onPrepared(MediaPlayer mp) {
+                mp.start();
             }
         });
-        btn2.setOnClickListener(new View.OnClickListener() {
+        //if you want video was play again and again
+        videoview.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(welcome.this, SignUp.class);
-                startActivity(intent);
+            public void onCompletion(MediaPlayer mp) {
+                mp.start();
             }
         });
         btn3.setOnClickListener(new View.OnClickListener() {
@@ -69,38 +80,5 @@ public class welcome extends AppCompatActivity {
             }
         });
     }
-/* @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-       getMenuInflater().inflate(R.menu.menu,menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.Mensmenu:
-                Intent intent=new Intent(welcome.this,mens_activity.class);
-                Toast.makeText(welcome.this, "Mens Clicked", Toast.LENGTH_SHORT).show();
-                startActivity(intent);
-                drawerLayout.closeDrawer(GravityCompat.START);
-                break;
-
-            case R.id.Womensmenu:
-                Toast.makeText(welcome.this, "Women Clicked", Toast.LENGTH_SHORT).show();
-                drawerLayout.closeDrawer(GravityCompat.START);
-                break;
-
-            case R.id.accsesorymenu:
-                Toast.makeText(welcome.this, "Accessories Clicked", Toast.LENGTH_SHORT).show();
-                drawerLayout.closeDrawer(GravityCompat.START);
-                break;
-            case R.id.logoutmenu:
-                Toast.makeText(welcome.this, "Logout Clicked", Toast.LENGTH_SHORT).show();
-                drawerLayout.closeDrawer(GravityCompat.START);
-                break;
-            default:
-                Toast.makeText(welcome.this, "Kuch Ni", Toast.LENGTH_SHORT).show();
-        }
-        return true;
-    }*/
 }
