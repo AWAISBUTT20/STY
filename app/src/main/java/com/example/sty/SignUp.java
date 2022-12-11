@@ -65,9 +65,9 @@ public class SignUp extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               /* firestore();
-              createUser();*/
-                Toast.makeText(SignUp.this, "UserName", Toast.LENGTH_SHORT).show();
+                firestore();
+              createUser();
+               // Toast.makeText(SignUp.this, "UserName", Toast.LENGTH_SHORT).show();
             }
         });
         btn1 = findViewById(R.id.btnreg_login);

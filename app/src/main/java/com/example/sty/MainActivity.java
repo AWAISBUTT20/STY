@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
+    FirebaseAuth firebaseAuth;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+        firebaseAuth=FirebaseAuth.getInstance();
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -52,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.logoutmenu:
-                        //  startActivity(new Intent(MainActivity.this,authentication.class));
-                        Toast.makeText(MainActivity.this, "Logout", Toast.LENGTH_SHORT).show();
+                       firebaseAuth.signOut();
+                        Toast.makeText(MainActivity.this, "Logout ", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.usermenu:

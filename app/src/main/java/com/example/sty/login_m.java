@@ -23,12 +23,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class login_m extends AppCompatActivity {
-    Button btn1, btn2;
+    Button btn1, btn2,btn3;
     FirebaseAuth mauth;
     EditText txt1, txt2;
     BroadcastReceiver broadcastReceiver;
 
-    @SuppressLint("WrongViewCast")
+    @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
 
 
@@ -41,8 +41,15 @@ public class login_m extends AppCompatActivity {
         mauth = FirebaseAuth.getInstance();
         btn1 = findViewById(R.id.cirLoginButton);
         btn2 = findViewById(R.id.btnsignup);
+        btn3=findViewById(R.id.btnforget);
         txt1 = findViewById(R.id.email);
         txt2 = findViewById(R.id.editTextPassword);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(login_m.this,forgetpassword.class));
+            }
+        });
         btn1.setOnClickListener(view -> {
             loginUser();
         });
@@ -91,5 +98,8 @@ public class login_m extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    public void viewForgotPassword(View view) {
     }
 }

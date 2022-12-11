@@ -1,5 +1,6 @@
 package com.example.sty;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
+import android.widget.Button;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
@@ -23,6 +25,7 @@ import java.util.zip.Inflater;
 public class fav extends Fragment {
     RecyclerView rv;
     Adapter adapter;
+    Button btn;
     ArrayList<String> prdctname = new ArrayList<>();
     ArrayList<String> prdctdesc = new ArrayList<>();
     ArrayList<String> prdctprice = new ArrayList<>();
@@ -53,6 +56,13 @@ public class fav extends Fragment {
         favadapter myfavadapter = new favadapter(prdctname, prdctdesc, prdctprice, prdctimg, getContext());
         rv.setAdapter(myfavadapter);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
+        btn=view.findViewById(R.id.btnaddtobag);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               // startActivity(new Intent(getActivity(),Cart.class));
+            }
+        });
         return view;
     }
 

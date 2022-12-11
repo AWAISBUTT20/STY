@@ -18,7 +18,9 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentTop="true"></VideoView>
+            android:layout_alignParentTop="true">
+
+        </VideoView>
 
         <Button
             android:id="@+id/btnshopnow"
@@ -26,8 +28,9 @@
             android:layout_height="30dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="10dp"
-            android:foreground="@drawable/shopnow">
+            android:layout_marginBottom="11dp"
+            android:background="@android:color/transparent"
+            >
 
         </Button>
 

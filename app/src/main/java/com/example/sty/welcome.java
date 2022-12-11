@@ -55,7 +55,7 @@ public class welcome extends AppCompatActivity {
         setContentView(R.layout.activity_wellcome);
         btn3 = findViewById(R.id.btnshopnow);
         VideoView videoview = findViewById(R.id.styvidv1);
-        String vidpath = "android.resource://" + getPackageName() + "/" + R.raw.styvid;
+        String vidpath = "android.resource://" + getPackageName() + "/" + R.raw.wellcome;
         Uri uri = Uri.parse(vidpath);
         videoview.setVideoURI(uri);
         /*for play and pause manually
