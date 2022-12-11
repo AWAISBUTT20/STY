@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    >
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvcart"
@@ -13,8 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:paddingStart="10dp"
         android:elevation="125dp"
+        android:paddingStart="10dp"
         tools:ignore="RtlSymmetry">
 
 
@@ -68,39 +66,38 @@
             tools:ignore="MissingConstraints">
 
         </TextView>
+
         <Button
             android:id="@+id/btncartminus"
             android:layout_width="30dp"
             android:layout_height="17dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="100dp"
+            android:background="@color/white"
             android:foreground="@drawable/left"
             android:foregroundTint="@color/white"
-            android:background="@color/white"
-            android:layout_marginTop="100dp"
-            android:layout_marginStart="20dp"
-            android:onClick="decrement"
-            >
-        </Button>
+            android:onClick="decrement"></Button>
+
         <Button
             android:id="@+id/btncartplus"
             android:layout_width="30dp"
             android:layout_height="17dp"
-            android:layout_marginTop="100dp"
             android:layout_marginStart="90dp"
-            android:onClick="increment"
+            android:layout_marginTop="100dp"
+            android:background="@color/white"
             android:foreground="@drawable/righterrow"
             android:foregroundTint="@color/white"
-            android:background="@color/white"
-            >
-        </Button>
+            android:onClick="increment"></Button>
+
         <TextView
             android:id="@+id/txtQuantity"
             android:layout_width="40dp"
             android:layout_height="17dp"
-            android:layout_marginTop="100dp"
             android:layout_marginStart="50dp"
+            android:layout_marginTop="100dp"
+            android:inputType="number"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:inputType="number"
             tools:ignore="MissingConstraints,TextViewEdits">
 
         </TextView>

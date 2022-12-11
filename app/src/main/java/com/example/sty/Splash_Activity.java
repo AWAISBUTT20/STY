@@ -14,7 +14,7 @@ public class Splash_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         getWindow().setStatusBarColor(Color.TRANSPARENT);
         Intent nxt = new Intent(this, welcome.class);
         new Handler().postDelayed(new Runnable() {
@@ -23,6 +23,6 @@ public class Splash_Activity extends AppCompatActivity {
                 startActivity(nxt);
                 finish();
             }
-        },1900);
+        }, 1900);
     }
 }

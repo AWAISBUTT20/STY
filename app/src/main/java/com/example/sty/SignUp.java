@@ -42,6 +42,7 @@ public class SignUp extends AppCompatActivity {
     String user = "Awais butt";
     BroadcastReceiver broadcastReceiver;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

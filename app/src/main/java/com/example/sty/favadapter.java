@@ -17,10 +17,11 @@ public class favadapter extends RecyclerView.Adapter<favadapter.Viewholer> {
     public favadapter() {
 
     }
-    ArrayList<String> prdctname=new ArrayList<>();
-    ArrayList<String> prdctdesc=new ArrayList<>();
-    ArrayList<String> prdctprice=new ArrayList<>();
-    ArrayList<Integer> prdctimg=new ArrayList<>();
+
+    ArrayList<String> prdctname = new ArrayList<>();
+    ArrayList<String> prdctdesc = new ArrayList<>();
+    ArrayList<String> prdctprice = new ArrayList<>();
+    ArrayList<Integer> prdctimg = new ArrayList<>();
     LayoutInflater inflater;
 
     public favadapter(ArrayList<String> prdctname, ArrayList<String> prdctdesc, ArrayList<String> prdctprice, ArrayList<Integer> prdctimg, Context context) {
@@ -34,7 +35,7 @@ public class favadapter extends RecyclerView.Adapter<favadapter.Viewholer> {
     @NonNull
     @Override
     public Viewholer onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= inflater.inflate(R.layout.cart,parent,false);
+        View view = inflater.inflate(R.layout.cart, parent, false);
         return new Viewholer(view);
     }
 
@@ -56,14 +57,15 @@ public class favadapter extends RecyclerView.Adapter<favadapter.Viewholer> {
         TextView desc;
         TextView price;
         ImageView img;
+
         public Viewholer(@NonNull View itemView) {
             super(itemView);
 
-                name=itemView.findViewById(R.id.cartname);
-                desc=itemView.findViewById(R.id.cartdescr);
-                price=itemView.findViewById(R.id.cartprice);
-                img=itemView.findViewById(R.id.cartimg);
+            name = itemView.findViewById(R.id.cartname);
+            desc = itemView.findViewById(R.id.cartdescr);
+            price = itemView.findViewById(R.id.cartprice);
+            img = itemView.findViewById(R.id.cartimg);
 
-            }
         }
     }
+}

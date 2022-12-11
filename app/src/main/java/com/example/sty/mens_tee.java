@@ -21,15 +21,16 @@ public class mens_tee extends AppCompatActivity {
     ArrayList<Integer> prdctimg = new ArrayList<>();
     ArrayList<String> prdctname = new ArrayList<>();
     ArrayList<String> prdctdesc = new ArrayList<>();
-    ArrayList<String> prdctprice= new ArrayList<>();
+    ArrayList<String> prdctprice = new ArrayList<>();
     Button btn2;
     Adapter adapter;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mens_tees);
-        rv=findViewById(R.id.recyclerView);
+        rv = findViewById(R.id.recyclerView);
       /* btn2=findViewById(R.id.btnaddtobag);
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,8 +58,8 @@ public class mens_tee extends AppCompatActivity {
         prdctimg.add(R.drawable.womentees);
         prdctimg.add(R.drawable.womenhood);
 
-        prodctadapter adapter=new prodctadapter(mens_tee.this,prdctname,prdctdesc,prdctprice,prdctimg);
-        GridLayoutManager gridLayoutManager=new GridLayoutManager(this,2, GridLayoutManager.VERTICAL,false);
+        prodctadapter adapter = new prodctadapter(mens_tee.this, prdctname, prdctdesc, prdctprice, prdctimg);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         rv.setLayoutManager(gridLayoutManager);
         rv.setAdapter((RecyclerView.Adapter) adapter);
     }

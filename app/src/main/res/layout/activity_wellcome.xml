@@ -10,6 +10,7 @@
     android:orientation="vertical"
     tools:context=".welcome"
     tools:openDrawer="start">
+
     <RelativeLayout
         android:id="@+id/welcomxml"
         android:layout_width="match_parent"
@@ -17,20 +18,19 @@
         android:background="@color/black"
         android:orientation="vertical"
         tools:context=".welcome">
+
         <VideoView
             android:id="@+id/styvidv1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-        </VideoView>
+            android:layout_height="wrap_content"></VideoView>
+
         <Button
             android:id="@+id/btnshopnow"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginBottom="8dp"
-            android:background="@android:color/transparent">
-        </Button>
+            android:background="@android:color/transparent"></Button>
     </RelativeLayout>
 </LinearLayout>

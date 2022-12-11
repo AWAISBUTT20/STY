@@ -1,40 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<item
-    android:id="@+id/home"
-    android:title="Home"
-    android:icon="@drawable/home"
-    >
-
-</item>
     <item
-        android:id="@+id/search"
-        android:title="Search"
-        android:icon="@drawable/search"
-        >
-
-    </item><item
-    android:id="@+id/Fav"
-    android:title="Favourite"
-    android:icon="@drawable/favorite"
-    >
-
-</item><item
-    android:id="@+id/Cart"
-    android:title="Bag"
-    android:icon="@drawable/shoppingbag"
-    >
-
-</item>
-    <item
-        android:id="@+id/User"
-        android:title="User Profile"
-        android:icon="@drawable/ic_baseline_account_box_24"
-        >
+        android:id="@+id/home"
+        android:icon="@drawable/home"
+        android:title="Home">
 
     </item>
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/search"
+        android:title="Search">
 
+    </item>
+    <item
+        android:id="@+id/Fav"
+        android:icon="@drawable/favorite"
+        android:title="Favourite">
+
+    </item>
+    <item
+        android:id="@+id/Cart"
+        android:icon="@drawable/shoppingbag"
+        android:title="Bag">
+
+    </item>
+    <item
+        android:id="@+id/User"
+        android:icon="@drawable/ic_baseline_account_box_24"
+        android:title="User Profile">
+
+    </item>
 
 
 </menu>

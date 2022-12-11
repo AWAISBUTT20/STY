@@ -23,6 +23,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public DBHandler(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TABLE_NAME + " ("
@@ -36,12 +37,13 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
+
     //Fetching
-    public String feactch(){
-        SQLiteDatabase db=this.getReadableDatabase();
-        Cursor cursor=db.rawQuery("SELECT * FROM "+ TABLE_NAME,null);
-        while (cursor.moveToNext()){
-           usrname=cursor.getString(0);
+    public String feactch() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        while (cursor.moveToNext()) {
+            usrname = cursor.getString(0);
         }
         return usrname;
     }
@@ -53,8 +55,8 @@ public class DBHandler extends SQLiteOpenHelper {
         // on below line we are creating a variable for content values.
         ContentValues values = new ContentValues();
         // on below line we are passing all values along with its key and value pair.
-        values.put(NAME_COL,userName);
-        db.insert(TABLE_NAME, null,values);
+        values.put(NAME_COL, userName);
+        db.insert(TABLE_NAME, null, values);
         // at last we are closing our database after adding database.
         db.close();
     }

@@ -3,39 +3,34 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <ImageView
-        android:layout_marginTop="25dp"
         android:layout_width="200dp"
         android:layout_height="150dp"
-        android:src="@drawable/user"
-        />
+        android:layout_marginTop="25dp"
+        android:src="@drawable/user" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="5dp"
         android:text="@string/Username"
         android:textColor="@color/black"
-        android:textStyle="bold"
-       android:layout_marginTop="5dp"
-        android:layout_marginStart="40dp"
         android:textSize="25sp"
-        />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/headeremail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Email"
-        android:textColor="@color/black"
-        android:textStyle="bold"
         android:layout_marginLeft="39dp"
         android:layout_marginBottom="10dp"
+        android:text="@string/Email"
+        android:textColor="@color/black"
         android:textSize="15sp"
-        />
-
+        android:textStyle="bold" />
 
 
 </LinearLayout>

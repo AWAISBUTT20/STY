@@ -27,22 +27,24 @@ public class search extends Fragment {
     public search() {
         // Required empty public constructor
     }
+
     RecyclerView rv;
     SearchView sv;
     ArrayList<String> productname = new ArrayList<>();
     ArrayList<String> productdesc = new ArrayList<>();
-    ArrayList<String> productprice= new ArrayList<>();
+    ArrayList<String> productprice = new ArrayList<>();
     ArrayList<Integer> Product = new ArrayList<>();
-   // Adapter adapter;
+
+    // Adapter adapter;
     @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         //for activity in fragment
-        View view= inflater.inflate(R.layout.fragment_search, container, false);
-       //search view
-        sv=view.findViewById(R.id.searchview);
+        View view = inflater.inflate(R.layout.fragment_search, container, false);
+        //search view
+        sv = view.findViewById(R.id.searchview);
         sv.setIconified(false);
         sv.clearFocus();
         sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -50,18 +52,19 @@ public class search extends Fragment {
             public boolean onQueryTextSubmit(String query) {
                 return false;
             }
+
             @Override
             public boolean onQueryTextChange(String newText) {
                 return false;
             }
         });
         //recycler view
-        rv=view.findViewById(R.id.rvsearch);
-        prodctadapter adapter=new prodctadapter(getContext(),productname,productdesc,productprice,Product);
-        rv.setLayoutManager(new GridLayoutManager(getActivity(),2,GridLayoutManager.VERTICAL,false));
+        rv = view.findViewById(R.id.rvsearch);
+        prodctadapter adapter = new prodctadapter(getContext(), productname, productdesc, productprice, Product);
+        rv.setLayoutManager(new GridLayoutManager(getActivity(), 2, GridLayoutManager.VERTICAL, false));
         rv.setAdapter((RecyclerView.Adapter) adapter);
 
-    return view;
+        return view;
     }
 
     @Override

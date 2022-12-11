@@ -35,6 +35,7 @@ public class prodctadapter extends RecyclerView.Adapter<prodctadapter.ViewHolder
         View view = inflater.inflate(R.layout.product, parent, false);
         return new ViewHolder(view);
     }
+
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
@@ -43,20 +44,23 @@ public class prodctadapter extends RecyclerView.Adapter<prodctadapter.ViewHolder
         holder.price.setText(prdctprice.get(position));
         holder.prdct.setImageResource(product.get(position));
     }
+
     @Override
     public int getItemCount() {
-         return prdctname.size();
+        return prdctname.size();
     }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView prdct;
         TextView name;
         TextView desc;
         TextView price;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            name=itemView.findViewById(R.id.prdctname);
-            desc=itemView.findViewById(R.id.prdctdesc);
-            price=itemView.findViewById(R.id.prdctprice);
+            name = itemView.findViewById(R.id.prdctname);
+            desc = itemView.findViewById(R.id.prdctdesc);
+            price = itemView.findViewById(R.id.prdctprice);
             prdct = itemView.findViewById(R.id.prdctimg);
         }
     }

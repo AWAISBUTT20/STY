@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
+
         <View
             android:layout_width="match_parent"
             android:layout_height="2.25dp"
             android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="5.32dp"
             android:background="@color/black"
-            android:layout_centerHorizontal="true"
 
             />
+
         <View
             android:id="@+id/some_id"
             android:layout_width="match_parent"
             android:layout_height="2.25dp"
             android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="95.32dp"
             android:background="@color/black"
-            android:layout_centerHorizontal="true"
 
             />
+
         <TextView
             android:id="@+id/checkout"
             android:layout_width="match_parent"
             android:layout_height="35.58dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginStart="75.58dp"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="10dp"
             android:gravity="center_horizontal|top"
             android:lineSpacingExtra="19sp"
-            android:layout_centerHorizontal="true"
             android:text="@string/favrt"
             android:textColor="@color/black"
             android:textSize="30sp"
@@ -48,58 +48,57 @@
 
     </RelativeLayout>
 
-        <RelativeLayout
+    <RelativeLayout
 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-   android:layout_marginBottom="@android:dimen/app_icon_size"
-            android:layout_marginTop="3dp"
-    tools:context=".fav">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="@android:dimen/app_icon_size"
+        android:background="@color/white"
+        tools:context=".fav">
 
-            <com.denzcoskun.imageslider.ImageSlider
-                android:id="@+id/imageslider"
-                android:layout_width="match_parent"
-                android:layout_height="225dp"
-                app:iss_placeholder="@drawable/mentees"
-                app:iss_error_image="@drawable/sample"
-                app:iss_auto_cycle="true"
-                app:iss_delay="0"
-                app:iss_corner_radius="5">
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/imageslider"
+            android:layout_width="match_parent"
+            android:layout_height="225dp"
+            app:iss_auto_cycle="true"
+            app:iss_corner_radius="5"
+            app:iss_delay="0"
+            app:iss_error_image="@drawable/sample"
+            app:iss_placeholder="@drawable/mentees">
 
-            </com.denzcoskun.imageslider.ImageSlider>
+        </com.denzcoskun.imageslider.ImageSlider>
 
         <View
             android:id="@+id/rectangle"
             android:layout_width="125dp"
-            android:layout_centerHorizontal="true"
             android:layout_height="2dp"
             android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginStart="110dp"
             android:layout_marginTop="250dp"
             android:background="@color/black" />
 
- <androidx.recyclerview.widget.RecyclerView
-     android:id="@+id/rvfav"
-     android:layout_below="@id/rectangle"
- android:layout_marginTop="10dp"
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvfav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rectangle"
+            android:layout_marginTop="10dp">
 
- </androidx.recyclerview.widget.RecyclerView>
-    <Button
-        android:id="@+id/btnaddtobag"
-        android:layout_width="314dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/rvfav"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/black"
-        android:text="add to bag"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:layout_marginBottom="@android:dimen/app_icon_size"
-        />
+        </androidx.recyclerview.widget.RecyclerView>
 
-       </RelativeLayout>
+        <Button
+            android:id="@+id/btnaddtobag"
+            android:layout_width="314dp"
+            android:layout_height="70dp"
+            android:layout_below="@+id/rvfav"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@android:dimen/app_icon_size"
+            android:backgroundTint="@color/black"
+            android:text="add to bag"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
 </LinearLayout>

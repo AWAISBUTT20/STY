@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,8 +10,8 @@
     <Button
         android:id="@+id/btnmenarrivals"
         android:layout_width="match_parent"
-        android:layout_alignParentTop="true"
         android:layout_height="395dp"
+        android:layout_alignParentTop="true"
         android:elevation="15dp"
         android:foreground="@drawable/menmodel">
 
@@ -22,9 +21,9 @@
         android:id="@+id/btnmenhood"
         android:layout_width="202dp"
         android:layout_height="340dp"
-        android:layout_marginTop="400dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="400dp"
         android:foreground="@drawable/menhodies">
 
     </Button>
@@ -33,8 +32,8 @@
         android:id="@+id/btnmentees"
         android:layout_width="202dp"
         android:layout_height="340dp"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="209dp"
         android:layout_marginTop="400dp"

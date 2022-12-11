@@ -6,8 +6,8 @@
         android:id="@+id/search"
         android:icon="@drawable/search"
         android:title="Search"
-        app:showAsAction="collapseActionView"
-        app:actionViewClass="android.widget.SearchView">
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="collapseActionView">
 
     </item>
     <group android:checkableBehavior="single">

@@ -33,7 +33,8 @@ public class Cart extends Fragment {
     ArrayList<Integer> prdctimg = new ArrayList<>();
     TextView quantity;
     int count;
-    Button btn1,btn2,btnopen;
+    Button btn1, btn2, btnopen;
+
     @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

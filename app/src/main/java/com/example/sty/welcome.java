@@ -34,6 +34,7 @@ import android.widget.VideoView;
 
 public class welcome extends AppCompatActivity {
     Button btn1, btn2, btn3;
+
     /* FirebaseAuth firebaseAuth;
     @Override
     protected void onStart() {
@@ -48,8 +49,8 @@ public class welcome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wellcome);
-        btn3=findViewById(R.id.btnshopnow);
-        VideoView videoview =findViewById(R.id.styvidv1);
+        btn3 = findViewById(R.id.btnshopnow);
+        VideoView videoview = findViewById(R.id.styvidv1);
         String vidpath = "android.resource://" + getPackageName() + "/" + R.raw.wellcome;
         Uri uri = Uri.parse(vidpath);
         videoview.setVideoURI(uri);

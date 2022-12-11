@@ -18,10 +18,10 @@ import java.util.zip.Inflater;
 
 public class cartadpater extends RecyclerView.Adapter<cartadpater.cartVholder> {
     LayoutInflater layoutInflater;
-    ArrayList<String> prdctname,prdctdesc,prdctprice;
+    ArrayList<String> prdctname, prdctdesc, prdctprice;
     ArrayList<Integer> prdctimg;
-    Button btn1,btn2;
-    int count=1;
+    Button btn1, btn2;
+    int count = 1;
     TextView quantity;
     //ArrayList<String> prdctvalue;
 
@@ -36,7 +36,7 @@ public class cartadpater extends RecyclerView.Adapter<cartadpater.cartVholder> {
     @NonNull
     @Override
     public cartVholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= layoutInflater.inflate(R.layout.cart,parent,false);
+        View view = layoutInflater.inflate(R.layout.cart, parent, false);
         return new cartVholder(view);
     }
 
@@ -47,6 +47,7 @@ public class cartadpater extends RecyclerView.Adapter<cartadpater.cartVholder> {
         holder.price.setText(prdctprice.get(position));
         holder.img.setImageResource(prdctimg.get(position));
     }
+
     @Override
     public int getItemCount() {
         return prdctname.size();
@@ -60,32 +61,32 @@ public class cartadpater extends RecyclerView.Adapter<cartadpater.cartVholder> {
 
         public cartVholder(@NonNull View itemView) {
             super(itemView);
-            name=itemView.findViewById(R.id.cartname);
-            desc=itemView.findViewById(R.id.cartdescr);
-            price=itemView.findViewById(R.id.cartprice);
-            img=itemView.findViewById(R.id.cartimg);
+            name = itemView.findViewById(R.id.cartname);
+            desc = itemView.findViewById(R.id.cartdescr);
+            price = itemView.findViewById(R.id.cartprice);
+            img = itemView.findViewById(R.id.cartimg);
             btn1 = itemView.findViewById(R.id.btncartminus);
-            btn2= itemView.findViewById(R.id.btncartplus);
+            btn2 = itemView.findViewById(R.id.btncartplus);
             quantity = itemView.findViewById(R.id.txtQuantity);
             btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (count <= 1) {
-                    count = 1;
-                    quantity.setText(String.valueOf(count));
-                } else {
-                    count--;
+                @Override
+                public void onClick(View v) {
+                    if (count <= 1) {
+                        count = 1;
+                        quantity.setText(String.valueOf(count));
+                    } else {
+                        count--;
+                        quantity.setText(String.valueOf(count));
+                    }
+                }
+            });
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    count++;
                     quantity.setText(String.valueOf(count));
                 }
-            }
-        });
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                count++;
-                quantity.setText(String.valueOf(count));
-            }
-        });
+            });
 
         }
     }

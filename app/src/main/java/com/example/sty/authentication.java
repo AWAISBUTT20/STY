@@ -14,14 +14,15 @@ import android.widget.Button;
 import java.util.zip.Inflater;
 
 public class authentication extends Fragment {
-Button btn1,btn2,btn3;
+    Button btn1, btn2, btn3;
+
     @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_authenticaion, container, false);
-       //Activity
+        //Activity
         btn1 = view.findViewById(R.id.btnwelcomelog);
         btn2 = view.findViewById(R.id.btnwelcomesignup);
         //btn3 = view.findViewById(R.id.btnwellcomayb);

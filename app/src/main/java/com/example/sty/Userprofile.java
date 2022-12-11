@@ -32,6 +32,7 @@ public class Userprofile extends Fragment {
     String usrname;
     Button btn;
     ImageView iv;
+
     @SuppressLint({"ResourceType", "MissingInflatedId"})
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,7 +40,7 @@ public class Userprofile extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_userprofile, container, false);
         txt = view.findViewById(R.id.txtusrname);
-        iv=view.findViewById(R.id.imgprofil);
+        iv = view.findViewById(R.id.imgprofil);
         iv.setImageResource(menhodies);
         firebaseAuth = FirebaseAuth.getInstance();
         btn = view.findViewById(R.id.btnlogout);

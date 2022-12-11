@@ -23,10 +23,10 @@ import java.util.zip.Inflater;
 public class fav extends Fragment {
     RecyclerView rv;
     Adapter adapter;
-    ArrayList<String> prdctname=new ArrayList<>();
-    ArrayList<String> prdctdesc=new ArrayList<>();
-    ArrayList<String> prdctprice=new ArrayList<>();
-    ArrayList<Integer> prdctimg=new ArrayList<>();
+    ArrayList<String> prdctname = new ArrayList<>();
+    ArrayList<String> prdctdesc = new ArrayList<>();
+    ArrayList<String> prdctprice = new ArrayList<>();
+    ArrayList<Integer> prdctimg = new ArrayList<>();
 
     public fav() {
         // Required empty public constructor
@@ -36,23 +36,23 @@ public class fav extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_fav, container, false);
-     //image Slider
-          ImageSlider imageSlider=view.findViewById(R.id.imageslider);
+        View view = inflater.inflate(R.layout.fragment_fav, container, false);
+        //image Slider
+        ImageSlider imageSlider = view.findViewById(R.id.imageslider);
 
-        ArrayList<SlideModel> slideModels=new ArrayList<>();
+        ArrayList<SlideModel> slideModels = new ArrayList<>();
         slideModels.add(new SlideModel(R.drawable.mentees, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.womentees,ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.menhodies,ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.womenhood,ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.acsesories,ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.womentees, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.menhodies, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.womenhood, ScaleTypes.FIT));
+        slideModels.add(new SlideModel(R.drawable.acsesories, ScaleTypes.FIT));
         imageSlider.setImageList(slideModels, ScaleTypes.CENTER_INSIDE);
         imageSlider.startSliding(2000);
         //recycler View
-        rv =view.findViewById(R.id.rvfav);
-    favadapter myfavadapter=new favadapter(prdctname,prdctdesc,prdctprice,prdctimg,getContext());
-    rv.setAdapter(myfavadapter);
-    rv.setLayoutManager(new LinearLayoutManager(getActivity()));
+        rv = view.findViewById(R.id.rvfav);
+        favadapter myfavadapter = new favadapter(prdctname, prdctdesc, prdctprice, prdctimg, getContext());
+        rv.setAdapter(myfavadapter);
+        rv.setLayoutManager(new LinearLayoutManager(getActivity()));
         return view;
     }
 

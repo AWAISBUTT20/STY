@@ -23,6 +23,7 @@ import com.denzcoskun.imageslider.ImageSlider;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 
@@ -36,32 +37,32 @@ public class Home extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-      View view = inflater.inflate(R.layout.fragment_home, container, false);
-          Button btnOpen = (Button) view. findViewById(R.id.btnmen);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        Button btnOpen = (Button) view.findViewById(R.id.btnmen);
         btnOpen.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 Intent in = new Intent(getActivity(), mens_activity.class);
                 startActivity(in);
             }
         });
-        Button btnOpen2 = (Button) view. findViewById(R.id.btnwomen);
+        Button btnOpen2 = (Button) view.findViewById(R.id.btnwomen);
         btnOpen2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 Intent in = new Intent(getActivity(), women_activity.class);
                 startActivity(in);
             }
         });
-        Button btnOpen3 = (Button) view. findViewById(R.id.btnacsesori);
+        Button btnOpen3 = (Button) view.findViewById(R.id.btnacsesori);
         btnOpen3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 Intent in = new Intent(getActivity(), Accessories.class);
                 startActivity(in);
             }
         });
-        return view;}
+        return view;
+    }
 
 }

@@ -2,73 +2,73 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:gravity="center"
         android:layout_height="match_parent"
+        android:gravity="center"
         tools:ignore="MissingConstraints">
+
         <ImageButton
             android:id="@+id/btnaddbag"
-            android:layout_alignParentRight="true"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:background="@drawable/addbag"
-            >
-        </ImageButton>
+            android:layout_alignParentRight="true"
+            android:background="@drawable/addbag" />
+
         <ImageView
             android:id="@+id/prdctimg"
             android:layout_width="190dp"
             android:layout_height="190dp"
             android:layout_centerHorizontal="true"
-            tools:srcCompat="@drawable/product"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="30dp"
+            tools:srcCompat="@drawable/product" />
 
-           <TextView
-               android:id="@+id/prdctname"
-               android:layout_width="94dp"
-               android:layout_height="wrap_content"
-               android:layout_marginStart="20dp"
-               android:text="STY Tees"
-               android:textColor="@color/black"
-               android:layout_below="@id/prdctimg"
-               android:textSize="18sp"
-               android:textStyle="bold"
-               tools:ignore="MissingConstraints">
+        <TextView
+            android:id="@+id/prdctname"
+            android:layout_width="94dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/prdctimg"
+            android:layout_marginStart="20dp"
+            android:text="STY Tees"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints">
 
-           </TextView>
+        </TextView>
 
-           <TextView
-               android:id="@+id/prdctdesc"
-               android:layout_width="151dp"
-               android:layout_height="wrap_content"
-               android:layout_marginStart="20dp"
-               android:layout_below="@id/prdctname"
-               android:text=" Black Cotton Shirt "
-               android:textColor="@color/black"
-               android:textSize="13sp"
-               android:textStyle="italic"
-               tools:ignore="MissingConstraints">
+        <TextView
+            android:id="@+id/prdctdesc"
+            android:layout_width="151dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/prdctname"
+            android:layout_marginStart="20dp"
+            android:text=" Black Cotton Shirt "
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:textStyle="italic"
+            tools:ignore="MissingConstraints">
 
-           </TextView>
+        </TextView>
 
-           <TextView
-               android:id="@+id/prdctprice"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_below="@+id/prdctdesc"
-               android:layout_marginStart="20dp"
-               android:text="$150"
-               android:textColor="#D57558"
-               android:textSize="15sp"
-               android:textStyle="normal"
-               tools:ignore="MissingConstraints">
+        <TextView
+            android:id="@+id/prdctprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prdctdesc"
+            android:layout_marginStart="20dp"
+            android:text="$150"
+            android:textColor="#D57558"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            tools:ignore="MissingConstraints">
 
-           </TextView>
+        </TextView>
     </RelativeLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

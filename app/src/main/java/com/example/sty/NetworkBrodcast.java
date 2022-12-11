@@ -27,12 +27,12 @@ public class NetworkBrodcast extends BroadcastReceiver {
                     .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                         @Override
                         public void onClick(SweetAlertDialog sDialog) {
-                                    if (!isConnected(context)) {
-                                        Toast.makeText(context,"No Connection !",Toast.LENGTH_LONG).show();
-                                    }else {
-                                        sDialog.dismissWithAnimation();
-                                    }
-                                }
+                            if (!isConnected(context)) {
+                                Toast.makeText(context, "No Connection !", Toast.LENGTH_LONG).show();
+                            } else {
+                                sDialog.dismissWithAnimation();
+                            }
+                        }
                     })
                     .setCancelButton("Later", new SweetAlertDialog.OnSweetClickListener() {
                         @Override
@@ -43,13 +43,14 @@ public class NetworkBrodcast extends BroadcastReceiver {
                     .show();
         }
     }
+
     private boolean isConnected(Context context) {
         try {
             ConnectivityManager connectivityManager = (ConnectivityManager) context.getApplicationContext().getSystemService(context.CONNECTIVITY_SERVICE);
             NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
             return networkInfo != null && networkInfo.isConnected();
-        }catch (Exception e){
-        e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
             return false;
         }
     }
