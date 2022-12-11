@@ -9,7 +9,7 @@
         android:layout_width="200dp"
         android:layout_height="150dp"
         android:layout_marginTop="25dp"
-        android:src="@drawable/user" />
+        android:src="@drawable/porfilepic" />
 
     <TextView
         android:layout_width="wrap_content"

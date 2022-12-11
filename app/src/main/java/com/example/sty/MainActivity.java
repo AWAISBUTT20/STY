@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -41,30 +42,30 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.Mensmenu:
-                        Toast.makeText(MainActivity.this, "Men Clicked", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainActivity.this, mens_activity.class));
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
                     case R.id.Womensmenu:
-                        Toast.makeText(MainActivity.this, "Women Clicked", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainActivity.this, women_activity.class));
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
                     case R.id.logoutmenu:
-                        Toast.makeText(MainActivity.this, "Logout Clicked", Toast.LENGTH_SHORT).show();
+                        //  startActivity(new Intent(MainActivity.this,authentication.class));
+                        Toast.makeText(MainActivity.this, "Logout", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.usermenu:
-                        Toast.makeText(MainActivity.this, "User Clicked", Toast.LENGTH_SHORT).show();
+                        loadfrag(new authentication(), false);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
-
                     case R.id.accsesorymenu:
-                        Toast.makeText(MainActivity.this, "Accessories Clicked", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainActivity.this, Accessories.class));
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     default:
-                        Toast.makeText(MainActivity.this, "Kuch Ni", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Nothing", Toast.LENGTH_SHORT).show();
                 }
 
                 return true;
