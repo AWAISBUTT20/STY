@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         firebaseAuth=FirebaseAuth.getInstance();
+        //check if user already exist or not
+        FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -57,8 +60,12 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.logoutmenu:
-                       firebaseAuth.signOut();
-                        Toast.makeText(MainActivity.this, "Logout ", Toast.LENGTH_SHORT).show();
+                        if (firebaseUser != null) {
+                            firebaseAuth.signOut();
+                            loadfrag(new Home(),false);
+                        }else {
+                            Toast.makeText(MainActivity.this, "No User Register ", Toast.LENGTH_SHORT).show();
+                        }
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                     case R.id.usermenu:
@@ -92,14 +99,16 @@ public class MainActivity extends AppCompatActivity {
                 } else if (id == R.id.Cart) {
                     loadfrag(new Cart(), true);
                 } else if (id == R.id.User) {
-                    // loadfrag(new Userprofile(),true);
-                    loadfrag(new authentication(), true);
+                    if (firebaseUser != null) {
+                        loadfrag(new Userprofile(),true);
+                    }else {
+                        loadfrag(new authentication(), true);
+                    }
                 }
                 return true;
             }
         });
         loadfrag(new Home(), false);
-//My first fragment
         bnv.setSelectedItemId(R.id.home);
     }
 
@@ -113,16 +122,5 @@ public class MainActivity extends AppCompatActivity {
             ft.replace(R.id.container, fragment);
         }
         ft.commit();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
-        if (firebaseUser != null) {
-
-        }else {
-        loadfrag(new Userprofile(),true);
-        }
     }
 }

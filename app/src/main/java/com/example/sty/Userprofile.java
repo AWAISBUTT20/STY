@@ -5,6 +5,9 @@ import static com.example.sty.R.drawable.mentees;
 
 import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -16,16 +19,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class Userprofile extends Fragment {
 
     public Userprofile() {
         // Required empty public constructor
     }
-
     TextView txt;
     BroadcastReceiver broadcastReceiver;
     FirebaseAuth firebaseAuth;
@@ -49,25 +54,35 @@ public class Userprofile extends Fragment {
             public void onClick(View v) {
                 FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
                 if (firebaseUser != null) {
-                    firebaseAuth.signOut();
+                    broadcastReceiver = new NetworkBrodcast();
+                    getActivity().registerReceiver(broadcastReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+                    new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE)
+                            .setTitleText("Logout")
+                            .setContentText("Are You sure?")
+                            .setConfirmText("Logout")
+                            .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                @Override
+                                public void onClick(SweetAlertDialog sDialog) {
+                                    firebaseAuth.signOut();
+                                    sDialog.dismissWithAnimation();
+                                    startActivity(new Intent(getActivity(), MainActivity.class));
+                                }
+                            })
+                            .setCancelButton("Cancel", new SweetAlertDialog.OnSweetClickListener() {
+                                @Override
+                                public void onClick(SweetAlertDialog sDialog) {
+                                    sDialog.dismissWithAnimation();
+                                }
+                            })
+                            .show();
                 }
             }
         });
-        /*broadcastReceiver=new NetworkBrodcast();
-       registerReceiver(broadcastReceiver,new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));  NetworkBrodcast networkBrodcast=new NetworkBrodcast();
-        */
         SignUp signUp = new SignUp();
         usrname = signUp.getuser();
         txt.setText(usrname);
         return view;
-    }
 
-  /*  @Override
-    public void onStart() {
-        super.onStart();
-        FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
-        if (firebaseUser == null) {
-            return;
-        }
-    }*/
+
+    }
 }
