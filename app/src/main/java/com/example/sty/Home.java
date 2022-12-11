@@ -38,13 +38,11 @@ public class Home extends Fragment {
         // Inflate the layout for this fragment
 
       View view = inflater.inflate(R.layout.fragment_home, container, false);
-/*
           Button btnOpen = (Button) view. findViewById(R.id.btnmen);
         btnOpen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
                 Intent in = new Intent(getActivity(), mens_activity.class);
-                //in.putExtra("some", "Mens Wears");
                 startActivity(in);
             }
         });
@@ -53,7 +51,6 @@ public class Home extends Fragment {
             @Override
             public void onClick(View v){
                 Intent in = new Intent(getActivity(), women_activity.class);
-                //in.putExtra("some", "Mens Wears");
                 startActivity(in);
             }
         });
@@ -62,42 +59,9 @@ public class Home extends Fragment {
             @Override
             public void onClick(View v){
                 Intent in = new Intent(getActivity(), Accessories.class);
-                //in.putExtra("some", "Mens Wears");
                 startActivity(in);
             }
-        });*/
-        //video
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
-        VideoView videoview = view.findViewById(R.id.styvidv);
-        String vidpath = "android.resource://" + getActivity().getPackageName() + "/" + R.raw.styvid;
-        Uri uri = Uri.parse(vidpath);
-        videoview.setVideoURI(uri);
-        //for play and pause manually
-      /*  MediaController mediaController=new MediaController(this);
-        videoview.setMediaController(mediaController);
-        mediaController.setAnchorView(videoview);*/
-      //  getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        getActivity().getWindow().setStatusBarColor(Color.TRANSPARENT);
-        videoview.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mp) {
-                mp.start();
-            }
         });
-
-        //if you want video was play again and again
-        videoview.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                mp.start();
-            }
-        });
-
         return view;}
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
 }
