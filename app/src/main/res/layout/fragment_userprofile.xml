@@ -68,8 +68,16 @@
                 android:layout_marginTop="10dp"
                 android:elevation="30dp"
                 app:cardCornerRadius="3dp">
-
-                <de.hdodenhof.circleimageview.CircleImageView
+                <ImageView
+                    android:id="@+id/imgprofil"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="30dp"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="2dp" />
+       <!--         <de.hdodenhof.circleimageview.CircleImageView
 
                     android:id="@+id/imgprofil"
                     android:layout_width="150dp"
@@ -77,9 +85,8 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="30dp"
-                    android:src="@drawable/porfilepic"
                     app:civ_border_color="#FF000000"
-                    app:civ_border_width="2dp" />
+                    app:civ_border_width="2dp" />-->
 
                 <TextView
                     android:id="@+id/txtusrname"
@@ -88,20 +95,21 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="90dp"
                     android:textAlignment="center"
+                    android:textSize="15sp"
                     android:textColor="@color/black"
                     android:textStyle="italic">
 
                 </TextView>
 
                 <Button
-                    android:id="@+id/change"
+                    android:id="@+id/btnchange"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="-10dp"
+                    android:layout_height="40dp"
                     android:background="@android:color/transparent"
                     android:backgroundTint="@android:color/transparent"
-                    android:gravity="top"
                     android:text="Update"
+                    android:textAllCaps="false"
+                    android:gravity="center"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
             </androidx.cardview.widget.CardView>

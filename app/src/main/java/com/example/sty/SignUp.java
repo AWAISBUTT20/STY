@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -15,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,7 +38,7 @@ import java.util.Map;
 public class SignUp extends AppCompatActivity {
     Button btn, btn1;
     EditText txt1, txt2, txt3, txt4;
-    TextView mTextView;
+    ImageView iv;
     private FirebaseAuth firebaseAuth;
     private DBHandler DBHandler;
     String name;
@@ -44,6 +46,7 @@ public class SignUp extends AppCompatActivity {
     BroadcastReceiver broadcastReceiver;
     DocumentReference documentReference;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +55,7 @@ public class SignUp extends AppCompatActivity {
         txt2 = findViewById(R.id.editregPassword);
         txt3 = findViewById(R.id.edttxtConformPassword);
         txt4 = findViewById(R.id.edittxtregusername);
-
+        iv=findViewById(R.id.imgprofil);
         //no internet Alert
         broadcastReceiver = new NetworkBrodcast();
         registerReceiver(broadcastReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
@@ -66,7 +69,7 @@ public class SignUp extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                firestore();
+                uploadfirestore();
               createUser();
                // Toast.makeText(SignUp.this, "UserName", Toast.LENGTH_SHORT).show();
             }
@@ -128,7 +131,7 @@ public class SignUp extends AppCompatActivity {
 
     }
 
-    public void firestore() {
+    public void uploadfirestore() {
         String username = txt4.getText().toString();
         String email = txt1.getText().toString();
         //FireStore

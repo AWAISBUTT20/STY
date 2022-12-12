@@ -1,6 +1,7 @@
 package com.example.sty;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -12,38 +13,51 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
-
+    ImageView imageView;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     FirebaseAuth firebaseAuth;
-
-    @SuppressLint("MissingInflatedId")
+    TextView txt1,txt2;
+    //FirebaseFirestore db=FirebaseFirestore.getInstance();
+    @SuppressLint({"MissingInflatedId", "ResourceType"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         navigationView = findViewById(R.id.navigationmenumain);
         drawerLayout = findViewById(R.id.drawermain);
+        txt1=findViewById(R.id.draweruser);
+        txt2=findViewById(R.id.draweremail);
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         firebaseAuth=FirebaseAuth.getInstance();
         //check if user already exist or not
         FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
-
+        //set
+        imageView=findViewById(R.id.imgdraweruser);
+        //navigation drawer view
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -123,4 +137,33 @@ public class MainActivity extends AppCompatActivity {
         }
         ft.commit();
     }
+
+   /* public void featchfirestore(){
+        //featching data from fire store(UserName)
+        DocumentReference documentReference=db.document("User/User_1");
+        documentReference.get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if (documentSnapshot.exists()) {
+                            String username = documentSnapshot.getString("User Name");
+                            String email = documentSnapshot.getString("Email");
+                            if (email.isEmpty()) {
+                                txt1.setText("Username");
+                                txt2.setText("Email");
+                            }
+                            txt1.setText(username);
+                            txt2.setText(email);
+                        }else {
+                            Toast.makeText(MainActivity.this, "FireStore Fetching Error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(MainActivity.this, "FireStore Fetching Error", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+    }*/
 }
