@@ -30,7 +30,13 @@
             android:background="@color/black"
 
             />
-
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="16dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/stylogo"
+            />
         <TextView
             android:id="@+id/checkout"
             android:layout_width="match_parent"
@@ -69,38 +75,30 @@
 
         </com.denzcoskun.imageslider.ImageSlider>
 
-        <View
-            android:id="@+id/rectangle"
-            android:layout_width="125dp"
-            android:layout_height="2dp"
-            android:layout_below="@+id/imageslider"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="255dp"
-            android:background="@color/black" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvfav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rectangle"
+            android:layout_below="@id/imageslider"
             android:layout_marginTop="10dp">
 
         </androidx.recyclerview.widget.RecyclerView>
 
         <Button
             android:id="@+id/btnaddtobag"
-            android:layout_width="314dp"
-            android:layout_height="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/rvfav"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="22dp"
             android:layout_marginBottom="@android:dimen/app_icon_size"
-            android:backgroundTint="@color/black"
-            android:text="add to bag"
+            android:text="add to cart"
+            android:textColor="@color/white"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:background="@drawable/tranparent_button"
+            />
 
     </RelativeLayout>
 </LinearLayout>

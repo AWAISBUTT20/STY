@@ -17,7 +17,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Search">Search Items</string>
-    <string name="SHOPPINGBAG">S H O P P I N G B A G</string>
+    <string name="SHOPPINGBAG">C A R T </string>
     <string name="favrt">F A V O U R I T E </string>
     <string name="search">S E A R C H </string>
     <string name="profile">P R O F I L E</string>

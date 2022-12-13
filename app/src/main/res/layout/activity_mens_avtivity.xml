@@ -10,7 +10,7 @@
     <Button
         android:id="@+id/btnmenarrivals"
         android:layout_width="match_parent"
-        android:layout_height="395dp"
+        android:layout_height="373dp"
         android:layout_alignParentTop="true"
         android:elevation="15dp"
         android:foreground="@drawable/menmodel">
@@ -23,7 +23,7 @@
         android:layout_height="340dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="385dp"
         android:foreground="@drawable/menhodies">
 
     </Button>
@@ -36,7 +36,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="209dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="385dp"
         android:foreground="@drawable/mentees">
 
     </Button>

@@ -39,6 +39,13 @@
                     android:background="@color/black"
 
                     />
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/stylogo"
+                    />
 
                 <TextView
                     android:id="@+id/checkout"
@@ -70,18 +77,18 @@
 
             <Button
                 android:id="@+id/btnchckout"
-                android:layout_width="314dp"
-                android:layout_height="70dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/rvcart"
-                android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginLeft="50dp"
+                android:layout_marginTop="22dp"
                 android:layout_marginBottom="@android:dimen/app_icon_size"
-                android:backgroundTint="@color/black"
-                android:shadowRadius="20"
-                android:text="Check Out"
+                android:text="Check out"
+                android:textColor="@color/white"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:background="@drawable/tranparent_button"
+                />
 
         </RelativeLayout>
     </ScrollView>

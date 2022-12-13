@@ -5,16 +5,23 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="780dp"
-        android:background="@drawable/welcome"
         tools:context=".authentication">
 
-        <Button
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/welcome">
+
+    </ImageView>
+
+    <Button
             android:id="@+id/btnwelcomelog"
-            android:layout_width="140dp"
-            android:layout_height="50dp"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="155dp"
+            android:layout_marginBottom="200dp"
             android:backgroundTint="@android:color/white"
             android:gravity="center"
             android:text="@string/Login"
@@ -27,11 +34,11 @@
 
         <Button
             android:id="@+id/btnwelcomesignup"
-            android:layout_width="140dp"
+            android:layout_width="150dp"
             android:layout_height="45dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="105dp"
+            android:layout_marginBottom="145dp"
             android:background="@android:color/transparent"
             android:foreground="@drawable/tranparent_button"
             android:gravity="center"
