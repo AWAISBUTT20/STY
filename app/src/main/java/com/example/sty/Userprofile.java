@@ -10,6 +10,7 @@ import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -70,6 +71,7 @@ public class Userprofile extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_userprofile, container, false);
+
         featchfirestore();
         txt = view.findViewById(R.id.txtusrname);
         iv = view.findViewById(R.id.imgprofil);

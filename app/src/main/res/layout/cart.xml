@@ -60,9 +60,9 @@
             android:layout_marginStart="155dp"
             android:layout_marginTop="95dp"
             android:text="$150"
-            android:textColor="@color/black"
+            android:textColor="#D57558"
             android:textSize="20sp"
-            android:textStyle="bold"
+            android:textStyle="normal"
             tools:ignore="MissingConstraints">
 
         </TextView>

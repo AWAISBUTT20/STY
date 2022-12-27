@@ -2,6 +2,7 @@ package com.example.sty;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 public class checkout extends AppCompatActivity {
@@ -11,5 +12,6 @@ public class checkout extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
+        getWindow().setStatusBarColor(Color.BLACK);
     }
 }

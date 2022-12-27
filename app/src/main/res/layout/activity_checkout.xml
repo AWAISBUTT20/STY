@@ -80,6 +80,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/total"
                 android:layout_width="342dp"
                 android:layout_height="76dp"
                 android:layout_centerHorizontal="true"
@@ -99,14 +100,18 @@
             </androidx.cardview.widget.CardView>
 
             <Button
-                android:layout_width="342dp"
-                android:layout_height="76dp"
-                android:layout_alignParentBottom="true"
+                android:layout_width="314dp"
+                android:layout_height="70dp"
+                android:layout_below="@+id/total"
+                android:layout_gravity="center_horizontal"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="550.71dp"
                 android:layout_marginBottom="@android:dimen/app_icon_size"
                 android:backgroundTint="@color/black"
-                android:text="Place Order"
+                android:layout_alignParentBottom="true"
+                android:onClick="logout"
+                android:shadowRadius="20"
+                android:text="Place order"
+                android:textAlignment="center"
                 android:textSize="20sp" />
         </RelativeLayout>
     </ScrollView>

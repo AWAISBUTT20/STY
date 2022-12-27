@@ -60,7 +60,7 @@ public class fav extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // startActivity(new Intent(getActivity(),Cart.class));
+            //    MainActivity mainActivity=new MainActivity();
             }
         });
         return view;
@@ -71,11 +71,11 @@ public class fav extends Fragment {
         super.onCreate(savedInstanceState);
         prdctname.add("STY Tee 1");
         prdctdesc.add("Black Cotton Shirt \nProduct No. #36251");
-        prdctprice.add("120$");
+        prdctprice.add("1,700/- Rs");
         prdctimg.add(R.drawable.female);
         prdctname.add("STY Tee 2");
         prdctdesc.add("Cotton Shirt \nProduct No. #361");
-        prdctprice.add("100$");
+        prdctprice.add("1,000/- Rs");
         prdctimg.add(R.drawable.male);
     }
 }

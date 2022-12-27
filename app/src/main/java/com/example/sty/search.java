@@ -79,10 +79,10 @@ public class search extends Fragment {
         productdesc.add("Black Cotton Shirt");
         productdesc.add("Black Cotton Shirt ");
         productdesc.add("Black Cotton Shirt");
-        productprice.add("200$");
-        productprice.add("100$");
-        productprice.add("150$");
-        productprice.add("130$");
+        productprice.add("1,700/- Rs");
+        productprice.add("1,000/- Rs");
+        productprice.add("2,500/- Rs");
+        productprice.add("900/- Rs");
         Product.add(R.drawable.menhodies);
         Product.add(R.drawable.mentees);
         Product.add(R.drawable.womentees);

@@ -66,9 +66,9 @@ public class Cart extends Fragment {
         prdctdesc.add("Black Cotton Shirt \nProduct No. #36251");
         prdctdesc.add("Black Cotton Shirt \nProduct No. #36251");
         prdctdesc.add("Black Cotton Shirt \nProduct No. #36251");
-        prdctprice.add("100$");
-        prdctprice.add("150$");
-        prdctprice.add("130$");
+        prdctprice.add("1,700/- Rs");
+        prdctprice.add("1,000/- Rs");
+        prdctprice.add("900/- Rs");
         prdctimg.add(R.drawable.menhodies);
         prdctimg.add(R.drawable.mentees);
         prdctimg.add(R.drawable.womentees);

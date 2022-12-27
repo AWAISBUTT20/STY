@@ -5,7 +5,6 @@
     android:id="@+id/usrfragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="@android:dimen/app_icon_size"
     tools:context=".Userprofile">
 
     <RelativeLayout
@@ -59,7 +58,6 @@
                 android:translationY="-9.47sp" />
 
         </RelativeLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,7 +69,6 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_marginTop="10dp"
                 android:elevation="30dp"
                 app:cardCornerRadius="3dp">
                 <ImageView
@@ -79,7 +76,7 @@
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="15dp"
                     android:layout_marginBottom="30dp"
                     app:civ_border_color="#FF000000"
                     app:civ_border_width="2dp" />
@@ -119,52 +116,46 @@
                     android:textColor="@color/black"
                     android:textSize="12sp" />
             </androidx.cardview.widget.CardView>
-
             <Button
                 android:id="@+id/rectangle_1"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="41dp"
+                android:layout_marginTop="31dp"
                 android:backgroundTint="@color/white"
                 android:elevation="40dp"
                 android:text="Orders"
                 android:textColor="@color/black" />
-
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:backgroundTint="@color/white"
                 android:elevation="40dp"
                 android:text="Reviews"
                 android:textColor="@color/black" />
-
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:backgroundTint="@color/white"
                 android:elevation="40dp"
                 android:text="FAQ"
                 android:textColor="@color/black" />
-
             <Button
                 android:id="@+id/btncustumer"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:backgroundTint="@color/white"
                 android:elevation="40dp"
                 android:text="Customer Support"
                 android:textColor="@color/black" />
-
             <Button
                 android:id="@+id/btnlogout"
                 android:layout_width="314dp"
                 android:layout_height="70dp"
                 android:layout_below="@+id/btncustumer"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
                 android:layout_marginBottom="@android:dimen/app_icon_size"
                 android:backgroundTint="@color/black"
                 android:onClick="logout"

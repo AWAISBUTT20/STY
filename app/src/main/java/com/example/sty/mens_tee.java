@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
@@ -30,6 +31,7 @@ public class mens_tee extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mens_tees);
+        getWindow().setStatusBarColor(Color.BLACK);
         rv = findViewById(R.id.recyclerView);
       /* btn2=findViewById(R.id.btnaddtobag);
         btn2.setOnClickListener(new View.OnClickListener() {

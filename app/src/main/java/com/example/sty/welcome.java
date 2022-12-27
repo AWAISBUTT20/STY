@@ -22,7 +22,9 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
+import android.widget.MediaController;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -55,15 +57,16 @@ public class welcome extends AppCompatActivity {
         setContentView(R.layout.activity_wellcome);
         btn3 = findViewById(R.id.btnshopnow);
         VideoView videoview = findViewById(R.id.styvidv1);
-        String vidpath = "android.resource://" + getPackageName() + "/" + R.raw.wellcome;
+        String vidpath = "android.resource://" + getPackageName() + "/" + R.raw.sale;
         Uri uri = Uri.parse(vidpath);
         videoview.setVideoURI(uri);
         /*for play and pause manually
         MediaController mediaController=new MediaController(this);
         videoview.setMediaController(mediaController);
         mediaController.setAnchorView(videoview);
-        getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);*/
-       //getWindow().setStatusBarColor(Color.TRANSPARENT);
+        getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+       */
+        getWindow().setStatusBarColor(Color.BLACK);
         videoview.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {

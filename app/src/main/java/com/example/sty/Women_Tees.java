@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Adapter;
 
@@ -21,6 +22,7 @@ public class Women_Tees extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_women_tees);
+        getWindow().setStatusBarColor(Color.BLACK);
         rv = findViewById(R.id.rvwomentee);
         prodctadapter prodctadapter = new prodctadapter(Women_Tees.this, prdctname, prdctdesc, prdctprice, prdctimg);
         rv.setLayoutManager(new GridLayoutManager(this, 2, RecyclerView.VERTICAL, false));
