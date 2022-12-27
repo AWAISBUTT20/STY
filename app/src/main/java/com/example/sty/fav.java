@@ -69,9 +69,13 @@ public class fav extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        prdctname.add("STY Tee1");
+        prdctname.add("STY Tee 1");
         prdctdesc.add("Black Cotton Shirt \nProduct No. #36251");
         prdctprice.add("120$");
         prdctimg.add(R.drawable.female);
+        prdctname.add("STY Tee 2");
+        prdctdesc.add("Cotton Shirt \nProduct No. #361");
+        prdctprice.add("100$");
+        prdctimg.add(R.drawable.male);
     }
 }

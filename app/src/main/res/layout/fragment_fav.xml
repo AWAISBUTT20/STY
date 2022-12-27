@@ -19,7 +19,6 @@
             android:background="@color/black"
 
             />
-
         <View
             android:id="@+id/some_id"
             android:layout_width="match_parent"
@@ -64,9 +63,8 @@
 
         <com.denzcoskun.imageslider.ImageSlider
             android:id="@+id/imageslider"
-           android:layout_marginTop="15dp"
             android:layout_width="match_parent"
-            android:layout_height="225dp"
+            android:layout_height="180dp"
             app:iss_auto_cycle="true"
             app:iss_corner_radius="5"
             app:iss_delay="0"
@@ -74,31 +72,29 @@
             app:iss_placeholder="@drawable/mentees">
 
         </com.denzcoskun.imageslider.ImageSlider>
-
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvfav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/imageslider"
-            android:layout_marginTop="10dp">
+          >
 
         </androidx.recyclerview.widget.RecyclerView>
 
         <Button
             android:id="@+id/btnaddtobag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="314dp"
+            android:layout_height="70dp"
             android:layout_below="@+id/rvfav"
+            android:layout_gravity="center_horizontal"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="22dp"
             android:layout_marginBottom="@android:dimen/app_icon_size"
+            android:layout_alignParentBottom="true"
+            android:backgroundTint="@color/black"
+            android:shadowRadius="20"
             android:text="add to cart"
-            android:textColor="@color/white"
             android:textAlignment="center"
-            android:textSize="20sp"
-            android:background="@drawable/tranparent_button"
-            />
+            android:textSize="20sp" />
 
     </RelativeLayout>
 </LinearLayout>

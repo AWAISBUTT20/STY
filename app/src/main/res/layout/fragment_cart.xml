@@ -40,9 +40,9 @@
 
                     />
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="16dp"
                     android:layout_alignParentStart="true"
                     android:src="@drawable/stylogo"
                     />
@@ -74,22 +74,34 @@
                 android:orientation="vertical">
 
             </androidx.recyclerview.widget.RecyclerView>
-
-            <Button
-                android:id="@+id/btnchckout"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/rvcart"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="22dp"
-                android:layout_marginBottom="@android:dimen/app_icon_size"
-                android:text="Check out"
-                android:textColor="@color/white"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:background="@drawable/tranparent_button"
-                />
+                android:text="Total :    380 $"
+                android:layout_below="@id/rvcart"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                >
 
+            </TextView>
+
+            <Button
+                android:id="@+id/btncheckout"
+                android:layout_width="314dp"
+                android:layout_height="70dp"
+                android:layout_below="@+id/rvcart"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@android:dimen/app_icon_size"
+                android:layout_alignParentBottom="true"
+                android:backgroundTint="@color/black"
+                android:shadowRadius="20"
+                android:text="@string/checkout"
+                android:textAlignment="center"
+                android:textSize="20sp" />
         </RelativeLayout>
     </ScrollView>
 

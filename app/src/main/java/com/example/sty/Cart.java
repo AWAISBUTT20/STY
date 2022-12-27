@@ -31,9 +31,7 @@ public class Cart extends Fragment {
     ArrayList<String> prdctdesc = new ArrayList<>();
     ArrayList<String> prdctprice = new ArrayList<>();
     ArrayList<Integer> prdctimg = new ArrayList<>();
-    TextView quantity;
-    int count;
-    Button btn1, btn2, btnopen;
+    Button btnopen;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -42,7 +40,7 @@ public class Cart extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_cart, container, false);
         rv = view.findViewById(R.id.rvcart);
-        btnopen = view.findViewById(R.id.btnchckout);
+        btnopen = view.findViewById(R.id.btncheckout);
         cartadpater cartadpater = new cartadpater(getContext(), prdctname, prdctdesc, prdctprice, prdctimg);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
         rv.setAdapter(cartadpater);
