@@ -44,9 +44,8 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="342dp"
                 android:layout_height="179.54dp"
-                android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="36dp"
                 android:layout_marginTop="138.17dp"
                 android:background="#00000000">
 
@@ -64,9 +63,8 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="342.98dp"
                 android:layout_height="76dp"
-                android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="36dp"
                 android:layout_marginTop="353.71dp"
                 android:background="#00000000">
 
@@ -84,9 +82,8 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="342dp"
                 android:layout_height="76dp"
-                android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="36dp"
                 android:layout_marginTop="465.71dp"
                 android:background="#00000000">
 
@@ -104,9 +101,8 @@
             <Button
                 android:layout_width="342dp"
                 android:layout_height="76dp"
-                android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="36dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="550.71dp"
                 android:layout_marginBottom="@android:dimen/app_icon_size"
                 android:backgroundTint="@color/black"
