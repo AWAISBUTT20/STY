@@ -2,6 +2,7 @@ package com.example.sty;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -43,8 +44,6 @@ public class Cart extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_cart, container, false);
-        //hi
-        getActivity().getWindow().setFlags(WindowManager.LayoutParams. FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 //Animations
         topAnim = AnimationUtils.loadAnimation (getContext(), R.anim.top_animation);
         bottomAnim = AnimationUtils.loadAnimation (getContext(), R.anim.bottom_animation);
