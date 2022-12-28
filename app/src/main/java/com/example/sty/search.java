@@ -16,7 +16,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Adapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +31,9 @@ public class search extends Fragment {
     public search() {
         // Required empty public constructor
     }
-
+    Animation topAnim,bottomanim;
+    TextView txt;
+    ImageView img;
     RecyclerView rv;
     SearchView sv;
     ArrayList<String> productname = new ArrayList<>();
@@ -43,6 +49,13 @@ public class search extends Fragment {
         // Inflate the layout for this fragment
         //for activity in fragment
         View view = inflater.inflate(R.layout.fragment_search, container, false);
+        //Animation
+        topAnim= AnimationUtils.loadAnimation(getContext(),R.anim.top_animation);
+        bottomanim=AnimationUtils.loadAnimation(getContext(),R.anim.bottom_animation);
+        txt=view.findViewById(R.id.search_txt);
+        txt.setAnimation(topAnim);
+        img=view.findViewById(R.id.stylogosrch);
+        img.setAnimation(topAnim);
         //search view
         sv = view.findViewById(R.id.searchview);
         sv.setIconified(false);
@@ -71,22 +84,22 @@ public class search extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        productname.add("STY Tee 1");
-        productname.add("STY Tee 2");
+        productname.add("Hoodies");
+        productname.add("STY Tee ");
         productname.add("STY Tee 3");
-        productname.add("STY Tee 4");
-        productdesc.add("Black Cotton Shirt");
+        productname.add("Bracelet");
+        productdesc.add("Black ");
         productdesc.add("Black Cotton Shirt");
         productdesc.add("Black Cotton Shirt ");
-        productdesc.add("Black Cotton Shirt");
+        productdesc.add("Silver");
         productprice.add("1,700/- Rs");
         productprice.add("1,000/- Rs");
         productprice.add("2,500/- Rs");
         productprice.add("900/- Rs");
         Product.add(R.drawable.menhodies);
+        Product.add(R.drawable.womenmodle);
         Product.add(R.drawable.mentees);
-        Product.add(R.drawable.womentees);
-        Product.add(R.drawable.womenhood);
+        Product.add(R.drawable.acsesories);
     }
 
 }

@@ -29,6 +29,8 @@ import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -56,9 +58,9 @@ public class Userprofile extends Fragment {
         // Required empty public constructor
     }
 
-    private final String key = "img";
     TextView txt;
     BroadcastReceiver broadcastReceiver;
+    Animation bottom;
     FirebaseAuth firebaseAuth;
     Button btn, btn2;
     ImageView iv;
@@ -71,7 +73,7 @@ public class Userprofile extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_userprofile, container, false);
-
+        bottom= AnimationUtils.loadAnimation(getContext(),R.anim.bottom_animation);
         featchfirestore();
         txt = view.findViewById(R.id.txtusrname);
         iv = view.findViewById(R.id.imgprofil);
@@ -87,6 +89,7 @@ public class Userprofile extends Fragment {
         });
         firebaseAuth = FirebaseAuth.getInstance();
         btn = view.findViewById(R.id.btnlogout);
+        btn.setAnimation(bottom);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -30,6 +30,7 @@
 
             />
         <ImageView
+            android:id="@+id/stylogofav"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginTop="16dp"
@@ -37,7 +38,7 @@
             android:src="@drawable/stylogo"
             />
         <TextView
-            android:id="@+id/checkout"
+            android:id="@+id/fav_txt"
             android:layout_width="match_parent"
             android:layout_height="35.58dp"
             android:layout_centerHorizontal="true"

@@ -1,5 +1,6 @@
 package com.example.sty;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -11,8 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Adapter;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
@@ -25,12 +30,13 @@ import java.util.zip.Inflater;
 public class fav extends Fragment {
     RecyclerView rv;
     Adapter adapter;
+    Animation top,bottom,right;
     Button btn;
     ArrayList<String> prdctname = new ArrayList<>();
     ArrayList<String> prdctdesc = new ArrayList<>();
     ArrayList<String> prdctprice = new ArrayList<>();
     ArrayList<Integer> prdctimg = new ArrayList<>();
-
+    @SuppressLint("MissingInflatedId")
     public fav() {
         // Required empty public constructor
     }
@@ -40,9 +46,17 @@ public class fav extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_fav, container, false);
+        //Animation
+        top= AnimationUtils.loadAnimation(getContext(),R.anim.top_animation);
+        bottom=AnimationUtils.loadAnimation(getContext(),R.anim.bottom_animation);
+        right=AnimationUtils.loadAnimation(getContext(),R.anim.leftmove);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TextView txt=view.findViewById(R.id.fav_txt);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView img =view.findViewById(R.id.stylogofav);
+        txt.setAnimation(top);
+        img.setAnimation(top);
         //image Slider
         ImageSlider imageSlider = view.findViewById(R.id.imageslider);
-
+        //imageSlider.setAnimation(top);
         ArrayList<SlideModel> slideModels = new ArrayList<>();
         slideModels.add(new SlideModel(R.drawable.mentees, ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.womentees, ScaleTypes.FIT));
@@ -56,7 +70,9 @@ public class fav extends Fragment {
         favadapter myfavadapter = new favadapter(prdctname, prdctdesc, prdctprice, prdctimg, getContext());
         rv.setAdapter(myfavadapter);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
+        rv.setAnimation(right);
         btn=view.findViewById(R.id.btnaddtobag);
+        btn.setAnimation(bottom);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

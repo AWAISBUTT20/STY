@@ -40,6 +40,7 @@
 
                     />
                 <ImageView
+                    android:id="@+id/stylogocart"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_marginTop="16dp"
@@ -48,7 +49,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/checkout"
+                    android:id="@+id/cart_txt"
                     android:layout_width="match_parent"
                     android:layout_height="35.58dp"
                     android:layout_centerHorizontal="true"
@@ -75,6 +76,7 @@
 
             </androidx.recyclerview.widget.RecyclerView>
             <TextView
+                android:id="@+id/cartTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total :    380 $"

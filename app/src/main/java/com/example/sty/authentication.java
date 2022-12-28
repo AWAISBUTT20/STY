@@ -9,22 +9,27 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import java.util.zip.Inflater;
 
 public class authentication extends Fragment {
-    Button btn1, btn2, btn3;
-
+    Button btn1, btn2;
+    Animation bottom;
     @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_authenticaion, container, false);
+        bottom = AnimationUtils.loadAnimation(getContext(),R.anim.bottom_animation);
         //Activity
         btn1 = view.findViewById(R.id.btnwelcomelog);
         btn2 = view.findViewById(R.id.btnwelcomesignup);
+        btn1.setAnimation(bottom);
+        btn2.setAnimation(bottom);
         //btn3 = view.findViewById(R.id.btnwellcomayb);
         //firebaseAuth = FirebaseAuth.getInstance();
         btn1.setOnClickListener(new View.OnClickListener() {
