@@ -1,45 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    android:paddingBottom="?attr/actionBarSize"
+    android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".Home">
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/txtnewcollection"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
+        android:layout_height="@android:dimen/app_icon_size"
+        android:text="NEW COLLECTION"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="italic"
+        >
+    </TextView>
         <Button
             android:id="@+id/btnmen"
+            android:layout_below="@+id/txtnewcollection"
             android:layout_width="match_parent"
-            android:layout_height="370dp"
+            android:layout_height="280dp"
             android:elevation="15dp"
-            android:foreground="@drawable/male">
+            android:foreground="@drawable/menmodel">
 
         </Button>
 
         <Button
             android:id="@+id/btnwomen"
-            android:layout_width="match_parent"
-            android:layout_height="370dp"
-            android:foreground="@drawable/female"
+            android:layout_width="202dp"
+            android:layout_height="300dp"
+            android:foreground="@drawable/womenmodle"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@android:dimen/app_icon_size"
             tools:targetApi="m">
 
         </Button>
-
-        <Button
-            android:id="@+id/btnacsesori"
-            android:layout_width="match_parent"
-            android:layout_height="370dp"
-            android:foreground="@drawable/breclet">
-
-        </Button>
-    </LinearLayout>
-</FrameLayout><!--<FrameLayout
+    <Button
+        android:id="@+id/btnacsesori"
+        android:layout_width="202dp"
+        android:layout_height="300dp"
+        android:foreground="@drawable/acsesories"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@android:dimen/app_icon_size"
+        >
+    </Button>
+</RelativeLayout>
+    <!--<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
