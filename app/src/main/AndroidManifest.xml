@@ -18,6 +18,14 @@
         android:theme="@style/Theme.STY"
         tools:targetApi="31">
         <activity
+            android:name=".payment_method"
+            android:exported="true"
+            android:theme="@style/Theme.Splash">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".forgetpassword"
             android:exported="true"
             android:theme="@style/Theme.Splash">
