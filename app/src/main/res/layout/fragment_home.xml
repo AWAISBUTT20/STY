@@ -13,21 +13,33 @@
         android:layout_width="match_parent"
         android:layout_height="@android:dimen/app_icon_size"
         android:text="NEW COLLECTION"
+        android:layout_marginTop="5dp"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="28sp"
         android:textStyle="italic"
         >
     </TextView>
-        <Button
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/homeImgSlide"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_below="@+id/txtnewcollection"
+        app:iss_auto_cycle="true"
+        app:iss_corner_radius="5"
+        app:iss_delay="0"
+        app:iss_error_image="@drawable/sample"
+        app:iss_placeholder="@drawable/mentees">
+
+    </com.denzcoskun.imageslider.ImageSlider>
+   <!-- <Button
             android:id="@+id/btnmen"
             android:layout_below="@+id/txtnewcollection"
             android:layout_width="match_parent"
             android:layout_height="280dp"
             android:elevation="15dp"
             android:foreground="@drawable/menmodel">
-
-        </Button>
+        </Button>-->
 
         <Button
             android:id="@+id/btnwomen"
@@ -37,15 +49,19 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_marginBottom="@android:dimen/app_icon_size"
+            android:layout_marginTop="40dp"
+            android:layout_below="@id/homeImgSlide"
             tools:targetApi="m">
 
         </Button>
     <Button
         android:id="@+id/btnacsesori"
-        android:layout_width="202dp"
+        android:layout_width="190dp"
         android:layout_height="300dp"
         android:foreground="@drawable/acsesories"
         android:layout_alignParentBottom="true"
+        android:layout_below="@id/homeImgSlide"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="@android:dimen/app_icon_size"
         >
     </Button>
