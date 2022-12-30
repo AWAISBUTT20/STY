@@ -14,14 +14,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:context=".checkout">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/stylogo">
 
+            </ImageView>
             <View
                 android:id="@+id/some_id"
                 android:layout_width="124.96dp"
                 android:layout_height="2.25dp"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="112.32dp"
+                android:layout_marginTop="92.32dp"
                 android:background="@color/black"
 
                 />
@@ -32,7 +37,7 @@
                 android:layout_height="32.58dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginStart="75.58dp"
-                android:layout_marginTop="69.75dp"
+                android:layout_marginTop="49.75dp"
                 android:layout_marginEnd="110dp"
                 android:gravity="center_horizontal|top"
                 android:lineSpacingExtra="19sp"
@@ -41,60 +46,102 @@
                 android:textSize="20sp"
                 android:translationY="-9.47sp" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/some_id"
+                android:text="ADDRESS DETAILS :"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="25dp"
+                android:textColor="#D57558"
+                android:textStyle="bold"
+                />
             <androidx.cardview.widget.CardView
+
                 android:layout_width="342dp"
-                android:layout_height="179.54dp"
+                android:layout_height="169.54dp"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="138.17dp"
-                android:background="#00000000">
-
+                android:layout_marginTop="148.17dp"
+                android:elevation="20dp"
+                android:background="@color/black">
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="SHIPPING ADDRESS "
-                    android:textColor="@color/grey"
-                    android:textStyle="bold"
+                    android:id="@+id/shipingadrs"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Robert Robertson,\n 1234 NW Bobcat Lane,\n St. Robert, MO 65584-5678."
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:textStyle="italic"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="30dp">
+                </TextView>
 
-                    />
             </androidx.cardview.widget.CardView>
 
+            <TextView
+                android:id="@+id/shipmethod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="340dp"
+                android:text="SHIPPING METHOD :"
+                android:layout_marginStart="35dp"
+                android:textColor="#D57558"
+                android:textStyle="bold"
+                />
             <androidx.cardview.widget.CardView
                 android:layout_width="342.98dp"
                 android:layout_height="76dp"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="353.71dp"
+                android:layout_marginTop="365.71dp"
                 android:background="#00000000">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
                     android:layout_marginTop="5dp"
-                    android:text="SHIPPING METHOD "
-                    android:textColor="@color/grey"
-                    android:textStyle="bold"
+                    android:text="Cash on Delivery">
 
-                    />
+                </RadioButton>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="40dp"
+                    android:text="Bank Transfer"
+                    >
+
+                </RadioButton>
             </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TOTAL :"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="100dp"
+                android:layout_below="@id/shipmethod"
+                android:textColor="#D57558"                    android:textStyle="bold"
+                android:textSize="15sp"
 
+                />
             <androidx.cardview.widget.CardView
                 android:id="@+id/total"
                 android:layout_width="342dp"
-                android:layout_height="76dp"
+                android:layout_height="56dp"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="465.71dp"
+                android:layout_marginTop="485.71dp"
                 android:background="#00000000">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="TOTAL "
-                    android:textColor="@color/grey"
-                    android:textStyle="bold"
+                    android:text="12,000 PKR /-"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="#D57558"                    android:textStyle="bold"
+                    android:textSize="15sp"
 
                     />
             </androidx.cardview.widget.CardView>
@@ -108,7 +155,6 @@
                 android:layout_marginBottom="@android:dimen/app_icon_size"
                 android:backgroundTint="@color/black"
                 android:layout_alignParentBottom="true"
-                android:onClick="logout"
                 android:shadowRadius="20"
                 android:text="Place order"
                 android:textAlignment="center"
