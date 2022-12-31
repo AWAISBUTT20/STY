@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -31,6 +32,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class SignUp extends AppCompatActivity {
     Button btn, btn1;
@@ -66,9 +69,11 @@ public class SignUp extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                uploadfirestore();
+             /*   SQLite database
+                sqldb();
+                uploadfirestore();*/
+
               createUser();
-               // Toast.makeText(SignUp.this, "UserName", Toast.LENGTH_SHORT).show();
             }
         });
         btn1 = findViewById(R.id.btnreg_login);
@@ -95,22 +100,34 @@ public class SignUp extends AppCompatActivity {
         } else if (!password.equals(confirmpass)) {
             txt3.setError("Password Unmatched");
         } else {
-            //SQLite database
 
-            sqldb();
             firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(SignUp.this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        Toast.makeText(SignUp.this, "User Register Successfully", Toast.LENGTH_SHORT).show();
+                        new SweetAlertDialog(SignUp.this, SweetAlertDialog.SUCCESS_TYPE)
+                                .setTitleText("SignUp Successfully").show();
+                        Intent intent = new Intent(SignUp.this, login_m.class);
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                startActivity(intent);
+                                finish();
+                            }
+                        }, 1000);
                     } else {
-                        Toast.makeText(SignUp.this, "User Register Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                    }
+                            new SweetAlertDialog(SignUp.this, SweetAlertDialog.ERROR_TYPE)
+                                    .setTitleText("User Registration Error").setConfirmButton("Try Again", new SweetAlertDialog.OnSweetClickListener() {
+                                        @Override
+                                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                            sweetAlertDialog.dismissWithAnimation();
+                                        }
+                                    }).show();
+                         }
                 }
             });
-            Intent intent = new Intent(SignUp.this, login_m.class);
-            startActivity(intent);
-            Toast.makeText(SignUp.this, "Successful", Toast.LENGTH_SHORT).show();
+            /*
+                });*/
         }
     }
 
@@ -127,7 +144,6 @@ public class SignUp extends AppCompatActivity {
         name = DBHandler.feactch();
 
     }
-
     public void uploadfirestore() {
         String username = txt4.getText().toString();
         String email = txt1.getText().toString();
@@ -148,23 +164,13 @@ public class SignUp extends AppCompatActivity {
             }
         });
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(broadcastReceiver);
     }
-
-    public String getuser() {
-        if (setuser().isEmpty()) {
-            return "Empty";
-        }
-        return setuser();
-    }
-
     public String setuser() {
         return user;
     }
-
 }
 

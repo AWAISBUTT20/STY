@@ -41,7 +41,6 @@ public class fav extends Fragment {
     ArrayList<String> prdctdesc = new ArrayList<>();
     ArrayList<String> prdctprice = new ArrayList<>();
     ArrayList<Integer> prdctimg = new ArrayList<>();
-    FragmentFavBinding binding;
     @SuppressLint("MissingInflatedId")
     public fav() {
         // Required empty public constructor
@@ -55,21 +54,12 @@ public class fav extends Fragment {
         top= AnimationUtils.loadAnimation(getContext(),R.anim.top_animation);
         bottom=AnimationUtils.loadAnimation(getContext(),R.anim.bottom_animation);
         right=AnimationUtils.loadAnimation(getContext(),R.anim.leftmove);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TextView txt=view.findViewById(R.id.fav_txt);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView img =view.findViewById(R.id.stylogofav);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+        TextView txt=view.findViewById(R.id.fav_txt);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+        ImageView img =view.findViewById(R.id.stylogofav);
         txt.setAnimation(top);
         img.setAnimation(top);
-        //image Slider
-        ImageSlider imageSlider = view.findViewById(R.id.imageslider);
-        //imageSlider.setAnimation(top);
-        ArrayList<SlideModel> slideModels = new ArrayList<>();
-        slideModels.add(new SlideModel(R.drawable.mentees, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.womentees, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.menhodies, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.womenhood, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.acsesories, ScaleTypes.FIT));
-        imageSlider.setImageList(slideModels, ScaleTypes.CENTER_INSIDE);
-        imageSlider.startSliding(2000);
         //recycler View
         rv = view.findViewById(R.id.rvfav);
         favadapter myfavadapter = new favadapter(prdctname, prdctdesc, prdctprice, prdctimg, getContext());
@@ -78,11 +68,12 @@ public class fav extends Fragment {
         rv.setAnimation(right);
         //Button
         btn=view.findViewById(R.id.btnaddtobag);
-        btn.setAnimation(bottom);        btn.setOnClickListener(new View.OnClickListener() {
+        btn.setAnimation(bottom);
+        btn.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("MissingInflatedId")
             @Override
             public void onClick(View v) {
-                new SweetAlertDialog(getContext(),SweetAlertDialog.CUSTOM_IMAGE_TYPE).
+                new SweetAlertDialog(getContext(),SweetAlertDialog.SUCCESS_TYPE).
                         setTitleText("Added to Cart").
                         setContentText("Successful").
                         setConfirmText("Go To Cart").setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {

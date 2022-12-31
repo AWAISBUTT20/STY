@@ -1,71 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical"
-    tools:context=".fragments.Home">
-    <TextView
-        android:id="@+id/txtnewcollection"
+    android:layout_height="match_parent">
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="@android:dimen/app_icon_size"
-        android:text="NEW COLLECTION"
-        android:layout_marginTop="5dp"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        android:textStyle="italic"
-        >
-    </TextView>
-    <com.denzcoskun.imageslider.ImageSlider
-        android:id="@+id/homeImgSlide"
-        android:layout_width="match_parent"
-        android:layout_height="280dp"
-        android:layout_below="@+id/txtnewcollection"
-        app:iss_auto_cycle="true"
-        app:iss_corner_radius="5"
-        app:iss_delay="0"
-        app:iss_error_image="@drawable/sample"
-        app:iss_placeholder="@drawable/mentees">
-
-    </com.denzcoskun.imageslider.ImageSlider>
-   <!-- <Button
-            android:id="@+id/btnmen"
-            android:layout_below="@+id/txtnewcollection"
+        android:layout_height="wrap_content">
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="280dp"
-            android:elevation="15dp"
-            android:foreground="@drawable/menmodel">
-        </Button>-->
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            tools:context=".fragments.Home">
+            <TextView
+                android:id="@+id/txtnewcollection"
+                android:layout_width="match_parent"
+                android:layout_height="@android:dimen/app_icon_size"
+                android:layout_marginTop="5dp"
+                android:text="NEW COLLECTION"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                android:textStyle="italic">
 
-        <Button
-            android:id="@+id/btnwomen"
-            android:layout_width="202dp"
-            android:layout_height="300dp"
-            android:foreground="@drawable/womenmodle"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="@android:dimen/app_icon_size"
-            android:layout_marginTop="40dp"
-            android:layout_below="@id/homeImgSlide"
-            tools:targetApi="m">
+            </TextView>
 
-        </Button>
-    <Button
-        android:id="@+id/btnacsesori"
-        android:layout_width="190dp"
-        android:layout_height="300dp"
-        android:foreground="@drawable/acsesories"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@id/homeImgSlide"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="@android:dimen/app_icon_size"
-        >
-    </Button>
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/homeImgSlide"
+                android:layout_width="match_parent"
+                android:layout_height="205dp"
+                android:layout_below="@+id/txtnewcollection"
+                app:iss_auto_cycle="true"
+                app:iss_corner_radius="5"
+                app:iss_delay="0"
+                app:iss_error_image="@drawable/sample"
+                app:iss_placeholder="@drawable/mentees">
+
+            </com.denzcoskun.imageslider.ImageSlider>
+
+            <Button
+                android:id="@+id/btnwomen"
+                android:layout_width="162dp"
+                android:layout_height="210dp"
+                android:layout_below="@id/homeImgSlide"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="295dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="@android:dimen/app_icon_size"
+                android:foreground="@drawable/female"
+                tools:targetApi="m">
+
+            </Button>
+
+            <Button
+                android:id="@+id/btnmen"
+                android:layout_width="162dp"
+                android:layout_height="210dp"
+                android:layout_below="@id/homeImgSlide"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="295dp"
+                android:layout_marginBottom="45dp"
+                android:foreground="@drawable/male">
+
+            </Button>
+
+            <Button
+                android:id="@+id/btnacsesori"
+                android:layout_width="162dp"
+                android:layout_height="210dp"
+                android:layout_below="@id/homeImgSlide"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="525dp"
+                android:layout_marginBottom="45dp"
+                android:foreground="@drawable/breclet">
+
+            </Button>
+
+            <Button
+                android:id="@+id/btnkids"
+                android:layout_width="162dp"
+                android:layout_height="210dp"
+                android:layout_below="@id/homeImgSlide"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="525dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="@android:dimen/app_icon_size"
+                android:foreground="@drawable/womenmodle"
+                tools:targetApi="m">
+
+            </Button>
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>
+
+
     <!--<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"

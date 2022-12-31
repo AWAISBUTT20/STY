@@ -20,6 +20,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 public class forgetpassword extends AppCompatActivity {
 Button btn1,btn2;
 EditText edt1,edt2;
@@ -67,7 +69,13 @@ BroadcastReceiver broadcastReceiver;
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(forgetpassword.this,"Check your Email",Toast.LENGTH_SHORT).show();
+                    new SweetAlertDialog(forgetpassword.this,SweetAlertDialog.ERROR_TYPE)
+                            .setTitleText("Unsuccessful").setContentText("Check your Email").setConfirmButton("Try Again", new SweetAlertDialog.OnSweetClickListener() {
+                                @Override
+                                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                    sweetAlertDialog.dismissWithAnimation();
+                                }
+                            }).show();
                 }
             });
         }

@@ -99,6 +99,7 @@
                 android:hint="@string/Password"
                 android:inputType="textPassword"
                 android:maxLines="1"
+                android:minEms="6"
                 android:textColorHint="@color/grey">
 
             </EditText>

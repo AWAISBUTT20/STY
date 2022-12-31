@@ -24,6 +24,7 @@ import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.sty.R;
 import com.example.sty.activity.Accessories;
+import com.example.sty.activity.mens_activity;
 import com.example.sty.activity.women_activity;
 
 public class Home extends Fragment {
@@ -40,14 +41,14 @@ Animation top;
         top= AnimationUtils.loadAnimation(getContext(),R.anim.top_animation);
         TextView txt1 = view.findViewById(R.id.txtnewcollection);
         txt1.setAnimation(top);
-       /* Button btnOpen = (Button) view.findViewById(R.id.btnmen);
+        Button btnOpen = (Button) view.findViewById(R.id.btnmen);
         btnOpen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(getActivity(), mens_activity.class);
                 startActivity(in);
             }
-        });*/
+        });
         Button btnOpen2 = (Button) view.findViewById(R.id.btnwomen);
         btnOpen2.setOnClickListener(new View.OnClickListener() {
             @Override
