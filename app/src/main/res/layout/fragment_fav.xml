@@ -60,7 +60,7 @@
         android:layout_marginTop="3dp"
         android:layout_marginBottom="@android:dimen/app_icon_size"
         android:background="@color/white"
-        tools:context=".fav">
+        tools:context=".fragments.fav">
 
         <com.denzcoskun.imageslider.ImageSlider
             android:id="@+id/imageslider"

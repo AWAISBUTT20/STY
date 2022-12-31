@@ -1,4 +1,4 @@
-package com.example.sty;
+package com.example.sty.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.MediaController;
 import android.widget.VideoView;
+
+import com.example.sty.R;
 
 public class Accessories extends AppCompatActivity {
     VideoView videoview;

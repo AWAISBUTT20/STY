@@ -1,4 +1,4 @@
-package com.example.sty;
+package com.example.sty.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,9 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
+
+import com.example.sty.R;
+import com.example.sty.activity.welcome;
 
 public class Splash_Activity extends AppCompatActivity {
 

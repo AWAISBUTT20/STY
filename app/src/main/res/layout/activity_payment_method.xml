@@ -14,7 +14,7 @@
             android:id="@+id/chckout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".checkout">
+            tools:context=".activity.checkout">
 
             <ImageView
                 android:layout_width="100dp"

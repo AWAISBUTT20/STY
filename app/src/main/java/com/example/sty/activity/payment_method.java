@@ -1,4 +1,4 @@
-package com.example.sty;
+package com.example.sty.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.sty.R;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -31,7 +33,7 @@ Button btn;
                             @Override
                             public void onClick(SweetAlertDialog sDialog) {
                                 sDialog.dismissWithAnimation();
-                                startActivity(new Intent(payment_method.this,MainActivity.class));
+                                startActivity(new Intent(payment_method.this, MainActivity.class));
                             }
                         }).show();
             }

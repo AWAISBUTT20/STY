@@ -1,4 +1,4 @@
-package com.example.sty;
+package com.example.sty.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.sty.R;
 
 public class mens_activity extends AppCompatActivity {
     Button btn3;

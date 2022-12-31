@@ -1,21 +1,19 @@
-package com.example.sty;
+package com.example.sty.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Adapter;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.Toast;
+
+import com.example.sty.R;
+import com.example.sty.adapters.prodctadapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class mens_tee extends AppCompatActivity {
     RecyclerView rv;

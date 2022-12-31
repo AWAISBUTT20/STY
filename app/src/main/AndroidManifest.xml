@@ -18,7 +18,7 @@
         android:theme="@style/Theme.STY"
         tools:targetApi="31">
         <activity
-            android:name=".payment_method"
+            android:name=".activity.payment_method"
             android:exported="true"
             android:theme="@style/Theme.Splash">
             <meta-data
@@ -26,7 +26,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".forgetpassword"
+            android:name=".activity.forgetpassword"
             android:exported="true"
             android:theme="@style/Theme.Splash">
             <meta-data
@@ -34,45 +34,45 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Women_Tees"
+            android:name=".activity.Women_Tees"
             android:exported="true"
             android:theme="@style/Theme.Splash" />
         <activity
-            android:name=".mens_tee"
+            android:name=".activity.mens_tee"
             android:exported="true"
             android:theme="@style/Theme.Splash" />
         <activity
-            android:name=".checkout"
+            android:name=".activity.checkout"
             android:exported="true"
             android:theme="@style/Theme.Splash" />
         <activity
-            android:name=".welcome"
+            android:name=".activity.welcome"
             android:exported="true"
             android:theme="@style/Theme.Splash" />
         <activity
-            android:name=".Accessories"
+            android:name=".activity.Accessories"
             android:exported="true"
             android:theme="@style/Theme.Splash" /> <!-- Hiding ‘Bottom Navigation Bar’ while keyboard is present -->
         <!-- android:windowSoftInputMode="adjustPan" -->
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Splash"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".SignUp"
+            android:name=".activity.SignUp"
             android:exported="true"
             android:theme="@style/Theme.Splash" />
         <activity
-            android:name=".login_m"
+            android:name=".activity.login_m"
             android:exported="true"
             android:theme="@style/Theme.Splash" />
         <activity
-            android:name=".women_activity"
+            android:name=".activity.women_activity"
             android:exported="true"
             android:theme="@style/Theme.Splash" />
         <activity
-            android:name=".Splash_Activity"
+            android:name=".activity.Splash_Activity"
             android:exported="true"
             android:theme="@style/Theme.Splash">
             <intent-filter>
@@ -82,12 +82,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".mens_activity"
+            android:name=".activity.mens_activity"
             android:exported="true"
             android:theme="@style/Theme.Splash" />
 
         <receiver
-            android:name=".NetworkBrodcast"
+            android:name=".services.NetworkBrodcast"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.net.conn.Connectivity_CHANGE" />

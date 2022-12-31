@@ -1,4 +1,4 @@
-package com.example.sty;
+package com.example.sty.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Adapter;
+
+import com.example.sty.R;
+import com.example.sty.adapters.prodctadapter;
 
 import java.util.ArrayList;
 

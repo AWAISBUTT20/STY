@@ -1,7 +1,6 @@
-package com.example.sty;
+package com.example.sty.adapters;
 
 import android.content.Context;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +9,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sty.R;
+
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 public class cartadpater extends RecyclerView.Adapter<cartadpater.cartVholder> {
     LayoutInflater layoutInflater;

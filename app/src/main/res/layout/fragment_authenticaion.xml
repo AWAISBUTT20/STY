@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="780dp"
-        tools:context=".authentication">
+        tools:context=".fragments.authentication">
 
     <ImageView
         android:layout_width="wrap_content"

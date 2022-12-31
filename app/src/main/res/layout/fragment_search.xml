@@ -7,7 +7,7 @@
     android:layout_marginBottom="@android:dimen/app_icon_size"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".search">
+    tools:context=".fragments.search">
     <!-- <ScrollView
          android:layout_width="match_parent"
          android:layout_height="wrap_content">

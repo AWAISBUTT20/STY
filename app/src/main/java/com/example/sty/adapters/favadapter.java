@@ -1,4 +1,4 @@
-package com.example.sty;
+package com.example.sty.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,8 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sty.R;
+
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 public class favadapter extends RecyclerView.Adapter<favadapter.Viewholer> {
     public favadapter() {

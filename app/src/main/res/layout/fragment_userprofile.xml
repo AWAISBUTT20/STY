@@ -5,7 +5,7 @@
     android:id="@+id/usrfragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Userprofile">
+    tools:context=".fragments.Userprofile">
 
     <RelativeLayout
         android:layout_width="match_parent"

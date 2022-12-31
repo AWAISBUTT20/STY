@@ -1,4 +1,4 @@
-package com.example.sty;
+package com.example.sty.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -19,12 +19,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sty.fragments.Cart;
+import com.example.sty.fragments.Home;
+import com.example.sty.R;
+import com.example.sty.fragments.Userprofile;
+import com.example.sty.fragments.authentication;
+import com.example.sty.fragments.fav;
+import com.example.sty.fragments.search;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import org.checkerframework.common.subtyping.qual.Bottom;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
     ImageView imageView;

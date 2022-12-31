@@ -1,4 +1,4 @@
-package com.example.sty;
+package com.example.sty.services;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

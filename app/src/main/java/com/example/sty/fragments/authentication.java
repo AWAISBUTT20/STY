@@ -1,4 +1,4 @@
-package com.example.sty;
+package com.example.sty.fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -13,7 +13,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
-import java.util.zip.Inflater;
+import com.example.sty.R;
+import com.example.sty.activity.SignUp;
+import com.example.sty.activity.login_m;
 
 public class authentication extends Fragment {
     Button btn1, btn2;

@@ -1,9 +1,7 @@
-package com.example.sty;
+package com.example.sty.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 
 import android.annotation.SuppressLint;
@@ -17,9 +15,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sty.database.DBHandler;
+import com.example.sty.services.NetworkBrodcast;
+import com.example.sty.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,11 +27,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.core.FirestoreClient;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,7 +37,7 @@ public class SignUp extends AppCompatActivity {
     EditText txt1, txt2, txt3, txt4;
     ImageView iv;
     private FirebaseAuth firebaseAuth;
-    private DBHandler DBHandler;
+    private com.example.sty.database.DBHandler DBHandler;
     String name;
     String user = "Awais butt";
     BroadcastReceiver broadcastReceiver;

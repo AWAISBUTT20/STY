@@ -1,4 +1,4 @@
-package com.example.sty;
+package com.example.sty.database;
 
 import android.content.ContentValues;
 import android.content.Context;

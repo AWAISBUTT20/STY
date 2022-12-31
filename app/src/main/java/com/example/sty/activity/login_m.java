@@ -1,4 +1,4 @@
-package com.example.sty;
+package com.example.sty.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,18 +9,21 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.sty.services.NetworkBrodcast;
+import com.example.sty.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class login_m extends AppCompatActivity {
     Button btn1, btn2,btn3;
@@ -47,7 +50,7 @@ public class login_m extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(login_m.this,forgetpassword.class));
+                startActivity(new Intent(login_m.this, forgetpassword.class));
             }
         });
         btn1.setOnClickListener(view -> {
@@ -85,16 +88,27 @@ public class login_m extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        Toast.makeText(login_m.this, "Login Successfully", Toast.LENGTH_SHORT).show();
+                        new SweetAlertDialog(login_m.this,SweetAlertDialog.SUCCESS_TYPE).setTitleText("Login Successful").show();
                         Intent intent = new Intent(login_m.this, MainActivity.class);
-                        startActivity(intent);
-                    } else
-                        Toast.makeText(login_m.this, "Login UnSuccessfully" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                startActivity(intent);
+                                finish();
+                            }
+                        }, 1000);
+                    }
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(login_m.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
+                    new SweetAlertDialog(login_m.this,SweetAlertDialog.ERROR_TYPE)
+                            .setTitleText("Login Unsuccessful").setConfirmButton("Try Again", new SweetAlertDialog.OnSweetClickListener() {
+                                @Override
+                                public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                    sweetAlertDialog.dismissWithAnimation();
+                                }
+                            }).show();
                 }
             });
         }

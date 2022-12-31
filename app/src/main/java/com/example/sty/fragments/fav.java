@@ -1,14 +1,12 @@
-package com.example.sty;
+package com.example.sty.fragments;
 
-import static com.example.sty.MainActivity.bnv;
+import static com.example.sty.activity.MainActivity.bnv;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,12 +23,11 @@ import android.widget.TextView;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
-import com.example.sty.databinding.FragmentCartBinding;
+import com.example.sty.R;
 import com.example.sty.databinding.FragmentFavBinding;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.example.sty.adapters.favadapter;
 
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -85,7 +82,7 @@ public class fav extends Fragment {
             @SuppressLint("MissingInflatedId")
             @Override
             public void onClick(View v) {
-                new SweetAlertDialog(getContext(),SweetAlertDialog.SUCCESS_TYPE).
+                new SweetAlertDialog(getContext(),SweetAlertDialog.CUSTOM_IMAGE_TYPE).
                         setTitleText("Added to Cart").
                         setContentText("Successful").
                         setConfirmText("Go To Cart").setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
@@ -104,9 +101,7 @@ public class fav extends Fragment {
                         .show();
             }
         });
-
         return view;
-
     }
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

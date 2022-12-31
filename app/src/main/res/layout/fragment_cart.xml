@@ -6,7 +6,7 @@
     android:layout_marginBottom="@android:dimen/app_icon_size"
     android:background="@color/white"
     android:id="@+id/cart_frag"
-    tools:context=".Cart">
+    tools:context=".fragments.Cart">
 
     <ScrollView
         android:layout_width="match_parent"

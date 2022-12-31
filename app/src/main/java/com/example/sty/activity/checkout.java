@@ -1,4 +1,4 @@
-package com.example.sty;
+package com.example.sty.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.sty.R;
 
 public class checkout extends AppCompatActivity {
 Button btn;
@@ -22,7 +24,7 @@ Button btn;
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(checkout.this,payment_method.class);
+                Intent intent=new Intent(checkout.this, payment_method.class);
                 startActivity(intent);
             }
         });
