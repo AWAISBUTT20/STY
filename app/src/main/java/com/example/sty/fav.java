@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,9 +23,13 @@ import android.widget.TextView;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.example.sty.databinding.FragmentCartBinding;
+import com.example.sty.databinding.FragmentFavBinding;
 
 import java.util.ArrayList;
 import java.util.zip.Inflater;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
 public class fav extends Fragment {
@@ -36,6 +41,7 @@ public class fav extends Fragment {
     ArrayList<String> prdctdesc = new ArrayList<>();
     ArrayList<String> prdctprice = new ArrayList<>();
     ArrayList<Integer> prdctimg = new ArrayList<>();
+    FragmentFavBinding binding;
     @SuppressLint("MissingInflatedId")
     public fav() {
         // Required empty public constructor
@@ -73,15 +79,28 @@ public class fav extends Fragment {
         rv.setAnimation(right);
         btn=view.findViewById(R.id.btnaddtobag);
         btn.setAnimation(bottom);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            //    MainActivity mainActivity=new MainActivity();
+                new SweetAlertDialog(getContext(),SweetAlertDialog.SUCCESS_TYPE).
+                        setTitleText("Added to Cart").
+                        setContentText("Successful").
+                        setConfirmText("Continue").setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                //startActivity(new Intent(getContext(),Cart.class));
+                                /*MainActivity mainActivity=new MainActivity();
+                                mainActivity.loadfrag(new Cart(),true);*/
+                            }
+                        })
+                        .show();
             }
         });
-        return view;
-    }
 
+        return view;
+
+    }
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
