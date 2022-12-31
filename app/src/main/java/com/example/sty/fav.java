@@ -1,5 +1,7 @@
 package com.example.sty;
 
+import static com.example.sty.MainActivity.bnv;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,6 +27,7 @@ import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.sty.databinding.FragmentCartBinding;
 import com.example.sty.databinding.FragmentFavBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.zip.Inflater;
@@ -46,7 +49,6 @@ public class fav extends Fragment {
     public fav() {
         // Required empty public constructor
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -77,21 +79,26 @@ public class fav extends Fragment {
         rv.setAdapter(myfavadapter);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
         rv.setAnimation(right);
+        //Button
         btn=view.findViewById(R.id.btnaddtobag);
-        btn.setAnimation(bottom);
-
-        btn.setOnClickListener(new View.OnClickListener() {
+        btn.setAnimation(bottom);        btn.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("MissingInflatedId")
             @Override
             public void onClick(View v) {
                 new SweetAlertDialog(getContext(),SweetAlertDialog.SUCCESS_TYPE).
                         setTitleText("Added to Cart").
                         setContentText("Successful").
-                        setConfirmText("Continue").setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                        setConfirmText("Go To Cart").setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                             @Override
                             public void onClick(SweetAlertDialog sweetAlertDialog) {
-                                //startActivity(new Intent(getContext(),Cart.class));
-                                /*MainActivity mainActivity=new MainActivity();
-                                mainActivity.loadfrag(new Cart(),true);*/
+                                sweetAlertDialog.dismissWithAnimation();
+                                bnv.setSelectedItemId(R.id.Cart);
+                            }
+                        }).setCancelButton("Continue", new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                sweetAlertDialog.dismissWithAnimation();
+                                bnv.setSelectedItemId(R.id.home);
                             }
                         })
                         .show();

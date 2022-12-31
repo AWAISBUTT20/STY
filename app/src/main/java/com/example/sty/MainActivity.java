@@ -24,33 +24,40 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+import org.checkerframework.common.subtyping.qual.Bottom;
+
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
     ImageView imageView;
-    NavigationView navigationView;
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     FirebaseAuth firebaseAuth;
-    TextView txt1,txt2;
+    TextView txt1, txt2;
+    NavigationView navigationView;
+    public static BottomNavigationView bnv;
+
     //FirebaseFirestore db=FirebaseFirestore.getInstance();
     @SuppressLint({"MissingInflatedId", "ResourceType"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         getWindow().setStatusBarColor(Color.BLACK);
+
         navigationView = findViewById(R.id.navigationmenumain);
         drawerLayout = findViewById(R.id.drawermain);
-        txt1=findViewById(R.id.draweruser);
-        txt2=findViewById(R.id.draweremail);
+        txt1 = findViewById(R.id.draweruser);
+        txt2 = findViewById(R.id.draweremail);
+
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-        firebaseAuth=FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
         //check if user already exist or not
-        FirebaseUser firebaseUser=firebaseAuth.getCurrentUser();
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
         //set
-        imageView=findViewById(R.id.imgdraweruser);
+        imageView = findViewById(R.id.imgdraweruser);
         //navigation drawer view
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -70,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.logoutmenu:
                         if (firebaseUser != null) {
                             firebaseAuth.signOut();
-                            loadfrag(new Home(),false);
-                        }else {
+                            loadfrag(new Home(), false);
+                        } else {
                             Toast.makeText(MainActivity.this, "No User Register ", Toast.LENGTH_SHORT).show();
                         }
                         drawerLayout.closeDrawer(GravityCompat.START);
@@ -93,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         });
         //Activity
         //Bottom Navigation's
-        BottomNavigationView bnv = findViewById(R.id.bottom_nav);
+        bnv = findViewById(R.id.bottom_nav);
         bnv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -108,8 +115,8 @@ public class MainActivity extends AppCompatActivity {
                     loadfrag(new Cart(), true);
                 } else if (id == R.id.User) {
                     if (firebaseUser != null) {
-                        loadfrag(new Userprofile(),true);
-                    }else {
+                        loadfrag(new Userprofile(), true);
+                    } else {
                         loadfrag(new authentication(), true);
                     }
                 }
@@ -134,6 +141,10 @@ public class MainActivity extends AppCompatActivity {
         ft.commit();
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
+    }
    /* public void featchfirestore(){
         //featching data from fire store(UserName)
         DocumentReference documentReference=db.document("User/User_1");

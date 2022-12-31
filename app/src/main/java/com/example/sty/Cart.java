@@ -44,7 +44,7 @@ public class Cart extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_cart, container, false);
-//Animations
+        //Animations
         topAnim = AnimationUtils.loadAnimation (getContext(), R.anim.top_animation);
         bottomAnim = AnimationUtils.loadAnimation (getContext(), R.anim.bottom_animation);
         right = AnimationUtils.loadAnimation (getContext(), R.anim.leftmove);
@@ -57,7 +57,7 @@ public class Cart extends Fragment {
         //Hooks
         rv = view.findViewById(R.id.rvcart);
         btnopen = view.findViewById(R.id.btncheckout);
-       // btnopen.setAnimation (bottomAnim);
+        // btnopen.setAnimation (bottomAnim);
        // rv.setAnimation (topAnim);
         cartadpater cartadpater = new cartadpater(getContext(), prdctname, prdctdesc, prdctprice, prdctimg);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
