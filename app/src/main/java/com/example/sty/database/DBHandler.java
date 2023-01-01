@@ -1,10 +1,13 @@
 package com.example.sty.database;
 
+import static com.example.sty.fragments.Userprofile.selectimage;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
 
 import java.util.ArrayList;
 
@@ -17,6 +20,8 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String TABLE_NAME = "myclients";
     // below variable is for our course name column
     private static final String NAME_COL = "name";
+    private static final String Email = "name";
+    private static final String Image="img";
 
     String usrname;
 
@@ -39,13 +44,22 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     //Fetching
-    public String feactch() {
+    public String feactchname() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
         while (cursor.moveToNext()) {
             usrname = cursor.getString(0);
         }
         return usrname;
+    }
+    //Fetching
+    public String feactchimg() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        while (cursor.moveToNext()) {
+            selectimage = Uri.parse(cursor.getString(0));
+        }
+        return selectimage.toString();
     }
 
     public void addnewuser(String userName) {
@@ -56,6 +70,8 @@ public class DBHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         // on below line we are passing all values along with its key and value pair.
         values.put(NAME_COL, userName);
+        /*values.put(Email,email);
+        values.put(Image,img);*/
         db.insert(TABLE_NAME, null, values);
         // at last we are closing our database after adding database.
         db.close();

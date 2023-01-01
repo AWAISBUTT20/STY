@@ -41,8 +41,7 @@ public class SignUp extends AppCompatActivity {
     ImageView iv;
     private FirebaseAuth firebaseAuth;
     private com.example.sty.database.DBHandler DBHandler;
-    String name;
-    String user = "Awais butt";
+    public static String name;
     BroadcastReceiver broadcastReceiver;
     DocumentReference documentReference;
 
@@ -69,10 +68,9 @@ public class SignUp extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             /*   SQLite database
+               // SQLite database
                 sqldb();
-                uploadfirestore();*/
-
+               // uploadfirestore();
               createUser();
             }
         });
@@ -126,23 +124,19 @@ public class SignUp extends AppCompatActivity {
                          }
                 }
             });
-            /*
-                });*/
         }
     }
 
     private void sqldb() {
         String userName = txt4.getText().toString();
+       /* String email = txt4.getText().toString();
+        String img = txt4.getText().toString();*/
         if (userName.isEmpty()) {
             Toast.makeText(SignUp.this, "Please enter UserName", Toast.LENGTH_SHORT).show();
             return;
         }
         DBHandler.addnewuser(userName);
         Toast.makeText(SignUp.this, "User has been added to SQL.", Toast.LENGTH_SHORT).show();
-
-        Log.d("info", "Name : " + DBHandler.feactch());
-        name = DBHandler.feactch();
-
     }
     public void uploadfirestore() {
         String username = txt4.getText().toString();
@@ -169,8 +163,7 @@ public class SignUp extends AppCompatActivity {
         super.onDestroy();
         unregisterReceiver(broadcastReceiver);
     }
-    public String setuser() {
-        return user;
-    }
+
+
 }
 

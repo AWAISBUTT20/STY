@@ -2,6 +2,8 @@ package com.example.sty.fragments;
 
 import static android.app.Activity.RESULT_OK;
 
+import static com.example.sty.activity.SignUp.name;
+
 import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Intent;
@@ -16,6 +18,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +29,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sty.activity.SignUp;
+import com.example.sty.database.DBHandler;
 import com.example.sty.services.NetworkBrodcast;
 import com.example.sty.R;
 import com.example.sty.activity.MainActivity;
@@ -45,13 +50,15 @@ public class Userprofile extends Fragment {
         // Required empty public constructor
     }
 
-    TextView txt;
+
+    private final int GALLERY_REQ_CODE = 1000;
+    TextView txt,txt2,txt3;
     BroadcastReceiver broadcastReceiver;
     Animation bottom;
     FirebaseAuth firebaseAuth;
     Button btn, btn2;
     ImageView iv;
-    Bitmap bitmap;
+    public static Uri selectimage;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @SuppressLint({"ResourceType", "MissingInflatedId"})
@@ -60,18 +67,33 @@ public class Userprofile extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_userprofile, container, false);
-        bottom= AnimationUtils.loadAnimation(getContext(),R.anim.bottom_animation);
-        featchfirestore();
+        bottom = AnimationUtils.loadAnimation(getContext(), R.anim.bottom_animation);
+       // featchfirestore();
+        //wait
+       /*DBHandler dbHandler=new DBHandler(getContext());
+       name=dbHandler.feactchname();
+        if (name.isEmpty()) {
+            txt.setText("username");
+        }else {
+            txt.setText(name);
+        }*/
+
         txt = view.findViewById(R.id.txtusrname);
         iv = view.findViewById(R.id.imgprofil);
+        if (selectimage == null) {
+            iv.setImageResource(R.drawable.porfilepic);
+        }else {
+            iv.setImageURI(selectimage);
+        }
+
+
         btn2 = view.findViewById(R.id.btnchange);
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent gallery = new Intent(Intent.ACTION_PICK);
                 gallery.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(gallery, 1);
-
+                startActivityForResult(gallery, GALLERY_REQ_CODE);
             }
         });
         firebaseAuth = FirebaseAuth.getInstance();
@@ -136,10 +158,26 @@ public class Userprofile extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
-            Uri selectimage = data.getData();
-            iv.setImageURI(selectimage);
-        }
 
+        if (requestCode == GALLERY_REQ_CODE) {
+            if (resultCode == RESULT_OK) {
+                if (data != null) {
+                    //URI
+                     selectimage = data.getData();
+                    iv.setImageURI(selectimage);
+                }
+            }
+        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        if (selectimage != null) {
+            //URI
+            iv.setImageURI(selectimage);
+        }else {
+            iv.setImageResource(R.drawable.porfilepic);
+        }
     }
 }
