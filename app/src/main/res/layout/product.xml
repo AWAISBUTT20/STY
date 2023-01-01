@@ -10,21 +10,27 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:padding="5dp"
         tools:ignore="MissingConstraints">
 
-        <ImageButton
-            android:id="@+id/btnaddbag"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/addbag" />
+        <ToggleButton
+            android:id="@+id/togglebutton"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:checked="false"
+            android:textOn=""
+            android:textOff=""
+            android:background="@drawable/toggle_image"
+
+             />
 
         <ImageView
             android:id="@+id/prdctimg"
             android:layout_width="190dp"
             android:layout_height="190dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             tools:srcCompat="@drawable/product" />
 
         <TextView

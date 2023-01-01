@@ -230,14 +230,14 @@
                 />
 
             <TextView
-                android:id="@+id/total"
+                android:id="@+id/totalpayment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/cardetial"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="30dp"
-                android:text="12,500 PKR/-"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -248,7 +248,7 @@
                 android:id="@+id/finalpayment"
                 android:layout_width="wrap_content"
                 android:layout_height="55dp"
-                android:layout_below="@+id/total"
+                android:layout_below="@+id/totalpayment"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="15dp"

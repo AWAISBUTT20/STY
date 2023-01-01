@@ -14,12 +14,19 @@
         android:elevation="125dp"
         tools:ignore="RtlSymmetry">
 
+        <Button
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="330dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/cross"/>
 
         <ImageView
             android:id="@+id/cartimg"
             android:layout_width="121dp"
             android:layout_height="91dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
             tools:ignore="MissingConstraints">
 
         </ImageView>
@@ -33,6 +40,7 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:layout_marginTop="5dp"
             tools:ignore="MissingConstraints">
 
         </TextView>
@@ -42,7 +50,7 @@
             android:layout_width="151dp"
             android:layout_height="50dp"
             android:layout_marginStart="155dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="45dp"
             android:text=" Black Cotton Shirt \n Product No. #36251"
             android:textColor="@color/black"
             android:textSize="15sp"
@@ -57,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/cartdescr"
             android:layout_marginStart="155dp"
-            android:layout_marginTop="95dp"
+            android:layout_marginTop="100dp"
             android:text="$150"
             android:textColor="#D57558"
             android:textSize="20sp"
@@ -71,7 +79,7 @@
             android:layout_width="30dp"
             android:layout_height="17dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="105dp"
             android:background="@color/white"
             android:foreground="@drawable/left"
             android:foregroundTint="@color/white"
@@ -82,7 +90,7 @@
             android:layout_width="30dp"
             android:layout_height="17dp"
             android:layout_marginStart="90dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="105dp"
             android:background="@color/white"
             android:foreground="@drawable/righterrow"
             android:foregroundTint="@color/white"
@@ -93,7 +101,7 @@
             android:layout_width="40dp"
             android:layout_height="17dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="105dp"
             android:inputType="number"
             android:textAlignment="center"
             android:textColor="@color/black"
@@ -107,7 +115,7 @@
             android:layout_height="2.25dp"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="140dp"
+            android:layout_marginTop="145dp"
             android:background="@color/black" />
     </androidx.cardview.widget.CardView>
 

@@ -31,13 +31,18 @@ public class Cart extends Fragment {
     public Cart() {
         // Required empty public constructor
     }
-    Animation topAnim,bottomAnim,right;
+
+    Animation topAnim, bottomAnim, right;
     RecyclerView rv;
     ArrayList<String> prdctname = new ArrayList<>();
     ArrayList<String> prdctdesc = new ArrayList<>();
     ArrayList<String> prdctprice = new ArrayList<>();
     ArrayList<Integer> prdctimg = new ArrayList<>();
     Button btnopen;
+    public static int sum;
+    int price1 = 1500;
+    int price2 = 1200;
+    int price3 = 800;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -46,12 +51,15 @@ public class Cart extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_cart, container, false);
         //Animations
-        topAnim = AnimationUtils.loadAnimation (getContext(), R.anim.top_animation);
-        bottomAnim = AnimationUtils.loadAnimation (getContext(), R.anim.bottom_animation);
-        right = AnimationUtils.loadAnimation (getContext(), R.anim.leftmove);
-        TextView txt=view.findViewById(R.id.cart_txt);
-        TextView txt1=view.findViewById(R.id.cartTotal);
-        ImageView img =view.findViewById(R.id.stylogocart);
+        topAnim = AnimationUtils.loadAnimation(getContext(), R.anim.top_animation);
+        bottomAnim = AnimationUtils.loadAnimation(getContext(), R.anim.bottom_animation);
+        right = AnimationUtils.loadAnimation(getContext(), R.anim.leftmove);
+        TextView txt = view.findViewById(R.id.cart_txt);
+        TextView txt1 = view.findViewById(R.id.cartTotal);
+        //total
+        sum = price1 + price2 + price3;
+        txt1.setText(sum + "/- Rs");
+        ImageView img = view.findViewById(R.id.stylogocart);
         txt.setAnimation(topAnim);
         img.setAnimation(topAnim);
         txt1.setAnimation(right);
@@ -59,7 +67,7 @@ public class Cart extends Fragment {
         rv = view.findViewById(R.id.rvcart);
         btnopen = view.findViewById(R.id.btncheckout);
         // btnopen.setAnimation (bottomAnim);
-       // rv.setAnimation (topAnim);
+        // rv.setAnimation (topAnim);
         cartadpater cartadpater = new cartadpater(getContext(), prdctname, prdctdesc, prdctprice, prdctimg);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
         rv.setAdapter(cartadpater);
@@ -85,12 +93,11 @@ public class Cart extends Fragment {
         prdctdesc.add("Black Cotton Hoodie \nProduct No. #36251");
         prdctdesc.add("Cotton Shirt \nProduct No. #36251");
         prdctdesc.add("Black bracelet \nProduct No. #36251");
-        prdctprice.add("1,700/- Rs");
-        prdctprice.add("1,000/- Rs");
-        prdctprice.add("900/- Rs");
+        prdctprice.add(price1 + "/- Rs");
+        prdctprice.add(price2 + "/- Rs");
+        prdctprice.add(price3 + "/- Rs");
         prdctimg.add(R.drawable.menhodies);
         prdctimg.add(R.drawable.womenmodle);
         prdctimg.add(R.drawable.acsesories);
-
     }
 }

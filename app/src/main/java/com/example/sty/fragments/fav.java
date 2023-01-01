@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,14 +18,17 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Adapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.sty.R;
-import com.example.sty.databinding.FragmentFavBinding;
+import com.example.sty.adapters.prodctadapter;
 import com.example.sty.adapters.favadapter;
 
 import java.util.ArrayList;
@@ -41,15 +45,18 @@ public class fav extends Fragment {
     ArrayList<String> prdctdesc = new ArrayList<>();
     ArrayList<String> prdctprice = new ArrayList<>();
     ArrayList<Integer> prdctimg = new ArrayList<>();
+    ToggleButton tb;
     @SuppressLint("MissingInflatedId")
     public fav() {
         // Required empty public constructor
     }
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_fav, container, false);
+        tb=view.findViewById(R.id.togglebutton);
         //Animation
         top= AnimationUtils.loadAnimation(getContext(),R.anim.top_animation);
         bottom=AnimationUtils.loadAnimation(getContext(),R.anim.bottom_animation);
@@ -62,9 +69,13 @@ public class fav extends Fragment {
         img.setAnimation(top);
         //recycler View
         rv = view.findViewById(R.id.rvfav);
-        favadapter myfavadapter = new favadapter(prdctname, prdctdesc, prdctprice, prdctimg, getContext());
+        prodctadapter adapter = new prodctadapter
+                (getContext(), prdctname, prdctdesc, prdctprice,prdctimg);
+        rv.setLayoutManager(new GridLayoutManager(getActivity(), 2, GridLayoutManager.VERTICAL, false));
+        rv.setAdapter((RecyclerView.Adapter) adapter);
+        /*favadapter myfavadapter = new favadapter(prdctname, prdctdesc, prdctprice, prdctimg, getContext());
         rv.setAdapter(myfavadapter);
-        rv.setLayoutManager(new LinearLayoutManager(getActivity()));
+        rv.setLayoutManager(new LinearLayoutManager(getActivity()));*/
         rv.setAnimation(right);
         //Button
         btn=view.findViewById(R.id.btnaddtobag);
@@ -92,6 +103,16 @@ public class fav extends Fragment {
                         .show();
             }
         });
+        /*tb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+
+                }else {
+
+                }
+            }
+        });*/
         return view;
     }
     @Override
@@ -102,6 +123,14 @@ public class fav extends Fragment {
         prdctprice.add("1,700/- Rs");
         prdctimg.add(R.drawable.female);
         prdctname.add("STY Tee 2");
+        prdctdesc.add("Cotton Shirt \nProduct No. #361");
+        prdctprice.add("1,000/- Rs");
+        prdctimg.add(R.drawable.male);
+        prdctname.add("STY Tee 3");
+        prdctdesc.add("Black Cotton Shirt \nProduct No. #36251");
+        prdctprice.add("1,700/- Rs");
+        prdctimg.add(R.drawable.female);
+        prdctname.add("STY Tee 4");
         prdctdesc.add("Cotton Shirt \nProduct No. #361");
         prdctprice.add("1,000/- Rs");
         prdctimg.add(R.drawable.male);

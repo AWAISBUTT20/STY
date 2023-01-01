@@ -36,7 +36,7 @@ public class favadapter extends RecyclerView.Adapter<favadapter.Viewholer> {
     @NonNull
     @Override
     public Viewholer onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.cart, parent, false);
+        View view = inflater.inflate(R.layout.cartadptr, parent, false);
         return new Viewholer(view);
     }
 

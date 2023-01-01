@@ -77,15 +77,29 @@
 
             </androidx.recyclerview.widget.RecyclerView>
             <TextView
-                android:id="@+id/cartTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Total :    380 $"
+                android:text="Total :"
                 android:layout_below="@id/rvcart"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="#D57558"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                >
+
+            </TextView>
+            <TextView
+                android:id="@+id/cartTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_below="@id/rvcart"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#D57558"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
                 android:layout_marginTop="10dp"
                 >
 

@@ -70,6 +70,7 @@ public class search extends Fragment {
         });
         //recycler view
         rv = view.findViewById(R.id.rvsearch);
+        rv.setAnimation(bottomanim);
         prodctadapter adapter = new prodctadapter(getContext(), productname, productdesc, productprice, Product);
         rv.setLayoutManager(new GridLayoutManager(getActivity(), 2, GridLayoutManager.VERTICAL, false));
         rv.setAdapter((RecyclerView.Adapter) adapter);
@@ -89,10 +90,10 @@ public class search extends Fragment {
         productdesc.add("Black Cotton Shirt");
         productdesc.add("Black Cotton Shirt ");
         productdesc.add("Silver");
-        productprice.add("1,700/- Rs");
-        productprice.add("1,000/- Rs");
+        productprice.add("1,500/- Rs");
+        productprice.add("1,200/- Rs");
         productprice.add("2,500/- Rs");
-        productprice.add("900/- Rs");
+        productprice.add("800/- Rs");
         Product.add(R.drawable.menhodies);
         Product.add(R.drawable.womenmodle);
         Product.add(R.drawable.mentees);

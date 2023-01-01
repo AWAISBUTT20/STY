@@ -160,7 +160,7 @@
                 android:textStyle="normal"
                 />
             <TextView
-                android:id="@+id/prdctcharges"
+                android:id="@+id/subtotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/delivierycharges"
@@ -176,7 +176,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/prdctcharges"
+                android:layout_below="@id/subtotal"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="20dp"
                 android:text="TOTAL :"
@@ -185,14 +185,14 @@
                 android:textStyle="bold"
                 />
             <TextView
-                android:id="@+id/total"
+                android:id="@+id/nettotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/prdctcharges"
+                android:layout_below="@id/subtotal"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
-                android:text="12,500 PKR/-"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -203,7 +203,7 @@
                 android:id="@+id/proceedtopayment"
                 android:layout_width="wrap_content"
                 android:layout_height="55dp"
-                android:layout_below="@+id/total"
+                android:layout_below="@+id/nettotal"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center_horizontal"
